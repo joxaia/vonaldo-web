@@ -128,6 +128,30 @@ let buttonclick = event.target.closest(".addtocart, .minus, .plus, #remove, .add
         quantity ++
         cartlist.classList.add("active")
         setproincart(position,proudctid,quantity)
+        sendAddToCartEvent(proudctid);
+        // ---- Meta Pixel AddToCart Event ----
+function sendAddToCartEvent(proudctid) {
+    if (typeof window.fbq !== 'undefined') {
+        // نجيب بيانات المنتج من proudct.js
+        const prodIndex = proudct.findIndex(p => p.colors.some(c => c.sizes.some(s => s.id === proudctid)));
+        if (prodIndex >= 0) {
+            const prod = proudct[prodIndex];
+            const colorObj = prod.colors.find(c => c.sizes.some(s => s.id === proudctid));
+            const sizeObj = colorObj.sizes.find(s => s.id === proudctid);
+
+            fbq('track', 'AddToCart', {
+                content_name: prod.name,      // اسم المنتج
+                content_ids: [proudctid],     // ID المنتج
+                content_type: 'product',
+                value: prod.price,            // سعر المنتج
+                currency: 'USD'               // العملة
+            });
+
+            console.log(`Meta Pixel AddToCart sent: ${prod.name}`);
+        }
+    }
+}
+
     }
     if(buttonclick.classList.contains("minus")){
         quantity --
