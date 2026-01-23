@@ -2,6 +2,29 @@
 import proudct from "./proudct.js"
 
 const carte = ()=>{
+    // ---- Meta Pixel AddToCart Event ----
+function sendAddToCartEvent(proudctid) {
+    console.log("sendAddToCartEvent fired", proudctid); // للتأكد
+
+    if (typeof window.fbq !== 'undefined') {
+        const prodIndex = proudct.findIndex(p => p.colors.some(c => c.sizes.some(s => s.id === proudctid)));
+        if (prodIndex >= 0) {
+            const prod = proudct[prodIndex];
+            fbq('track', 'AddToCart', {
+                content_name: prod.name,
+                content_ids: [proudctid],
+                content_type: 'product',
+                value: prod.price,
+                currency: 'USD'
+            });
+            console.log(`Meta Pixel AddToCart sent: ${prod.name}`);
+        } else {
+            console.log("Product ID not found in proudct.js");
+        }
+    } else {
+        console.log("fbq غير موجود");
+    }
+}
 let cartlist = document.querySelector(".cart")
 let carticons = document.querySelector(".cart-icons")
 let cartclsoe = document.getElementById("closecart")
@@ -128,29 +151,7 @@ let buttonclick = event.target.closest(".addtocart, .minus, .plus, #remove, .add
         quantity ++
         cartlist.classList.add("active")
         setproincart(position,proudctid,quantity)
-        sendAddToCartEvent(proudctid);
-        // ---- Meta Pixel AddToCart Event ----
-function sendAddToCartEvent(proudctid) {
-    if (typeof window.fbq !== 'undefined') {
-        // نجيب بيانات المنتج من proudct.js
-        const prodIndex = proudct.findIndex(p => p.colors.some(c => c.sizes.some(s => s.id === proudctid)));
-        if (prodIndex >= 0) {
-            const prod = proudct[prodIndex];
-            const colorObj = prod.colors.find(c => c.sizes.some(s => s.id === proudctid));
-            const sizeObj = colorObj.sizes.find(s => s.id === proudctid);
-
-            fbq('track', 'AddToCart', {
-                content_name: prod.name,      // اسم المنتج
-                content_ids: [proudctid],     // ID المنتج
-                content_type: 'product',
-                value: prod.price,            // سعر المنتج
-                currency: 'USD'               // العملة
-            });
-
-            console.log(`Meta Pixel AddToCart sent: ${prod.name}`);
-        }
-    }
-}
+ sendAddToCartEvent(proudctid);  // هنا بنرسل الحدث
 
     }
     if(buttonclick.classList.contains("minus")){
