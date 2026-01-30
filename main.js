@@ -40,7 +40,7 @@ const innitnew = ()=>{
         card.classList.add("itemnew")
         card.innerHTML = `
         <a href="./details.html?id=${pro.id}">
-        <img src="${pro.mainimg}">
+        <img src="${pro.mainimg}" alt="Handmade Italian leather sneakers for men by Vonaldo">
         </a>
         <h3>${pro.name}</h3>
         <h4>${pro.price}$</h4>
@@ -99,7 +99,7 @@ const innipros = ()=>{
         card.classList.add("pross")
         card.innerHTML = `
         <a href="./details.html?id=${pro.id}">
-        <img src ="${pro.mainimg}">
+        <img src ="${pro.mainimg}" alt="Handmade Italian leather sneakers for men by Vonaldo">
         </a>
         <h3>${pro.name}</h3>
         <h4>${pro.price}$</h4>
@@ -275,3 +275,7 @@ innitslider();
 
 
 
+let know = document.querySelector(".know")
+know.addEventListener("click",()=>{
+    window.location.href = `./collection.html`
+})

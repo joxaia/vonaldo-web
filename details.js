@@ -13,6 +13,10 @@ const innit = () => {
 };
 innit();
 
+
+
+
+
 // الفيديو
 const video = document.getElementById("myVideo");
 video.addEventListener("timeupdate", () => {
@@ -150,6 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const product = proudct.find(p => p.colors.some(c => c.sizes.some(s => s.id == id)));
   
   if (!product) return console.error("Product not found");
+
 
   // عرض البيانات
   document.querySelectorAll(".nam-mobdesc, .name, .name-desc, .name-pack").forEach(el => el.textContent = product.name);

@@ -1,238 +1,226 @@
+import proudct from "./proudct.js";
 
-import proudct from "./proudct.js"
+const carte = () => {
+  /* ================= META PIXEL ================= */
+  function sendAddToCartEvent(proudctid) {
+    if (typeof window.fbq === "undefined") return;
 
-const carte = ()=>{
-    // ---- Meta Pixel AddToCart Event ----
-function sendAddToCartEvent(proudctid) {
-    console.log("sendAddToCartEvent fired", proudctid); // للتأكد
+    const prodIndex = proudct.findIndex((p) =>
+      p.colors.some((c) => c.sizes.some((s) => s.id === proudctid))
+    );
 
-    if (typeof window.fbq !== 'undefined') {
-        const prodIndex = proudct.findIndex(p => p.colors.some(c => c.sizes.some(s => s.id === proudctid)));
-        if (prodIndex >= 0) {
-            const prod = proudct[prodIndex];
-            fbq('track', 'AddToCart', {
-                content_name: prod.name,
-                content_ids: [proudctid],
-                content_type: 'product',
-                value: prod.price,
-                currency: 'USD'
-            });
-            console.log(`Meta Pixel AddToCart sent: ${prod.name}`);
-        } else {
-            console.log("Product ID not found in proudct.js");
-        }
+    if (prodIndex < 0) return;
+
+    const prod = proudct[prodIndex];
+
+    fbq("track", "AddToCart", {
+      content_name: prod.name,
+      content_ids: [proudctid],
+      content_type: "product",
+      value: prod.price,
+      currency: "USD",
+    });
+  }
+
+  /* ================= ELEMENTS ================= */
+  const cartlist = document.querySelector(".cart");
+  const carticons = document.querySelector(".cart-icons");
+  const cartclose = document.getElementById("closecart");
+  const menulist = document.querySelector(".menu-list");
+  const menuopen = document.querySelector(".menu");
+  const closemenu = document.getElementById("closemenu");
+  const home = document.querySelector(".logo");
+  const checkoutBtn = document.querySelector(".checkout-cart");
+
+  /* ================= NAV ================= */
+  home.addEventListener("click", () => {
+    window.location.href = "./index.html";
+  });
+
+  carticons.addEventListener("click", () => {
+    cartlist.classList.toggle("active");
+    menulist.classList.remove("active");
+  });
+
+  cartclose.addEventListener("click", () => {
+    cartlist.classList.remove("active");
+  });
+
+  menuopen.addEventListener("click", () => {
+    menulist.classList.toggle("active");
+    cartlist.classList.remove("active");
+  });
+
+  closemenu.addEventListener("click", () => {
+    menulist.classList.remove("active");
+  });
+
+  /* ================= CART ================= */
+  let cart = [];
+
+  const setproincart = (position, proudctid, quantity) => {
+    if (quantity > 0) {
+      if (position < 0) {
+        cart.push({ proudct_id: proudctid, quantity });
+      } else {
+        cart[position].quantity = quantity;
+      }
     } else {
-        console.log("fbq غير موجود");
+      cart.splice(position, 1);
     }
-}
-let cartlist = document.querySelector(".cart")
-let carticons = document.querySelector(".cart-icons")
-let cartclsoe = document.getElementById("closecart")
-let body = document.querySelector("body")
-let home = document.querySelector(".logo")
-home.addEventListener("click",()=>{
-    window.location.href = "./index.html"
-})
 
-carticons.addEventListener("click",()=>{
-    cartlist.classList.toggle("active")
-    menulist.classList.remove("active")
-})
+    localStorage.setItem("cart", JSON.stringify(cart));
+    refresh();
+  };
 
-cartclsoe.addEventListener("click",()=>{
-    cartlist.classList.toggle("active")
-    menulist.classList.remove("active")
-})
-let langopen = document.getElementById("lange")
-let lang = document.querySelector(".langues")
-langopen.addEventListener("click",()=>{
-    lang.classList.toggle("active")
-    
-})
-let menulist = document.querySelector(".menu-list")
-let closemenu = document.getElementById("closemenu")
-let menuopen = document.querySelector(".menu")
-menuopen.addEventListener("click",()=>{
-    menulist.classList.toggle("active")
-    cartlist.classList.remove("active")
-})
-closemenu.addEventListener("click",()=>{
-    menulist.classList.toggle("active")
-    cartlist.classList.remove("active")
-})
+  const refresh = () => {
+    const listhtml = document.querySelector(".list");
+    const quantityhtml = document.querySelector(".counter");
+    const pricehtml = document.querySelector(".totalprice");
 
-let cart = []
+    let totalquantity = 0;
+    let totalprice = 0;
 
+    listhtml.innerHTML = "";
 
+    cart.forEach((item) => {
+      const position = proudct.findIndex((p) =>
+        p.colors.some((c) => c.sizes.some((s) => s.id === item.proudct_id))
+      );
 
-const setproincart=(position,proudctid,quantity)=>{
-    if(quantity > 0){
-        if(position < 0 ){
-            cart.push({
-                proudct_id:proudctid,
-                quantity:quantity
-            })
-        }else{
-            cart[position].quantity = quantity
-        }
-    }else{
-        cart.splice(position , 1)
-    }
-    localStorage.setItem("cart",JSON.stringify(cart))
-    refresh()
-}
+      if (position < 0) return;
 
-const refresh = ()=>{
-    let listhtml = document.querySelector(".list")
-    let quantityhtml = document.querySelector(".counter")
-    let pricehtml = document.querySelector(".totalprice")
-    let totalquantity = 0
-    let totalprice = 0
-    listhtml.innerHTML = null
-    cart.forEach((item)=>{
-        let position = proudct.findIndex((value)=>value.colors.find((v)=>v.sizes.find((v)=>v.id === item.proudct_id)))
-        let info = proudct[position]
-        let varient = info.colors.find((value)=>value.sizes.find((v)=>v.id === item.proudct_id))
-        let size = varient.sizes.find((v)=>v.id === item.proudct_id)
-        totalquantity = totalquantity + item.quantity
-        totalprice = totalprice + item.quantity * info.price
-        let fisrtimg = varient.imgs[0]
-        let cardcart = document.createElement("div")
-        cardcart.classList.add("cardcart")
-        cardcart.innerHTML = `
+      const info = proudct[position];
+      const variant = info.colors.find((c) =>
+        c.sizes.some((s) => s.id === item.proudct_id)
+      );
+      const size = variant.sizes.find((s) => s.id === item.proudct_id);
+
+      totalquantity += item.quantity;
+      totalprice += item.quantity * info.price;
+
+      const card = document.createElement("div");
+      card.className = "cardcart";
+      card.innerHTML = `
         <div class="imgcart">
-        <img src="${fisrtimg}">
+          <img src="${variant.imgs[0]}" alt="Vonaldo Italian Shoes">
         </div>
         <div class="detailscart">
-        <p>size:${size.size}</p>
-        <p>color:${varient.color}</p>
-        <p>price:${info.price}$</p>
+          <p>size: ${size.size}</p>
+          <p>color: ${variant.color}</p>
+          <p>price: ${info.price}$</p>
         </div>
-        <div class="quantitybox">
-        <span class="minus" data-id="${size.id}"><span class="material-symbols-outlined">
-check_indeterminate_small
-</span></span>
-        <span class="qua">${item.quantity}</span>
-        <span class="plus" data-id="${size.id}"><span class="material-symbols-outlined">
-add
-</span></span>
+        <div class="more-det">
+          <span class="material-symbols-outlined removeprocart" data-id="${size.id}">
+            close_small
+          </span>
+          <div class="quantitybox">
+            <span class="minus" data-id="${size.id}">−</span>
+            <span class="qua">${item.quantity}</span>
+            <span class="plus" data-id="${size.id}">+</span>
+          </div>
         </div>
-        <div class="remover">
-        <span class="material-symbols-outlined removeprocart" id="remove" data-id="${size.id} ">
-          close_small
-        </span>
-        </div>
+      `;
 
+      listhtml.appendChild(card);
+    });
 
-        `
-        cardcart.querySelector(".removeprocart").addEventListener("click",(e)=>{
-            let idremove = e.target.getAttribute("data-id")
-            cart = cart.filter(item=>item.proudct_id != idremove)
-            localStorage.setItem("cart",JSON.stringify(cart))
-            refresh()
-        })
-        listhtml.appendChild(cardcart)
-        quantityhtml.textContent = totalquantity
-        pricehtml.textContent = totalprice + `$`
+    quantityhtml.textContent = totalquantity;
+    pricehtml.textContent = totalprice + "$";
+  };
 
+  /* ================= EVENTS ================= */
+  document.addEventListener("click", (event) => {
+    const btn = event.target.closest(
+      ".addtocart, .addtocartmob, .plus, .minus, .removeprocart"
+    );
+    if (!btn) return;
 
+    const proudctid = Number(btn.dataset.id);
+    if (!proudctid) return;
 
-    })
-}
+    const position = cart.findIndex(
+      (item) => item.proudct_id === proudctid
+    );
+    let quantity = position < 0 ? 0 : cart[position].quantity;
 
-
-// add event
-document.addEventListener("click",(event)=>{
-let buttonclick = event.target.closest(".addtocart, .minus, .plus, #remove, .addtocartmob")
-    let proudctid = Number(buttonclick.dataset.id)
-    let position = cart.findIndex((value)=>value.proudct_id === proudctid)
-    let quantity = position < 0 ? 0 : cart[position].quantity
-    if(buttonclick.classList.contains("addtocart")||buttonclick.classList.contains("plus")||buttonclick.classList.contains("addtocartmob")){
-        quantity ++
-        cartlist.classList.add("active")
-        setproincart(position,proudctid,quantity)
- sendAddToCartEvent(proudctid);  // هنا بنرسل الحدث
-
+    if (btn.classList.contains("addtocart") || btn.classList.contains("addtocartmob")) {
+      const qty = document.querySelector(".qn");
+      quantity += qty ? parseInt(qty.textContent) : 1;
+      cartlist.classList.add("active");
+      setproincart(position, proudctid, quantity);
+      sendAddToCartEvent(proudctid);
     }
-    if(buttonclick.classList.contains("minus")){
-        quantity --
-        setproincart(position,proudctid,quantity)
 
+    if (btn.classList.contains("plus")) {
+      setproincart(position, proudctid, quantity + 1);
     }
-})
 
-const innitlocal = ()=>{
-    if(localStorage.getItem("cart")){
-        try{
-            cart = JSON.parse(localStorage.getItem("cart"))
-        }catch(e){
-            console.log("error")
-        }
+    if (btn.classList.contains("minus")) {
+      setproincart(position, proudctid, quantity - 1);
     }
-    refresh()
-}
-innitlocal()
 
+    if (btn.classList.contains("removeprocart")) {
+      cart = cart.filter((i) => i.proudct_id !== proudctid);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      refresh();
+    }
+  });
 
+  /* ================= INIT ================= */
+  if (localStorage.getItem("cart")) {
+    cart = JSON.parse(localStorage.getItem("cart"));
+  }
+  refresh();
 
-
-
-
-    async function createCheckout() {
-    const cartData = JSON.parse(localStorage.getItem("cart")) || [];
-    const lineItems = cartData.map(item => ({
-        merchandiseId: `gid://shopify/ProductVariant/${item.proudct_id}`,
-        quantity: item.quantity
+  /* ================= CHECKOUT ================= */
+  async function createCheckout() {
+    const lineItems = cart.map((item) => ({
+      merchandiseId: `gid://shopify/ProductVariant/${item.proudct_id}`,
+      quantity: item.quantity,
     }));
 
+    const res = await fetch(
+      "https://k6nv4p-xx.myshopify.com/api/2024-07/graphql.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Shopify-Storefront-Access-Token":
+            "d2dddf0bfa85314f4768291633b95095",
+        },
+        body: JSON.stringify({
+          query: `
+            mutation cartCreate($input: CartInput!) {
+              cartCreate(input: $input) {
+                cart { checkoutUrl }
+              }
+            }
+          `,
+          variables: { input: { lines: lineItems } },
+        }),
+      }
+    );
+
+    const result = await res.json();
+    return result.data.cartCreate.cart.checkoutUrl;
+  }
+
+  checkoutBtn.addEventListener("click", async () => {
+    checkoutBtn.classList.add("loading");
+    checkoutBtn.disabled = true;
+
     try {
-        const response = await fetch("https://k6nv4p-xx.myshopify.com/api/2024-07/graphql.json", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "X-Shopify-Storefront-Access-Token": "d2dddf0bfa85314f4768291633b95095"
-            },
-            body: JSON.stringify({
-                query: `
-                    mutation cartCreate($input: CartInput!) {
-                        cartCreate(input: $input) {
-                            cart {
-                                checkoutUrl
-                            }
-                            errors: userErrors {
-                                message
-                            }
-                        }
-                    }
-                `,
-                variables: {
-                    input: {
-                        lines: lineItems
-                    }
-                }
-            })
-        });
-
-        const result = await response.json();
-        console.log(result);
-
-        if (result.data?.cartCreate?.cart?.checkoutUrl) {
-            window.location.href = result.data.cartCreate.cart.checkoutUrl;
-        } else {
-            const errors = result.data?.cartCreate?.errors || [];
-            console.error("أخطاء:", errors);
-        }
-    } catch (error) {
-        console.error("حدث خطأ:", error);
+      const url = await createCheckout();
+      setTimeout(() => {
+        window.location.href = url;
+      }, 300);
+    } catch (e) {
+      checkoutBtn.classList.remove("loading");
+      checkoutBtn.disabled = false;
+      console.error(e);
     }
-    
-}
-let finihs = document.querySelector(".checkout-cart")
-finihs.addEventListener("click",()=>{
-createCheckout()
-})
+  });
+};
 
-
-}
-
-export default carte
+export default carte;

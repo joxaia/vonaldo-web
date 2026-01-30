@@ -3,13 +3,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@font-face {
+  font-family: "headreg";
+  src: url("./fonts/geist-v4-latin-regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "headbold";
+  src: url("./fonts/geist-v4-latin-700.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "headvery";
+  src: url("./fonts/geist-v4-latin-900.woff2")
+    format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
 
-/* body{
-    font-family: "Montserrat", sans-serif;
-    font-family: "Bebas Neue", sans-serif;
-    font-family: "Oswald", sans-serif;
-} */
 
+:root {
+  --head: "headreg", serif;
+  --headbold: "headbold", serif;
+  --headvery: "headvery", serif;
+}
 * {
   padding: 0;
   margin: 0;
@@ -41,6 +65,12 @@
     color: #2c2c2c;
     position: relative;
   }
+  .cart-icons svg{
+    width: 25px;
+    height: 25px;
+        color: #2c2c2c;
+    position: relative;
+  }
   .counter {
     position: absolute;
     top: -5px;
@@ -65,6 +95,12 @@
     font-size: 25px;
     color: #2c2c2c;
   }
+  .menu svg{
+    width: 25px;
+    height: 25px;
+     color: #2c2c2c;
+    position: relative;
+  }
   .cart {
     font-family: "Montserrat", sans-serif;
     position: fixed;
@@ -74,9 +110,9 @@
     bottom: 0;
     width: 74%;
     background-color: whitesmoke;
-    padding: 20px;
+    padding: 15px;
     display: grid;
-    grid-template-rows: 30px 50px 1fr 30px 70px;
+    grid-template-rows: 50px 20px 1fr 25px 25px 35px;
     transition: all 1s ease;
   }
   .cart.active {
@@ -86,9 +122,19 @@
   .title-cart h3 {
     font-size: 18px;
     font-weight: 600;
+    font-family: var(--headvery);
   }
   .title-cart span {
     font-size: 30px;
+  }
+  .sumship{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .sumship h3{
+    font-family: var(--headbold);
+    font-size: 12px;
   }
   .total-list {
     display: flex;
@@ -96,6 +142,8 @@
     justify-content: center;
     font-size: 15px;
     gap: 3px;
+    font-family: var(--headbold);
+    color: #0a0a0a;
   }
 .btns-cartlist{
 display: grid;
@@ -106,8 +154,9 @@ gap: 3px;
   color: whitesmoke;
   border: none;
   font-weight: 400;
-  font-size: 10px;
-  border-radius: 20px;
+  font-size: 12px;
+  border-radius: 10px;
+  font-family: var(--head);
 }
   .btns button {
     border: none;
@@ -196,43 +245,52 @@ gap: 3px;
   }
 
   .cardcart img {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
   }
   .cardcart {
     display: grid;
-    grid-template-columns: 70px 75px 70px 10px;
+    grid-template-columns: 80px 90px 1fr;
     gap: 8px;
     justify-content: center;
+  }
+  .more-det{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-right: 10px;
   }
   .quantitybox {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 90px;
   }
   .plus {
-    width: 20px;
-    height: 20px;
-    background-color: #c5c2c1;
-    color: white;
+    width: 22px;
+    height: 22px;
+    background-color: #000000;
+    color: rgba(255, 255, 255, 0.925);
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-    border-radius: 50%;
+    border-radius: 7px 0 7px 7px;
     cursor: pointer;
     user-select: none;
+    font-size: 11px;
   }
   .minus {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     background-color: #c5c2c1;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-    border-radius: 50%;
+    border-radius: 0px 7px 7px 7px;
     cursor: pointer;
     user-select: none;
   }
@@ -243,7 +301,8 @@ gap: 3px;
     font-size: 10px;
   }
   .qua {
-    font-size: 15px;
+    font-size: 11px;
+    font-family: var(--headbold);
   }
 
   .detailscart {
@@ -251,12 +310,12 @@ gap: 3px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-right: 9px;
+    padding-left: 10px;
     gap: 3px;
   }
   .detailscart p {
-    font-weight: 600;
     font-size: 13px;
+    font-family: var(--headbold);
   }
   .remover {
     display: flex;
@@ -265,8 +324,14 @@ gap: 3px;
     cursor: pointer;
     height: 20px;
   }
+  .remover span{
+    font-size: 20px;
+  }
   .list {
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
   .list::-webkit-scrollbar {
     width: 0px;
@@ -319,6 +384,12 @@ gap: 3px;
   }
   #menheader {
     font-size: 25px;
+  }
+    .menu svg{
+    width: 25px;
+    height: 25px;
+     color: #2c2c2c;
+    position: relative;
   }
   .cart {
     font-family: "Montserrat", sans-serif;
@@ -548,6 +619,8 @@ border-radius: 20px;
     font-size: 20px;
     font-weight: 200;
     padding-top: 2px;
+    font-family: var(--head);
+
   }
   .cart-icons {
     display: flex;
@@ -568,6 +641,12 @@ border-radius: 20px;
     color: rgb(75, 74, 74);
     position: relative;
   }
+    .cart-icons svg{
+    width: 30px;
+    height: 30px;
+        color: #2c2c2c;
+    position: relative;
+  }
   .counter {
     position: absolute;
     top: -5px;
@@ -585,9 +664,11 @@ border-radius: 20px;
     padding-bottom: 1px;
   }
   .logo h4 {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 400;
     color: #2c2c2c;
+    font-family: var(--headbold);
+    margin-top: 4px;
     
   }
   #menheader {
@@ -604,7 +685,7 @@ border-radius: 20px;
     background-color: whitesmoke;
     padding: 15px;
     display: grid;
-    grid-template-rows: 30px 50px 1fr 30px 70px;
+    grid-template-rows: 30px 20px 1fr 30px 30px 40px;
     transition: all 1s ease;
   }
   .cart.active {
@@ -612,11 +693,12 @@ border-radius: 20px;
     transition: all 1s ease;
   }
   .title-cart h3 {
-    font-size: 25px;
-    font-weight: 600;
+    font-size: 24px;
+    font-family: var(--headvery);
+    color: #0a0a0a;
   }
   .title-cart span {
-    font-size: 40px;
+    font-size: 30px;
     cursor: pointer;
     user-select: none;
   }
@@ -624,25 +706,35 @@ border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 17px;
+    font-size: 15px;
     gap: 3px;
+    font-family: var(--headbold);
+    color: #141414;
   }
   .btns-cartlist{
     display: grid;
-    grid-template-rows: repeat(2,1fr);
+    grid-template-rows: repeat(1,1fr);
     gap: 3px;
   }
   .btns-cartlist button{
     background-color: black;
     color: whitesmoke;
     border: none;
-    border-radius: 20px;
-    font-size: 15px;
+    border-radius: 10px;
+    font-size: 16px;
     font-weight: lighter;
     cursor: pointer;
     user-select: none;
-
+    font-family: var(--head);
   }
+  .sumship{
+    display: block;
+    margin: auto;
+  }
+.sumship h3{
+  font-family: var(--headbold);
+  font-size: 15px;
+}
 
 
   .title-cart {
@@ -706,6 +798,25 @@ border-radius: 20px;
     cursor: pointer;
     user-select: none;
   }
+    .menu svg{
+    width: 30px;
+    height: 30px;
+     color: #2c2c2c;
+    position: relative;
+  }
+  .menu svg{
+    width: 30px;
+    height: 30px;
+     color: #2c2c2c;
+    position: relative;
+    padding-top: 2px;
+  }
+  .menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .links div {
     display: flex;
     justify-content: space-between;
@@ -729,70 +840,73 @@ border-radius: 20px;
   }
   .cardcart {
     display: grid;
-    grid-template-columns: 80px 120px 80px 30px;
+    grid-template-columns: 80px 130px 1fr;
     gap: 7px;
+    justify-content: flex-start;
+  }
+  .detailscart{
+    width: 130px;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 2px;
+    font-family: var(--headbold);
+    font-size: 15px;
+    padding-left: 10px;
+  }
+  .more-det{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
   }
   .quantitybox {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 85px;
   }
   .plus {
-    width: 20px;
-    height: 20px;
-    background-color: #c5c2c1;
-    color: white;
+    width: 25px;
+    height: 25px;
+    background-color: #0a0a0a;
+    color: rgba(255, 255, 255, 0.904);
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-    border-radius: 50%;
+    border-radius: 7px 0 7px 7px;
     cursor: pointer;
     user-select: none;
   }
   .minus {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     background-color: #c5c2c1;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-    border-radius: 50%;
+    border-radius: 0px 7px 7px 7px;
     cursor: pointer;
     user-select: none;
+
   }
   .plus span {
-    font-size: 13px;
+    font-size: 12px;
     user-select: none;
   }
   .minus span {
-    font-size: 15px;
+    font-size: 14px;
     user-select: none;
   }
   .qua {
-    font-size: 15px;
+    font-size: 13px;
     user-select: none;
   }
 
-  .detailscart {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-right: 9px;
-    gap: 3px;
-    font-family: "Montserrat", sans-serif;
-    margin: auto;
-    
-  }
-  .detailscart p {
-    font-weight: 400;
-    font-size: 15px;
-    color: black;
-  }
   .remover {
     display: flex;
     justify-content: flex-end;
@@ -800,9 +914,14 @@ border-radius: 20px;
     cursor: pointer;
     height: 20px;
   }
-
+  .qua{
+    font-family: var(--headbold);
+  }
   .list {
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
   .list::-webkit-scrollbar {
     width: 0px;
@@ -1075,15 +1194,17 @@ border-radius: 20px;
 }
 .titlepc-sec{
   position: relative;
+  width: 100%;
+  padding-left: 60px;
 }
-.titlepc-sec::after{
+/* .titlepc-sec::after{
   content: "";
   position: absolute;
-  width: 100%;
+  width: 70%;
   height: 2px;
   background-color: rgba(128, 128, 128, 0.507);
   bottom: -15px;
-}
+} */
 .colors-list{
   display: flex;
   flex-direction: column;
@@ -1220,9 +1341,8 @@ border-radius: 20px;
 .btns-listpc button{
   width: 100px;
   border: none;
-  border-radius: 200px;
+  border-radius: 10px;
 }
-
 
 
 
@@ -1648,12 +1768,13 @@ border-radius: 20px;
     list-style: none;
     width: 25px;
     height: 25px;
-            opacity: 0.5;
+    opacity: 0.5;
     transition: all 0.5s ease;
+    border-radius: 0px 7px 0px 7px;
 
   }
   .seccolour-mob ul li.active{
-        opacity: 1;
+    opacity: 1;
     transition: all 0.5s ease;
   }
   .c {
@@ -1727,8 +1848,9 @@ border-radius: 20px;
     align-items: center;
     font-weight: 400;
     font-size: 13px;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--head);
     transition: all 1s ease;
+    border-radius: 0px 7px 7px 7px;
   }
   .secsizes-mob h4.active {
     transition: all 1s ease;
@@ -1860,7 +1982,11 @@ background-color: rgba(128, 128, 128, 0.651);
   
     #qua{
       font-size: 17px;
-      font-family: "Oswald", sans-serif;font-family: "Montserrat", sans-serif;font-weight: 400;
+font-family: var(--head);
+    }
+    .qn{
+      font-family: var(--head);
+      font-size: 15px;
     }
   .quantity-boxmob{
     width: 150px;
@@ -1870,18 +1996,19 @@ background-color: rgba(128, 128, 128, 0.651);
     padding-left: 25px;
     padding-top: 5px;
   }
+
   .mn{
     width: 25px;
     height: 25px;
-    background-color: black;
+    background-color: rgb(107, 107, 107);
     color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
+    font-size: 20px;
     border: none;
-    border-radius: 50%;
-    padding-bottom: 2px;
+    border-radius: 0px 7px 7px 7px;
+    padding-bottom: 2.5px;
   }
   .ls{
     width: 25px;
@@ -1891,25 +2018,29 @@ background-color: rgba(128, 128, 128, 0.651);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: 13px;
     border: none;
-    border-radius: 50%;
+    border-radius: 7px 0px 7px 7px;
     padding-top: 2px;
   }
   .mobbt{
-    width: 80%;
+    width: 90%;
     height: 35px;
     margin: 20px auto;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 5px;
+    gap: 20px;
   }
   .mobbt button{
     background-color: rgba(0, 0, 0, 0.918);
     color: white;
     border: none;
-    border-radius: 200px;
+    border-radius: 10px;
     font-weight: 200;
+    font-family: var(--head);
+  }
+  .addtocartmob{
+    font-family: var(--head);
   }
   .listcarte{
     transition: all 0.5s ease;
@@ -2156,7 +2287,7 @@ background-color: rgba(128, 128, 128, 0.651);
     align-items: center;
     gap: 20px;
   }
-  .seccolour-mob ul {
+  .ul {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -2491,9 +2622,7 @@ background-color: rgba(128, 128, 128, 0.651);
     margin-top: 100px;
   }
 
-  .seccolour-mob {
-    display: none;
-  }
+
   .secsizes-mob {
     display: none;
   }
@@ -2576,9 +2705,11 @@ background-color: rgba(128, 128, 128, 0.651);
     list-style: none;
     width: 30px;
     height: 30px;
-    /* border-radius: 50%; */
+    border-radius: 0px 7px 7px 7px;
     opacity: 0.5;
     transition: all 0.7s ease;
+    border: none;
+    cursor: pointer;
   }
   .colorss li.active {
     opacity: 1;
@@ -2604,7 +2735,9 @@ background-color: rgba(128, 128, 128, 0.651);
     cursor: pointer;
     font-weight: 200;
     transition: all 0.6s ease;
-    font-size: 15px;
+    font-size: 12px;
+    border-radius: 0 7px 7px 7px;
+    font-family: var(--head);
   }
   .sizes h4.active {
     background-color: rgb(94, 93, 93);
@@ -2613,41 +2746,45 @@ background-color: rgba(128, 128, 128, 0.651);
   }
   .quantitybox-pc {
     display: flex;
-    width: 80px;
+    width: 100px;
     justify-content: space-between;
     padding-top: 5px;
     align-items: center;
   }
+  .quan{
+    font-family: var(--head);
+  }
   .minss {
-    width: 25px;
-    height: 25px;
-    background-color: rgb(5, 5, 5);
+    width: 30px;
+    height: 30px;
+    background-color: rgb(109, 109, 109);
     color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-    border-radius: 50%;
-    font-size: 20px;
+    border-radius: 0px 7px 7px 7px;
+    font-size: 23px;
     font-weight: 600;
-    padding-bottom: 3px;
+    padding-bottom: 5px;
     cursor: pointer;
     user-select: none;
   }
   .plss {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     background-color: rgb(5, 5, 5);
     color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-    border-radius: 50%;
+    border-radius: 7px 0px 7px 7px;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     user-select: none;
+    padding-right: 1px;
   }
   .btns {
     padding-top: 15px;
@@ -2655,20 +2792,26 @@ background-color: rgba(128, 128, 128, 0.651);
     align-items: center;
   }
   #addcart {
-    width: 100px;
+    width: 150px;
     padding: 10px 10px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     background-color: black;
     color: whitesmoke;
+    font-family: var(--head);
+    cursor: pointer;
+    user-select: none;
   }
   #check {
-    width: 100px;
+    width: 150px;
     padding: 10px 10px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     background-color: black;
     color: whitesmoke;
+    font-family: var(--head);
+    cursor: pointer;
+    user-select: none;
   }
   .price {
     display: flex;
@@ -4701,7 +4844,10 @@ width: 35px;
 
 
 
-
+.descvoer{
+  text-decoration: none;
+  color: #141414;
+}
 
 
 /*  */
@@ -4712,5 +4858,38 @@ width: 35px;
 
 
 
+.checkout-cart {
+  display: flex!important;              /* 🔴 مهم جدًا */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+
+/* spinner */
+.btn-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: none;
+}
+
+/* loading */
+.checkout-cart.loading .btn-text {
+  display: none;
+}
+
+.checkout-cart.loading .btn-spinner {
+  display: block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 

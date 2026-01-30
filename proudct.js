@@ -24,7 +24,7 @@ const proudct = [
         ],
       },
       {
-        color: "brown",
+        color: "#4B3621",
         imgs: ["./imgs/12.jpeg", "./imgs/13.jpeg", "./imgs/14.jpeg"],
         sizes: [
           { size: 39, id: 45871363457213 },
@@ -68,7 +68,7 @@ const proudct = [
         ],
       },
       {
-        color: "green",
+        color: "#6B8E23",
         imgs: [
           "./imgs/22.jpeg",
           "./imgs/23.jpeg",
@@ -187,7 +187,7 @@ const proudct = [
     mainimg: "./imgs/45.jpeg",
     colors: [
       {
-        color: "brown",
+        color: "#4B3621",
         imgs: [
           "./imgs/45.jpeg",
           "./imgs/46.jpeg",
