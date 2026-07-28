@@ -18,9 +18,6 @@ const setBg = (sel, val) => {
   if (el) el.style.background = val;
 };
 
-/* بيتخزن فيه بيانات المنتج الحالي عشان يبقى متاح برا initPro() (مثلاً في handleBuyNow) */
-let currentProductInfo = null;
-
 /* ================= CART ================= */
 const init = () => {
   const list = document.querySelector(".listcart");
@@ -35,9 +32,6 @@ const init = () => {
     .catch(err => console.error("Cart failed to load:", err));
 };
 init();
-
-/* بيتأكد إحنا في viewport موبايل ولا لأ، عشان منعملش شغل زيادة (rebuild سلايدرات مخفية) من غير داعي */
-const isMobileViewport = () => window.matchMedia("(max-width: 676px)").matches;
 
 const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
 const getUrl = (slug) => isLocal ? `/details.html?name=${slug}` : `/${slug}`;
@@ -143,7 +137,6 @@ const initPro = () => {
   if (!product) return;
 
   const info = product;
-  currentProductInfo = info;
   if (typeof fbq !== "undefined") {
   fbq("track", "ViewContent", {
     content_name: info.name,
@@ -193,10 +186,6 @@ const initPro = () => {
 
   let currentVarient = varient;
   let bigCurent = 0;
-
-  // بيتابعوا لو سلايدرات البي سي / الموبايل اتبنيت فعلاً ولا لسه (لتفادي شغل زيادة عن اللزوم)
-  let pcSlidersBuilt = false;
-  let mobileSlidersBuilt = false;
 
   let bigBullslider = [];
   let bigSliderLength = 0;
@@ -336,13 +325,8 @@ const initPro = () => {
         bigSliderRender(0, color);
         initPcImgs(color);
         buildSizes(color.sizes, domCache.addToCart);
-        pcSlidersBuilt = true;
-
-        // متبنيش/متحدّثش سلايدرات الموبايل إلا لو هي أصلاً اتبنت قبل كده (يعني المستخدم فعلاً شافها في وضع موبايل مرة)
-        if (mobileSlidersBuilt) {
-          initMobileSmallSlider(color);
-          initMobileFullSlider(color);
-        }
+        initMobileSmallSlider(color);
+        initMobileFullSlider(color);
       });
 
       pcFragment.appendChild(pcColor);
@@ -362,18 +346,10 @@ const initPro = () => {
 
         initMobileSmallSlider(color);
         initMobileFullSlider(color);
-        mobileSlidersBuilt = true;
         buildSizes(color.sizes, domCache.addToCartMob, ".secsizes-mob h4", ".secsizes-mob");
 
         if (domCache.addToCartMob && color.sizes[0]) {
           domCache.addToCartMob.setAttribute("data-id", color.sizes[0].id);
-        }
-
-        // متبنيش/متحدّثش سلايدرات البي سي إلا لو هي أصلاً اتبنت قبل كده
-        if (pcSlidersBuilt) {
-          bigSliderRender(0, color);
-          initPcImgs(color);
-          buildSizes(color.sizes, domCache.addToCart);
         }
 
         if (domCache.sliderMob) {
@@ -537,41 +513,16 @@ const initPro = () => {
   };
 
   initColors();
-  // المقاسات خفيفة (نص بس، مفيش صور) فبتتبني في الحالتين من غير تأثير على الأداء
+  initPcImgs();
   buildSizes(currentVarient.sizes, domCache.addToCart);
   buildSizes(currentVarient.sizes, domCache.addToCartMob, ".secsizes-mob h4", ".secsizes-mob");
+  bigSliderRender(0);
+  initMobileFullSlider(currentVarient);
+  initMobileSmallSlider(currentVarient);
 
   if (domCache.addToCartMob && currentVarient.sizes[0]) {
     domCache.addToCartMob.setAttribute("data-id", currentVarient.sizes[0].id);
   }
-
-  // بس سلايدر الصور بتاع الجهاز الحالي هو اللي بيتبني عند التحميل الأول (توفير وقت وشغل زيادة)
-  if (isMobileViewport()) {
-    initMobileFullSlider(currentVarient);
-    initMobileSmallSlider(currentVarient);
-    mobileSlidersBuilt = true;
-  } else {
-    initPcImgs();
-    bigSliderRender(0);
-    pcSlidersBuilt = true;
-  }
-
-  // لو المستخدم غيّر حجم النافذة وعدى breakpoint الموبايل، نبني السلايدر الغايب أول مرة بنفس اللون الحالي
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      if (isMobileViewport() && !mobileSlidersBuilt) {
-        initMobileFullSlider(currentVarient);
-        initMobileSmallSlider(currentVarient);
-        mobileSlidersBuilt = true;
-      } else if (!isMobileViewport() && !pcSlidersBuilt) {
-        initPcImgs(currentVarient);
-        bigSliderRender(0, currentVarient);
-        pcSlidersBuilt = true;
-      }
-    }, 200);
-  });
 
   const initMore = () => {
     if (!domCache.listMoreCards) return;
@@ -817,40 +768,13 @@ const checkBtnMob = document.querySelector(".mobbt .Checkout");
 const checkBtnOriginalText = checkBtn ? checkBtn.textContent : "";
 const checkBtnMobOriginalText = checkBtnMob ? checkBtnMob.textContent : "";
 
-const getSelectedVariantId = (isMobile = false) => {
-  // بيدي الأولوية للـ id بتاع النسخة اللي فعلاً بتتفاعل معاها اليوزر
-  if (isMobile) {
-    return (
-      domCache.addToCartMob?.getAttribute("data-id") ||
-      domCache.addToCart?.getAttribute("data-id") ||
-      null
-    );
-  }
+const getSelectedVariantId = () => {
+  // ياخد المقاس المختار سواء من نسخة الديسكتوب أو الموبايل، أيهما متاح
   return (
     domCache.addToCart?.getAttribute("data-id") ||
     domCache.addToCartMob?.getAttribute("data-id") ||
     null
   );
-};
-
-const showBuyNowError = (btn, message) => {
-  if (!btn || !btn.parentElement) return;
-  let errorEl = btn.parentElement.querySelector(".buynow-error");
-  if (!errorEl) {
-    errorEl = document.createElement("p");
-    errorEl.className = "buynow-error";
-    errorEl.style.color = "#c0392b";
-    errorEl.style.fontSize = "13px";
-    errorEl.style.marginTop = "8px";
-    errorEl.style.textAlign = "center";
-    btn.insertAdjacentElement("afterend", errorEl);
-  }
-  errorEl.textContent = message;
-};
-
-const clearBuyNowError = (btn) => {
-  const errorEl = btn?.parentElement?.querySelector(".buynow-error");
-  if (errorEl) errorEl.remove();
 };
 
 async function createCheckout(variantId, quantity) {
@@ -913,34 +837,26 @@ async function createCheckout(variantId, quantity) {
   return payload.cart.checkoutUrl;
 }
 
-const handleBuyNow = async (btn, originalText, isMobile = false) => {
+const handleBuyNow = async (btn, originalText) => {
   if (!btn) return;
 
-  clearBuyNowError(btn);
-
-  const variantId = getSelectedVariantId(isMobile);
+  const variantId = getSelectedVariantId();
 
   if (!variantId) {
-    showBuyNowError(btn, "Please select a size first.");
+    console.error("No variant selected");
     return;
   }
 
   btn.disabled = true;
   btn.innerHTML = `<span class="btn-spinner"></span>`;
-
-  try {
-    if (typeof window.fbq !== "undefined" && currentProductInfo) {
-      fbq("track", "InitiateCheckout", {
-        content_name: currentProductInfo.name,
-        content_type: "product",
-        value: currentProductInfo.price,
-        currency: "USD",
-      });
-    }
-  } catch (pixelErr) {
-    console.error("fbq InitiateCheckout failed:", pixelErr);
-  }
-
+  if (typeof window.fbq !== "undefined") {
+  fbq("track", "InitiateCheckout", {
+    content_name: info.name,
+    content_type: "product",
+    value: info.price,
+    currency: "USD",
+  });
+}
   try {
     const url = await createCheckout(variantId, curent);
     window.location.href = url;
@@ -948,14 +864,13 @@ const handleBuyNow = async (btn, originalText, isMobile = false) => {
     console.error(e);
     btn.disabled = false;
     btn.textContent = originalText;
-    showBuyNowError(btn, "Couldn't start checkout. Please try again.");
   }
 };
 
 checkBtn?.addEventListener("click", () => {
-  handleBuyNow(checkBtn, checkBtnOriginalText, false);
+  handleBuyNow(checkBtn, checkBtnOriginalText);
 });
 
 checkBtnMob?.addEventListener("click", () => {
-  handleBuyNow(checkBtnMob, checkBtnMobOriginalText, true);
+  handleBuyNow(checkBtnMob, checkBtnMobOriginalText);
 });
