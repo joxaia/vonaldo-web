@@ -107,7 +107,11 @@ body {
 .logo h4 {
   font-family: var(--klapt-bold) !important;
 }
-
+@media (max-width: 550px) {
+    .smalldesc {
+        margin-top: 60px;
+    }
+}
 /* mobile */
 @media (max-width: 676px) {
   .header {
