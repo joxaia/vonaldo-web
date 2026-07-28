@@ -107,7 +107,21 @@ body {
 .logo h4 {
   font-family: var(--klapt-bold) !important;
 }
+.btn-spinner {
+  display: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin .6s linear infinite;
+}
 
+.checkout-cart.loading .btn-text { display: none; }
+.checkout-cart.loading .btn-spinner { display: block; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
 /* mobile */
 @media (max-width: 676px) {
   .header {
