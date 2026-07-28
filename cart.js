@@ -311,10 +311,10 @@ checkoutBtn?.addEventListener("click", async () => {
       window.location.href = url;
     }, 300);
 
-  } catch (e) {
+} catch (e) {
     checkoutBtn.classList.remove("loading");
     checkoutBtn.disabled = false;
-    showCheckoutError("Couldn't start checkout. Please try again.");
+    showCheckoutError("Error: " + (e.message || "unknown error"));
     console.error(e);
   }
 });
