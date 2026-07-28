@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Old Money Aesthetic , Derby Shoes - Luxury Menswear Guide | Vonaldo
+      Journal
+    </title>
+    <meta name="description" content="" />
+    <link rel="icon" href="../icons/vo.webp" type="image/webp" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="../main.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f7f5f1;
+        color: #111;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        width: 92%;
+        max-width: 1400px;
+        margin: auto;
+      }
+
+      /* HERO */
+
+      .hero {
+        height: 90vh;
+        background:
+          linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)),
+          url("../imgs/Image_without_watermarks.png");
+        background-size: cover;
+        background-position: bottom;
+        display: flex;
+        align-items: center;
+        color: white;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-content {
+        max-width: 700px;
+      }
+
+      .hero span {
+        font-size: 14px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        opacity: 0.8;
+        font-family: var(--klapt-bold);
+      }
+
+      .hero h1 {
+        font-size: 70px;
+        line-height: 1.2;
+        margin: 18px 0;
+        font-weight: 600;
+        font-family: var(--headbold);
+      }
+
+      .hero p {
+        font-size: 17px;
+        line-height: 1.7;
+        max-width: 550px;
+        opacity: 0.9;
+        font-family: var(--head);
+        font-weight: 400;
+        letter-spacing: 0.4px;
+      }
+
+      /* BLOG */
+
+      .blog-section {
+        padding: 90px 0;
+      }
+
+      .section-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: 50px;
+        gap: 20px;
+      }
+
+      .section-top h2 {
+        font-size: 42px;
+        font-weight: 600;
+        font-family: var(--headbold);
+        color: var(--black-color);
+      }
+
+      .section-top p {
+        color: var(--brown-color);
+        max-width: 500px;
+        line-height: 1.6;
+        font-family: var(--head);
+        font-weight: 400;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 28px;
+      }
+
+      .blog-card {
+        background: white;
+        border-radius: 24px;
+        overflow: hidden;
+        transition: 0.35s ease;
+        border: 1px solid #ece7de;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-6px);
+      }
+
+      .blog-image {
+        height: 370px;
+        overflow: hidden;
+        background-color: var(--white-color);
+      }
+
+      .blog-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s ease;
+      }
+
+      .blog-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .blog-content {
+        padding: 28px;
+        display: grid;
+        grid-template-rows: 40px 80px 100px;
+      }
+
+      .blog-date {
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--brown-color);
+        margin-bottom: 14px;
+        font-family: var(--klapt-med);
+      }
+
+      .blog-content h3 {
+        font-size: 28px;
+        line-height: 1.25;
+        margin-bottom: 16px;
+        font-weight: 600;
+        font-family: var(--headbold);
+        color: var(--black-color);
+      }
+
+      .blog-content p {
+        color: var(--brown-color);
+        font-family: var(--head);
+        line-height: 1.7;
+        margin-bottom: 26px;
+        font-size: 15px;
+        letter-spacing: 0.3px;
+        align-items: center;
+      }
+
+      .read-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 22px;
+        border: 1px solid var(--biege-color);
+        border-radius: 100px;
+        font-size: 14px;
+        transition: 0.3s ease;
+        color: #4d403ae3;
+        letter-spacing: 0.3px;
+        font-family: var(--headbold);
+      }
+
+      .read-btn:hover {
+        background-color: var(--black-color);
+        color: var(--white-color);
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          height: 60vh;
+        }
+
+        .hero h1 {
+          font-size: 46px;
+        }
+
+        .section-top {
+          flex-direction: column;
+          align-items: start;
+        }
+
+        .section-top h2 {
+          font-size: 34px;
+        }
+
+        .blog-image {
+          height: 260px;
+        }
+
+        .blog-content h3 {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO -->
+    <div class="list-cartfetch"></div>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+<a href="../index.html" style="text-decoration:none; color:inherit;">
+  <span>VONALDO JOURNAL</span>
+</a>
+          <h1>Timeless Style Starts Here</h1>
+          <p>
+            Discover styling guides, leather care tips, and modern footwear
+            inspiration crafted for everyday elegance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOGS -->
+
+    <section class="blog-section">
+      <div class="container">
+        <div class="section-top">
+          <h2>Latest Articles</h2>
+
+          <p>
+            Explore premium footwear guides, timeless styling inspiration, and
+            everything behind modern luxury essentials.
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          <!-- CARD -->
+
+          <div class="blog-card">
+            <div class="blog-image">
+              <img src="../file/5.webp" alt="" style="object-fit: contain;"/>
+            </div>
+
+            <div class="blog-content">
+              <div class="blog-date">Style Guide</div>
+
+              <h3>How To Style Derby Shoes</h3>
+
+              <p>
+                Learn how to wear Derby shoes effortlessly for both formal and
+                smart casual outfits.
+              </p>
+
+              <a href="./how-to-style-derby-shoes.html" class="read-btn">
+                Read More
+              </a>
+            </div>
+          </div>
+
+          <!-- CARD -->
+
+          <div class="blog-card">
+            <div class="blog-image">
+              <img src="../file/7.webp" alt=""  style="object-fit: contain;"/>
+            </div>
+
+            <div class="blog-content">
+              <div class="blog-date">Footwear</div>
+
+              <h3>Derby vs Oxford Shoes</h3>
+
+              <p>
+                Understand the difference between Derby and Oxford shoes before
+                your next purchase.
+              </p>
+
+              <a href="Derby-vs-Oxford-Shoes.html" class="read-btn"> Read More </a>
+            </div>
+          </div>
+
+          <!-- CARD -->
+
+          <div class="blog-card">
+            <div class="blog-image">
+              <img src="../imgs/2a8d5ba12cd4d0efa0176aa7c7c770a3.jpg" alt="" />
+            </div>
+
+            <div class="blog-content">
+              <div class="blog-date">Leather Care</div>
+
+              <h3>How To Care For Leather Shoes</h3>
+
+              <p>
+                Keep your premium leather shoes looking polished with proper
+                cleaning and care techniques.
+              </p>
+
+              <a href="How-To-Care-For-Leather-Shoes.html" class="read-btn"> Read More </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="footer">
+      <div class="foot-sec-1">
+        <div class="tit-onefoot">
+          <h1>GET IN TOUCH WITH VONALDO</h1>
+          <h2>
+            Contact us, and our team will be happy to answer all your questions
+          </h2>
+        </div>
+        <div class="tit-twofoot">
+          <span>CREATE YOUR</span>
+          <span>OWN UNIQUE</span>
+          <span>LOOK</span>
+        </div>
+      </div>
+      <div class="foot-sec-2">
+        <div class="sec-1-foot">
+          <div class="lounge">
+            <div class="title-loung">
+              <h2>LINOGE</h2>
+            </div>
+            <div class="body-lounge">
+              <h3>Terms & Conditions</h3>
+              <h3>Privacy Policy</h3>
+            </div>
+          </div>
+        </div>
+        <div class="sec-2-foot">
+          <div class="nav-inf">
+            <div class="nave">
+              <div class="nave-title">
+                <h2>NAVIGATION</h2>
+              </div>
+              <div class="body-nav">
+                <h3>HOME</h3>
+                <h3 class="blogs">Blogs</h3>
+                <h3>LOCK BOOK</h3>
+                <h3>ABOUT</h3>
+              </div>
+            </div>
+            <div class="info">
+              <div class="info-title">
+                <h2>INFO</h2>
+              </div>
+              <div class="info-body">
+                <h3>ACOUNT</h3>
+                <h3>HELP CENTER</h3>
+                <h3>SHIPPING & RETURNS</h3>
+                <h3>COUNTACTS</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="newrgs">
+            <div class="new-title">
+              <h2>NEWSLETTER</h2>
+            </div>
+            <div class="new-body">
+              <form class="newsletter-form">
+                <input
+                  type="email"
+                  id="emailInput"
+                  placeholder="EMAIL"
+                  required
+                />
+
+                <button
+                  type="button"
+                  onclick="document.getElementById('emailInput').value = ''"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                    />
+                  </svg>
+                </button>
+              </form>
+            </div>
+            <div class="footer-new">
+              <img src="../icons/apple-pay.webp" alt="" />
+              <img src="../icons/google-pay.webp" alt="" />
+              <img src="../icons/symbols (1).webp" alt="" />
+              <img src="../icons/money.webp" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot-sec3">
+        <div class="foot-lounge">
+          <h3>© 2026 vonaldo All right reserved</h3>
+        </div>
+      </div>
+    </div>
+    <script src="../blogs.js" type="module"></script>
+  </body>
+</html>

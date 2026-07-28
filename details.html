@@ -1,17 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Vonaldo Maretti Sneakers – Handmade Italian Leather Shoes</title>
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="description"
+      content="Shop Vonaldo Maretti sneakers – handcrafted Italian leather shoes for men."
     />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="./main.css" as="style" />
+    <link rel="preload" href="./file/1.webp" as="image" fetchpriority="high" />
+
+    <link
+      rel="preload"
+      href="./fonts/Klapt-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="./fonts/geist-v4-latin-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <!-- Fonts -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+
     <link rel="stylesheet" href="./main.css" />
-    <link rel="icon" type="image/svg+xml" href="./vedro.svg" />
-    <link rel="shortcut icon" href="./vedro.svg" type="image/x-icon" />
-<title>Vonaldo Maretti Sneakers – Handmade Italian Leather Shoes for Men | Premium Comfort & Style</title>
-<meta name="description" content="Shop Vonaldo Maretti sneakers – handcrafted Italian leather shoes for men. Stylish, comfortable, and premium quality footwear perfect for any occasion.">
-<meta name="keywords" content="Vonaldo Maretti, Italian leather sneakers, men's premium shoes, handmade Italian shoes, stylish men's footwear, comfortable sneakers, best Italian shoe brands">
+
+    <link rel="icon" href="./icons/vo.webp" type="image/webp" />
+
     <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -22,358 +55,1064 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '25641528128866571'); 
+
+fbq('init', '905426472024769');
 fbq('track', 'PageView');
 </script>
-<!-- End Meta Pixel Code -->
 
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=905426472024769&ev=PageView&noscript=1"/>
+</noscript>
   </head>
 
   <body>
-    <!-- BIG SLIDER / ZOOM -->
-    <div class="bigslider">
-      <div class="title-slide">
-        <span class="material-symbols-outlined" id="closeslide"
-          >close_small</span
-        >
-      </div>
-
-      <div class="imgcounter">
-        <div class="cont">
-          <div class="slider big-slider"></div>
+    <!-- slider-mobile -->
+    <div class="slider-mobile">
+      <div class="title-mob">
+        <div class="close-slidermobile">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="gray"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
         </div>
       </div>
-
-      <div class="more">
-        <span class="material-symbols-outlined" id="left-big"
-          >arrow_left_alt</span
-        >
-        <div class="bull big-bull"></div>
-        <span class="material-symbols-outlined" id="right-big"
-          >arrow_right_alt</span
-        >
+      <div class="count-mobile-wrap">
+        <div class="slider-mobile-li"></div>
+      </div>
+      <div class="bullet-mobileslider">
+        <ul></ul>
+      </div>
+    </div>
+    <!-- delevry -->
+    <div class="deleverylist">
+      <div class="title-del">
+        <h2>Delivery information</h2>
+        <div class="close-del">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="body-del">
+        <div class="del freeshipli">
+          <div class="head-del">
+            <h2>FREE SHIPPING</h2>
+            <div class="shi">
+              <img
+                src="./icons/delivery_truck_speed_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="body-del">
+            <h4>
+              Free shipping on all orders within the united states no minimum
+              order required
+            </h4>
+          </div>
+        </div>
+        <div class="del freeshipli">
+          <div class="head-del">
+            <h2>DELIVERY TIME</h2>
+            <div class="tim">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#262626"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-timer-icon lucide-timer"
+              >
+                <line x1="10" x2="14" y1="2" y2="2" />
+                <line x1="12" x2="15" y1="14" y2="11" />
+                <circle cx="12" cy="14" r="8" />
+              </svg>
+            </div>
+          </div>
+          <div class="body-del">
+            <h4>
+              Orders processed within 24 hours Delivery time: 2-5 business days
+            </h4>
+          </div>
+        </div>
+        <div class="del freeshipli">
+          <div class="head-del">
+            <h2>ORDERS TRACKING</h2>
+            <div class="tracking">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#262626"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-map-pin-icon lucide-map-pin"
+              >
+                <path
+                  d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+          </div>
+          <div class="body-del">
+            <h4>
+              Your order is trackable in real time. You’ll get a WhatsApp link
+              after confirmation to follow it until delivery. All delivery times
+              are provided by the shipping company
+            </h4>
+          </div>
+        </div>
+        <div class="del">
+          <div class="head-del">
+            <h2>NO HIDDEN FEES</h2>
+            <div class="shield">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#262626"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-shield-icon lucide-shield"
+              >
+                <path
+                  d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="body-del">
+            <h4>Transparent pricing. what you see what you pay</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- return -->
+    <div class="returnlist">
+      <div class="title-del">
+        <h2>Return policy</h2>
+        <div class="close-ref">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="body-del">
+        <div class="del freeshipli">
+          <div class="head-del">
+            <h2>30 DAYS RETURN WINDOW</h2>
+            <div class="tim">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#262626"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-timer-icon lucide-timer"
+              >
+                <line x1="10" x2="14" y1="2" y2="2" />
+                <line x1="12" x2="15" y1="14" y2="11" />
+                <circle cx="12" cy="14" r="8" />
+              </svg>
+            </div>
+          </div>
+          <div class="body-del">
+            <h4>
+              you can request a return within 30 days of receiving your order
+            </h4>
+          </div>
+        </div>
+        <div class="del freeshipli">
+          <div class="head-del">
+            <h2>ITEM CONDITIONS</h2>
+            <div class="tim">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#262626"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-handshake-icon lucide-handshake"
+              >
+                <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+                <path
+                  d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"
+                />
+                <path d="m21 3 1 11h-2" />
+                <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+                <path d="M3 4h8" />
+              </svg>
+            </div>
+          </div>
+          <div class="body-del">
+            <h4>
+              Items must be unused and in original condition with original
+              packaing
+            </h4>
+          </div>
+        </div>
+        <div class="del freeshipli">
+          <div class="head-del">
+            <h2>REFUNDS & EXCHANGES</h2>
+            <div class="tracking">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#262626"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-refresh-cw-icon lucide-refresh-cw"
+              >
+                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                <path d="M21 3v5h-5" />
+                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                <path d="M8 16H3v5" />
+              </svg>
+            </div>
+          </div>
+          <div class="body-del">
+            <h4>Refunds or exchanges will be processed after approval</h4>
+          </div>
+        </div>
+        <div class="del">
+          <div class="head-del">
+            <h2>RETURN SHIPPING</h2>
+            <div class="shield">
+              <img
+                src="./icons/delivery_truck_speed_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="body-del">
+            <h4>Shipping fees for returns may apply depending on the case</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- sizeguide -->
+    <div class="sizeguide-list">
+      <div class="title-sizeguide">
+        <div class="close-size">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="bodey-sizeguide">
+        <img src="./icons/main.webp" alt="" />
+      </div>
+    </div>
+    <!-- BIG SLIDER / ZOOM -->
+    <div class="bigslider">
+      <div class="sec-imgs">
+        <div class="list-bull"></div>
+        <div class="list-imgs">
+          <div class="count-imgs">
+            <div class="slider-imgsbig"></div>
+          </div>
+        </div>
+      </div>
+      <div class="bull-sec">
+        <div class="left-arrow">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            />
+          </svg>
+        </div>
+        <div class="close-arrow">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+        <div class="rigth-arrow">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </div>
       </div>
     </div>
 
     <!-- CART -->
+<div class="countainer">
     <div class="listcart"></div>
 
-    <!-- VIDEO SECTION -->
-    <div class="listved">
-      <div class="sahdowlist"></div>
-      <div class="box-det">
-        <h4 class="dec-det">The heart of pure design</h4>
-        <h2 class="name-desc">Capri Comfort</h2>
+    <div class="count-li">
+      <!-- VIDEO SECTION -->
+      <div class="listved">
+        <div class="sahdowlist"></div>
+        <div class="box-det">
+          <div class="box-h4">
+            <h4 class="dec-det">The heart of pure design</h4>
+          </div>  
+          <div class="box-h2">
+            <h2 class="name-desc">Capri Comfort</h2>
+          </div>
+        </div>
+          <img src="" alt="" class="menpc">
+          <img src="" alt="" class="menmob">
+
+      </div>
+      <div class="ved-space"></div>
+
+      <!-- SMALL DESCRIPTION -->
+      <div class="smalldesc">
+        <div>
+          <h2>The pinnacle of shoemaking</h2>
+        </div>
+
+        <h4 class="mobtext">
+          At Vonaldo, handcrafted shoes combine comfort, durability, and timeless elegance.
+        </h4>
+        <h4 class="pc-text">
+          At Vonaldo, handcrafted shoes are the supreme test of our shoemaking
+          expertise. They are perfected not only for their comfort and
+          durability, but also for their elegance and timeless design
+        </h4>
+        <button>Mastercrafted Shoes</button>
       </div>
 
-      <video
-        src="./ved/3.mp4"
-        id="myVideo"
-        autoplay
-        muted
-        playsinline
-        width="500"
-        height="400"
-      ></video>
-    </div>
-
-    <div class="ved-space"></div>
-
-    <!-- SMALL DESCRIPTION -->
-    <div class="smalldesc">
-      <h2>The pinnacle of shoemaking</h2>
-      <h4>
-        At Velano, handcrafted shoes are the supreme test of our shoemaking
-        expertise. They are perfected not only for their comfort and durability,
-        but also for their elegance and timeless design.
-      </h4>
-      <button>Mastercrafted Shoes</button>
-    </div>
-
-    <!-- PRODUCT SECTION -->
-    <div class="pro">
-      <!-- TEXT / DETAILS -->
-      <div class="name-sec">
-        <div class="titlepc-sec">
-        <h4 class="sec-decss">name</h4>
-        <h4 class="name">name</h4>
-        <h3 class="nono">0$</h3>
-        </div>
-        <div class="colors-list">
-          <div class="matee">
-            <span>Material:</span>
-            <span>Premium Natural Leather</span>
-          </div>
-          <div class="colors-pcs">
-             <span class="clo">colors:</span>
-          <div class="colors">
-            <ul class="colorss"></ul>
-          </div>
-          </div>
-
-        </div>
-
-        <div class="sizes-list">
-          <div class="div">
-          <span class="siz">sizes:</span>
-          <div class="sizes"></div>
-          </div>
-
-      <div class="stor">
-        <div class="check">
-          <span class="material-symbols-outlined" id="track"
-            >delivery_truck_speed</span
-          >
-          <h4>
-            Free US delivery on all orders -
-            <a href="#">Delivery information</a>
-          </h4>
-        </div>
-        <div class="loc">
-          <span class="material-symbols-outlined">location_on</span>
-          <h4>Find in store - <a href="#">Check availability now</a></h4>
-        </div>
+      <!-- BREADCRUMB -->
+      <div class="breadcrumb">
+        <a href="./index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="./collection.html">Collection</a>
+        <span class="separator">/</span>
+        <span class="current">Classic Oxford</span>
       </div>
 
-
-
+      <!-- PRODUCT SECTION -->
+      <div class="pro">
+        <!-- IMAGE SLIDER (PC) -->
+        <div class="imgsec">
+          <div class="list-imgpc"></div>
         </div>
+        <!-- TEXT / DETAILS -->
+        <div class="name-sec">
+          <div class="titlepc-sec">
+            <h4 class="sec-decss">name</h4>
+            <h4 class="name">name</h4>
+            <div class="pr-pc">
+            
+              <h3 class="nono">0$</h3>
+              <h3 class="descount">$200</h3>
+              <div>
+                <img src="./icons8-price-tag-50.png" alt="" />
+                <p>Launch Offer — 25% Off</p>
+              </div>
+            </div>
+          </div>
 
-        <div class="quantity">
-          <span class="qnaa">quantity:</span>
+          <div class="colors-list">
+            <div class="matee">
+              <span>Material:</span>
+              <span class="matpc">Premium Natural Leather</span>
+            </div>
+            <div class="colors-pcs">
+              <div class="collpc">
+                <span class="clo">colors:</span>
+              </div>
+              <div class="colors"></div>
+            </div>
+          </div>
+
+          <div class="sizes-list">
+            <div class="sizesguide">
+              <span class="siz">sizes:</span>
+              <div class="guide">
+                <img src="./icons/icons8-measuring-44.webp" alt="" />
+                <span>VIEW SIZE GUIDE</span>
+              </div>
+            </div>
+
+            <div class="sizes"></div>
+            <div class="stor">
+              <div class="check">
+                <div id="track">
+                  <img
+                    src="./icons/delivery_truck_speed_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+                    alt=""
+                  />
+                </div>
+                <h4>
+                  Free US delivery on all orders -
+                  <a style="text-decoration: underline; cursor: pointer"
+                    >Delivery information</a
+                  >
+                </h4>
+              </div>
+              <div class="loc">
+                <div id="loc-easy">
+                  <img
+                    src="./icons/autorenew_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+                    alt=""
+                  />
+                </div>
+                <h4>
+                  Easy 30 day returns on all orders -
+                  <a style="text-decoration: underline; cursor: pointer"
+                    >Return policy</a
+                  >
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="quantity">
+            <span class="qnaa">quantity:</span>
             <div class="quantitybox-pc">
-          <span class="minss">-</span>
-          <span class="quan">1</span>
-          <span class="plss">+</span>
-        </div>
-        </div>
+              <span class="minss">-</span>
+              <span class="qn">1</span>
+              <span class="plss">+</span>
+            </div>
+          </div>
 
-
-
-        <div class="btns-listpc">
-          <button class="Checkout" id="check">Checkout</button>
-          <button class="addtocart" id="addcart">add to cart</button>
-        </div>
-      </div>
-
-      <!-- IMAGE SLIDER (PC) -->
-      <div class="imgsec">
-        <div class="cont">
-          <div class="slider small-slider"></div>
-        </div>
-
-        <div class="listss">
-          <span class="material-symbols-outlined" id="left-pc"
-            >arrow_left_alt</span
-          >
-          <div class="bull small-bull"></div>
-          <span class="material-symbols-outlined" id="right-pc"
-            >arrow_right_alt</span
-          >
-        </div>
-
-        <div class="iconszoom">
-          <span class="material-symbols-outlined">zoom_in</span>
-        </div>
-      </div>
-
-      <div class="listimgspc"></div>
-    </div>
-
-    <!-- MOBILE SECTION -->
-    <div class="mobile">
-      <div class="sec-d">
-        <h4 class="dev">bla</h4>
-        <h4 class="nam-mobdesc"></h4>
-        <div class="c">
-          <h4 class="pr">0$</h4>
-        </div>
-      </div>
-
-      <div class="comobile">
-        <div class="materi">
-          <span>Material:</span>
-          <span>Premium Natural Leather</span>
-        </div>
-        <div class="colors-li">
-          <span>colors:</span>
-          <div class="seccolour-mob">
-            <ul></ul>
+          <div class="btns-listpc">
+            <button class="Checkout" id="check">Checkout</button>
+            <button class="addtocart" id="addcart">add to cart</button>
           </div>
         </div>
       </div>
 
-      <div class="sizmoo">
-        <span>sizes:</span>
-        <div class="secsizes-mob"></div>
-      </div>
-      <div class="stor">
-        <div class="check">
-          <span class="material-symbols-outlined" id="track"
-            >delivery_truck_speed</span
-          >
-          <h4>
-            Free UK delivery on all orders -
-            <a href="#">Delivery information</a>
-          </h4>
+      <!-- MOBILE SECTION -->
+      <div class="mobile">
+        <div class="sec-imgmob">
+          <div class="count-mob">
+            <div class="slider-mob"></div>
+          </div>
         </div>
-        <div class="loc">
-          <span class="material-symbols-outlined">location_on</span>
-          <h4>Find in store - <a href="#">Check availability now</a></h4>
+        <div class="bull-secmob">
+          <ul></ul>
         </div>
-      </div>
-      <div class="quantitymob">
-        <span id="qua">quantity:</span>
-        <div class="quantity-boxmob">
-          <span class="mn">-</span>
-          <span class="qn">1</span>
-          <span class="ls">+</span>
+
+        <div class="sec-d">
+                    <h4 class="dev">bla</h4>
+                    <h4 class="nam-mobdesc">he</h4>
+
+          <div class="c">
+            <h4 class="pr">0$</h4>
+            <h3 class="descount" id="desclist">$200</h3>
+            <div>
+              <img src="./icons8-price-tag-50.png" alt="" />
+              <p>Launch Offer — 25% Off</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="comobile">
+          <div class="materi">
+            <span>Material:</span>
+            <span class="matmob">Premium Natural Leather</span>
+          </div>
+          <div class="list-mob-color">
+            <div class="colors-li">
+              <span>colors:</span>
+            </div>
+            <div class="colors-imgs"></div>
+          </div>
+        </div>
+
+        <div class="sizmoo">
+          <div class="title-sizemob">
+            <span id="mobisize">sizes:</span>
+            <div class="guide-mob">
+              <img src="./icons/icons8-measuring-44.webp" alt="" />
+              <span>VIEW SIZE GUIDE</span>
+            </div>
+          </div>
+
+          <div class="secsizes-mob"></div>
+        </div>
+
+        <div class="stor">
+          <div class="check">
+            <div id="track">
+              <img
+                src="./icons/delivery_truck_speed_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+                alt=""
+              />
+            </div>
+            <h4>
+              Free US delivery on all orders -
+              <a
+                style="cursor: pointer; text-decoration: underline"
+                class="open-lis"
+                >Delivery information</a
+              >
+            </h4>
+          </div>
+          <div class="loc">
+            <div id="loc-easy">
+              <img
+                src="./icons/autorenew_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+                alt=""
+              />
+            </div>
+            <h4>
+              Easy 30 day returns on all orders -
+              <a
+                style="cursor: pointer; text-decoration: underline"
+                class="openret"
+                >Return policy</a
+              >
+            </h4>
+          </div>
+        </div>
+
+        <div class="quantitymob">
+          <span id="qua">quantity:</span>
+          <div class="quantity-boxmob">
+            <span class="mn">-</span>
+            <span class="qn">1</span>
+            <span class="ls">+</span>
+          </div>
+        </div>
+
+        <div class="mobbt">
+          <button class="Checkout">Buy Now</button>
+          <button class="addtocartmob">Add to cart</button>
         </div>
       </div>
 
-      <div class="mobbt">
-        <button class="Checkout">Checkout</button>
-        <button class="addtocartmob">add to cart</button>
-      </div>
-    </div>
-    <div class="title-pros">
-      <div class="maino">
-        <h3>TECHNICAL</h3>
-        <h3>CHARACTERISTICS</h3>
-      </div>
-      <div class="dial">
-        <div class="title-dial">
-          <h4>DIAL</h4>
-          <span class="material-symbols-outlined"> arrow_drop_down </span>
+      <!-- TECHNICAL CHARACTERISTICS -->
+      <div class="title-pros">
+        <div class="maino">
+          <h3>TECHNICAL</h3>
+          <h3>CHARACTERISTICS</h3>
         </div>
-        <div class="dial-list">
-          <h3>
-            Natural leather in black and brown tones, subtle engraved details,
-            white accents, rose-gold applied logos. Leaf-shaped stitching in
-            rose-gold thread.
+
+        <!-- PRODUCT DESCRIPTION -->
+        <div class="dial">
+          <div class="title-dial">
+            <h4>Product Description</h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="currentColor"
+              class="arrow-icon rotate"
+            >
+              <path d="M480-360 280-560h400L480-360Z" />
+            </svg>
+          </div>
+          <div class="dial-list active">
+            <ul class="bullet-list">
+              <li>
+                <span class="bullet"></span>
+                <h3 class="techdesc1">
+                  This shoe blends premium craftsmanship with everyday
+                  versatility, making it perfect for both formal occasions and
+                  smart casual styling
+                </h3>
+              </li>
+              <li>
+                <span class="bullet"></span>
+                <h3 class="techdesc2">
+                  A statement of confidence, built to elevate your wardrobe
+                  effortlessly
+                </h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SIZE AND FIT -->
+        <div class="Movement">
+          <div class="title-Movement">
+            <h4>Size and Fit</h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="currentColor"
+              class="arrow-icon"
+            >
+              <path d="M480-360 280-560h400L480-360Z" />
+            </svg>
+          </div>
+          <div class="Movement-list">
+            <div class="size-lis-des">
+              <h3 id="sizelist">Fit True to size</h3>
+              <ul class="bullet-list">
+                <li>
+                  <span class="bullet"></span>
+                  <h3>
+                    If you are between sizes, we recommend sizing up for a more
+                    comfortable fit.
+                  </h3>
+                </li>
+                <li>
+                  <span class="bullet"></span>
+                  <h3>
+                    Designed with a balanced silhouette to provide all-day
+                    comfort without compromising elegance.
+                  </h3>
+                </li>
+              </ul>
+              <div class="size-gi">
+                <span>View Size Guide</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MATERIALS -->
+        <div class="gem">
+          <div class="title-gem">
+            <h4>Materials</h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="currentColor"
+              class="arrow-icon"
+            >
+              <path d="M480-360 280-560h400L480-360Z" />
+            </svg>
+          </div>
+          <div class="gem-list">
+            <ul class="bullet-list">
+              <li>
+                <span class="bullet"></span>
+                <h3 class="upper">Upper: Premium Natural Leather</h3>
+              </li>
+              <li>
+                <span class="bullet"></span>
+                <h3 class="inner">Inner Lining: Soft Leather Blend</h3>
+              </li>
+              <li>
+                <span class="bullet"></span>
+                <h3 class="insole">Insole: Comfort-Focused Cushion Layer</h3>
+              </li>
+              <li>
+                <span class="bullet"></span>
+                <h3 class="outsole">
+                  Outsole: Durable Rubber for Long-Lasting Wear
+                </h3>
+              </li>
+              <li>
+                <span class="bullet"></span>
+                <h3>
+                  Carefully constructed to maintain structure, comfort, and
+                  durability over time.
+                </h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SHIPPING INFORMATION -->
+        <div class="Upper">
+          <div class="title-Upper">
+            <h4>Shipping information</h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="currentColor"
+              class="arrow-icon"
+            >
+              <path d="M480-360 280-560h400L480-360Z" />
+            </svg>
+          </div>
+          <div class="Upper-list">
+            <ul class="bullet-list">
+              <li>
+                <span class="bullet"></span>
+                <h3>Free Shipping on all US orders</h3>
+              </li>
+              <li>
+                <span class="bullet"></span>
+                <h3>Fast and secure worldwide delivery</h3>
+              </li>
+              <li>
+                <span class="bullet"></span>
+                <h3>30-Day Easy Returns</h3>
+              </li>
+              <li>
+                <span class="bullet"></span>
+                <h3>Secure Checkout with trusted payment methods</h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- style -->
+      <div class="style-sec">
+        <div class="list-imgstyle">
+          <img src="./file/5.webp" alt="" />
+        </div>
+        <div class="text-style">
+          <h1>Know your styles</h1>
+          <h2 class="sylename">Derby</h2>
+          <h3 class="styledesc">
+            Derby Shoes Effortless Style Everyday Confidence Derby shoes are
+            more than just footwear they are a clean confident choice The open
+            lacing design gives you a comfortable fit that feels natural all day
+            They work for everything from work to casual outings with a timeless
+            look that always fits in Simple details quality materials and a
+            sharp silhouette make them easy to rely on Comfortable versatile and
+            always on point Derby shoes give you style without overthinking it
+            Derby where classic style meets everyday wear
           </h3>
         </div>
       </div>
-      <div class="gem">
-        <div class="title-gem">
-          <h4>GEMSETTING</h4>
-          <span class="material-symbols-outlined"> arrow_drop_down </span>
+
+      <!-- EXPLORE MORE -->
+      <div class="morepros">
+        <div class="titlemore">
+          <h2>EXPLORE MORE</h2>
+          <h4>Our picks for you</h4>
         </div>
-        <div class="gem-list">
-          <h3>
-            “Upper crafted from premium natural leather in rich black and warm
-            brown tones, with subtle stitching details and elegant finishing
-            touches. Durable yet refined design for ultimate comfort and style"
-          </h3>
+        <div class="sec-more">
+          <div class="li">
+            <div class="ne">
+              <span></span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+                />
+              </svg>
+            </div>
+            <div class="slide-more">
+              <div class="listmorecards"></div>
+            </div>
+
+            <div class="lei">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="Upper">
-        <div class="title-Upper">
-          <h4>UPPER</h4>
-          <span class="material-symbols-outlined"> arrow_drop_down </span>
-        </div>
-        <div class="Upper-list">
-          <h3>
-            Premium Italian calf leather, soft matte finish, rich black and deep
-            brown tones.
-          </h3>
-        </div>
+
+      <div class="space"></div>
+      <div class="view-coll">
+        <span>VIEW ALL COLLECTION</span>
       </div>
-      <div class="Movement">
-        <div class="title-Movement">
-          <h4>MOVEMENT</h4>
-          <span class="material-symbols-outlined"> arrow_drop_down </span>
+      <section class="faq-section">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq">
+            <div class="faq-item">
+              <button class="faq-question">
+                What makes Vonaldo classic shoes unique
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Vonaldo shoes are crafted with premium materials, timeless
+                  Italian-inspired designs, and attention to detail that
+                  reflects true old money elegance.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Are your shoes made from genuine leather
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes, all our shoes are made from high-quality genuine leather
+                  to ensure durability, comfort, and a refined classic look.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                How do I choose the right size
+              </button>
+              <div class="faq-answer">
+                <p>
+                  We recommend checking our size guide. If you're between sizes,
+                  choose the larger size for a more comfortable fit.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Do you offer returns or exchanges
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes, we offer easy returns and exchanges within 14 days to
+                  ensure your satisfaction.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                How should I care for my leather shoes
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Clean with a soft cloth, use leather conditioner regularly,
+                  and store them properly to maintain their elegance over time.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="Movement-list">
-          <h3>
-            construction: Hand-stitched Italian leather upper Lining: Full-grain
-            leather for comfort and breathability Sole: Leather sole
-          </h3>
+      </section>
+      <!-- FOOTER -->
+      <div class="footer">
+        <div class="foot-sec-1">
+          <div class="tit-onefoot">
+            <h1>GET IN TOUCH WITH VONALDO</h1>
+            <h2>
+              Contact us, and our team will be happy to answer all your
+              questions
+            </h2>
+          </div>
+          <div class="tit-twofoot">
+            <span>CREATE YOUR</span>
+            <span>OWN UNIQUE</span>
+            <span>LOOK</span>
+          </div>
+        </div>
+        <div class="foot-sec-2">
+          <div class="sec-1-foot">
+            <div class="lounge">
+              <div class="title-loung">
+                <h2>LINOGE</h2>
+              </div>
+              <div class="body-lounge">
+                <h3 class="terms">Terms & Conditions</h3>
+                <h3 class="privacy">Privacy Policy</h3>
+              </div>
+            </div>
+          </div>
+          <div class="sec-2-foot">
+            <div class="nav-inf">
+              <div class="nave">
+                <div class="nave-title">
+                  <h2>NAVIGATION</h2>
+                </div>
+                <div class="body-nav">
+                  <h3 class="home">HOME</h3>
+                  <h3 class="blogs">Blogs</h3>
+                  <h3>LOCK BOOK</h3>
+                  <h3>ABOUT</h3>
+                </div>
+              </div>
+              <div class="info">
+                <div class="info-title">
+                  <h2>INFO</h2>
+                </div>
+                <div class="info-body">
+                  <h3>ACOUNT</h3>
+                  <h3>HELP CENTER</h3>
+                  <h3>SHIPPING & RETURNS</h3>
+                  <h3>COUNTACTS</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="newrgs">
+              <div class="new-title">
+                <h2>NEWSLETTER</h2>
+              </div>
+              <div class="new-body">
+                <form class="newsletter-form">
+                  <input
+                    type="email"
+                    id="emailInput"
+                    placeholder="EMAIL"
+                    required
+                  />
+
+                  <button
+                    type="button"
+                    onclick="document.getElementById('emailInput').value = ''"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                      />
+                    </svg>
+                  </button>
+                </form>
+              </div>
+              <div class="footer-new">
+                <img src="./icons/apple-pay.webp" alt="" />
+                <img src="./icons/google-pay.webp" alt="" />
+                <img src="./icons/symbols (1).webp" alt="" />
+                <img src="./icons/money.webp" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="foot-sec3">
+          <div class="foot-lounge">
+            <h3>© 2026 vonaldo All right reserved</h3>
+          </div>
         </div>
       </div>
     </div>
-    <div class="morepros">
-      <div class="titlemore">
-        <h2>EXPLORE MORE</h2>
-        <h4>similar shoes</h4>
-      </div>
-      <div class="sec-more">
-        <div class="listmorecards"></div>
-      </div>
-    </div>
-    <div class="box-shadows"></div>
-    <div class="reve">
-      <div class="list-rev">
-        <h4 class="name-pack"></h4>
-        <h3>Premium Italian leather shoes</h3>
-      </div>
-      <video
-        src="./ved/15.mp4"
-        autoplay
-        muted
-        loop
-        playsinline
-        width="500"
-        height="400"
-      ></video>
-    </div>
-    <div class="space"></div>
-    <div class="footer">
-      <div class="desc-pc">
-        <div class="one">
-          <div class="one-title">
-            <h4>ACHETER</h4>
-          </div>
-          <div class="one-list">
-            <a href="#">Eleganza</a>
-            <a href="#">Gentiluomo</a>
-            <a href="#">Enfant</a>
-            <a href="#">Home</a>
-          </div>
-        </div>
-                <div class="three">
-          <div class="title-3">
-            <h4>AIDE</h4>
-          </div>
-          <div class="three-list">
-            <a href="#">service</a>
-            <a href="#">Catalog</a>
-            <a href="#">Contact</a>
-            <a href="#">About</a>
-          </div>
-        </div>
-        <div class="two">
-          <div class="two-title">
-            <h4>INFORMATION</h4>
-          </div>
-          <div class="two-list">
-                        <a href="#">Investor relations</a>
-                                    <a href="#">governance</a>
-            <a href="#">Vofre</a>
-            <a href="#">paropos</a>
-            <a href="#">Presse</a>
 
 
-          </div>
-        </div>
+</div>
 
-      </div>
-      <div class="desc-mobile">
-        <div class="icons-fot">
-          <img src="./icons/1.png" alt="" style="width: 40px;">
-          <img src="./icons/2.png" alt="">
-          <img src="./icons/3.png" alt="">
-          <img src="./icons/5.png" alt="" class="yout" style="width: 44px;">
-          <img src="./icons/6.png" alt="" style="width: 40px;" >
-        </div>
-        <div class="desc-foot">
-          <h3>Experience true Italian craftsmanship with our handmade shoes, created from the finest genuine leather. Each pair reflects timeless style, exceptional comfort, and the passion for perfection that defines Italian design.</h3>
-        </div>
-        <div class="logo-foot">
-          <h3>VONALDO</h3>
-        </div>
-      </div>
-    </div>
     <script src="./details.js" type="module" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What makes Vonaldo classic shoes unique?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vonaldo shoes are crafted with premium materials and timeless Italian-inspired designs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are your shoes made from genuine leather?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, all our shoes are made from high-quality genuine leather."
+            }
+          }
+        ]
+      }
+    </script>
   </body>
 </html>

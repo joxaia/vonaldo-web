@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shipping & Returns | Vonaldo</title>
+  <meta name="description" content="Read Vonaldo's Shipping and Returns policy. Everything you need to know about delivery times, shipping costs, and how to return your premium Italian leather footwear."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://vonaldo.com/shipping-and-returns"/>
+  <link rel="icon" href="./icons/vo.webp" type="image/webp"/>
+  <link rel="stylesheet" href="./main.css"/>
+
+  <style>
+    @font-face {
+      font-family: "headreg";
+      src: url("./fonts/geist-v4-latin-regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "headbold";
+      src: url("./fonts/geist-v4-latin-700.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "headvery";
+      src: url("./fonts/geist-v4-latin-900.woff2") format("woff2");
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "klaptbold";
+      src: url("./fonts/Klapt-Bold.woff2") format("woff2");
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "kalptmed";
+      src: url("./fonts/Klapt-Medium.woff2") format("woff2");
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "klaptreg";
+      src: url("./fonts/Klapt-Regular.woff2") format("woff2");
+      font-display: swap;
+    }
+
+    :root {
+      --black-color: #262626;
+      --brown-color: #4d403a;
+      --biege-color: #dedacf;
+      --white-color: #f9f8f5;
+
+      --biege-light: #f0ede6;
+      --biege-mid:   #cdc4b5;
+      --rule:        #e5e0d6;
+      --gold:        #b8965a;
+
+      --head:      "headreg",  serif;
+      --headbold:  "headbold", serif;
+      --headvery:  "headvery", serif;
+      --klapt:     "klaptreg",  sans-serif;
+      --klaptmed:  "kalptmed",  sans-serif;
+      --klaptbold: "klaptbold", sans-serif;
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white-color);
+      color: var(--black-color);
+      font-family: var(--head);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { width: 100%; display: block; }
+
+    .container {
+      width: 92%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* ── PROGRESS ── */
+    #progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--brown-color));
+      z-index: 9999;
+      transition: width .1s linear;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--black-color);
+      padding: 160px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: 'S&R';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--headvery);
+      font-size: clamp(160px, 22vw, 320px);
+      color: rgba(255,255,255,.03);
+      line-height: 1;
+      pointer-events: none;
+      letter-spacing: -10px;
+      white-space: nowrap;
+    }
+
+    .hero__inner { position: relative; z-index: 1; }
+
+    .hero__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--klaptmed);
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+    }
+
+    .hero__tag::before {
+      content: '';
+      width: 32px; height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: var(--headbold);
+      font-size: clamp(44px, 6vw, 88px);
+      line-height: 1.0;
+      color: var(--white-color);
+      letter-spacing: -1.5px;
+      max-width: 700px;
+    }
+
+    .hero h1 span {
+      color: var(--biege-color);
+      display: block;
+    }
+
+    .hero__meta {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+
+    .hero__meta-label {
+      font-family: var(--klaptmed);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.3);
+      margin-bottom: 6px;
+    }
+
+    .hero__meta-value {
+      font-family: var(--head);
+      font-size: 14px;
+      color: rgba(255,255,255,.65);
+    }
+
+    .hero__divider {
+      width: 1px; height: 36px;
+      background: rgba(255,255,255,.12);
+    }
+
+    /* ── LAYOUT ── */
+    .page { padding: 100px 0 140px; }
+
+    .page__inner {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidenav {
+      position: sticky;
+      top: 100px;
+    }
+
+    .sidenav__label {
+      font-family: var(--klaptmed);
+      font-size: 10px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .sidenav__list {
+      list-style: none;
+      border-left: 1px solid var(--rule);
+    }
+
+    .sidenav__list li a {
+      display: block;
+      padding: 10px 0 10px 20px;
+      font-size: 13px;
+      color: var(--brown-color);
+      font-family: var(--head);
+      border-left: 2px solid transparent;
+      margin-left: -1px;
+      transition: color .2s, border-color .2s, padding-left .2s;
+      line-height: 1.5;
+    }
+
+    .sidenav__list li a:hover,
+    .sidenav__list li a.active {
+      color: var(--black-color);
+      border-left-color: var(--gold);
+      padding-left: 24px;
+    }
+
+    .sidenav__contact {
+      margin-top: 36px;
+      padding: 24px;
+      background: var(--biege-light);
+      border-radius: 4px;
+    }
+
+    .sidenav__contact p {
+      font-size: 13px;
+      color: var(--brown-color);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .sidenav__contact a {
+      font-family: var(--klaptmed);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black-color);
+      border-bottom: 1px solid var(--biege-mid);
+      padding-bottom: 2px;
+      transition: border-color .2s, color .2s;
+    }
+
+    .sidenav__contact a:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* ── CONTENT ── */
+    .terms { max-width: 780px; }
+
+    .terms__intro {
+      font-size: 18px;
+      line-height: 1.9;
+      color: var(--brown-color);
+      padding-bottom: 56px;
+      margin-bottom: 72px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .terms__section {
+      margin-bottom: 72px;
+      scroll-margin-top: 100px;
+    }
+
+    .terms__section-num {
+      font-family: var(--klaptmed);
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .terms__section h2 {
+      font-family: var(--headbold);
+      font-size: clamp(24px, 2.8vw, 34px);
+      color: var(--black-color);
+      margin-bottom: 24px;
+      letter-spacing: -.3px;
+      line-height: 1.15;
+    }
+
+    .terms__section p {
+      font-size: 16px;
+      line-height: 1.95;
+      color: #5c504a;
+      margin-bottom: 20px;
+    }
+
+    .terms__section ul,
+    .terms__section ol {
+      margin: 20px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .terms__section ul li,
+    .terms__section ol li {
+      font-size: 16px;
+      line-height: 1.85;
+      color: #5c504a;
+      padding: 10px 0 10px 28px;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+    }
+
+    .terms__section ul li:last-child,
+    .terms__section ol li:last-child { border-bottom: none; }
+
+    .terms__section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 20px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--biege-mid);
+    }
+
+    .terms__section ol { counter-reset: items; }
+    .terms__section ol li { counter-increment: items; }
+    .terms__section ol li::before {
+      content: counter(items, decimal-leading-zero);
+      position: absolute;
+      left: 0; top: 10px;
+      font-family: var(--klaptmed);
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--gold);
+    }
+
+    .terms__note {
+      background: var(--biege-light);
+      border-left: 3px solid var(--gold);
+      padding: 28px 32px;
+      border-radius: 0 4px 4px 0;
+      margin: 32px 0;
+    }
+
+    .terms__note p {
+      font-size: 15px;
+      color: var(--brown-color);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .terms__note strong {
+      font-family: var(--headbold);
+      color: var(--black-color);
+    }
+
+    .terms__rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 72px 0;
+    }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .page__inner { grid-template-columns: 1fr; }
+      .sidenav { position: relative; top: 0; display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding: 130px 0 80px; }
+      .hero__meta { flex-wrap: wrap; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress"></div>
+  <div class="list-cartfetch"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__tag">Customer Care</div>
+        <h1>
+          Shipping &
+          <span>Returns</span>
+        </h1>
+        <div class="hero__meta">
+          <div class="hero__meta-item">
+            <div class="hero__meta-label">Free Shipping</div>
+            <div class="hero__meta-value">Orders Over $200</div>
+          </div>
+          <div class="hero__divider"></div>
+          <div class="hero__meta-item">
+            <div class="hero__meta-label">Return Window</div>
+            <div class="hero__meta-value">30 Days</div>
+          </div>
+          <div class="hero__divider"></div>
+          <div class="hero__meta-item">
+            <div class="hero__meta-label">Worldwide</div>
+            <div class="hero__meta-value">We Ship Globally</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE -->
+  <section class="page">
+    <div class="container">
+      <div class="page__inner">
+
+        <!-- SIDEBAR -->
+        <nav class="sidenav">
+          <span class="sidenav__label">Contents</span>
+          <ul class="sidenav__list">
+            <li><a href="#s1">Processing Time</a></li>
+            <li><a href="#s2">Shipping Methods</a></li>
+            <li><a href="#s3">International Shipping</a></li>
+            <li><a href="#s4">Order Tracking</a></li>
+            <li><a href="#s5">Duties & Taxes</a></li>
+            <li><a href="#s6">Return Eligibility</a></li>
+            <li><a href="#s7">How to Return</a></li>
+            <li><a href="#s8">Refund Process</a></li>
+            <li><a href="#s9">Exchanges</a></li>
+            <li><a href="#s10">Damaged or Wrong Items</a></li>
+            <li><a href="#s11">Contact Us</a></li>
+          </ul>
+          <div class="sidenav__contact">
+            <p>Need help with an order?</p>
+            <a href="mailto:support@vonaldo.com">support@vonaldo.com</a>
+          </div>
+        </nav>
+
+        <!-- CONTENT -->
+        <div class="terms">
+
+          <p class="terms__intro reveal">
+            At Vonaldo, every pair is prepared with care before it leaves our hands. We want your experience — from the moment you order to the moment your shoes arrive — to reflect the same standard of excellence we put into our craft. Here is everything you need to know about shipping and returns.
+          </p>
+
+          <!-- 01 -->
+          <div class="terms__section reveal" id="s1">
+            <span class="terms__section-num">01</span>
+            <h2>Processing Time</h2>
+            <p>All orders are processed and dispatched within 1–3 business days of payment confirmation. During peak periods such as sales or new launches, processing may take up to 5 business days. You will receive a shipping confirmation email with your tracking details as soon as your order is on its way.</p>
+            <div class="terms__note">
+              <p><strong>Please note:</strong> Orders placed on weekends or public holidays will begin processing on the next available business day.</p>
+            </div>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 02 -->
+          <div class="terms__section reveal" id="s2">
+            <span class="terms__section-num">02</span>
+            <h2>Shipping Methods & Costs</h2>
+            <p>We offer a range of shipping options to suit your needs. Estimated delivery times begin from the date of dispatch, not the date of order.</p>
+            <ul>
+              <li><strong>Standard Shipping (5–10 business days):</strong> Available on all orders. Free on orders over $200</li>
+              <li><strong>Express Shipping (2–4 business days):</strong> Available at checkout for an additional fee based on destination</li>
+              <li><strong>Overnight / Next-Day Shipping:</strong> Available for select destinations — contact us before ordering to confirm availability</li>
+            </ul>
+            <p>Shipping costs are calculated at checkout based on your location, order weight, and selected shipping method.</p>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 03 -->
+          <div class="terms__section reveal" id="s3">
+            <span class="terms__section-num">03</span>
+            <h2>International Shipping</h2>
+            <p>Vonaldo ships to most countries worldwide. International delivery times vary depending on the destination country and customs processing. Estimated timeframes are as follows:</p>
+            <ul>
+              <li><strong>Europe:</strong> 5–9 business days</li>
+              <li><strong>Middle East & North Africa:</strong> 6–10 business days</li>
+              <li><strong>North America:</strong> 7–12 business days</li>
+              <li><strong>Asia Pacific:</strong> 8–14 business days</li>
+              <li><strong>Rest of World:</strong> 10–18 business days</li>
+            </ul>
+            <p>These are estimated delivery windows only and are not guaranteed. Delays caused by customs, public holidays, or carrier disruptions are outside our control.</p>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 04 -->
+          <div class="terms__section reveal" id="s4">
+            <span class="terms__section-num">04</span>
+            <h2>Order Tracking</h2>
+            <p>Once your order has been dispatched, you will receive a shipping confirmation email containing your tracking number and a link to track your parcel in real time. Tracking information may take up to 24 hours to update after dispatch.</p>
+            <ol>
+              <li>Check your confirmation email for your tracking number</li>
+              <li>Visit the carrier's tracking page using the link provided</li>
+              <li>Enter your tracking number to view live shipment status</li>
+              <li>If tracking has not updated after 48 hours, contact our support team</li>
+            </ol>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 05 -->
+          <div class="terms__section reveal" id="s5">
+            <span class="terms__section-num">05</span>
+            <h2>Duties & Taxes</h2>
+            <p>Prices displayed on the Vonaldo website are exclusive of import duties, customs fees, and local taxes. These charges vary by country and are the sole responsibility of the recipient.</p>
+            <div class="terms__note">
+              <p><strong>Important:</strong> Vonaldo has no control over customs charges and cannot predict or cover these costs. We recommend checking your country's import regulations before placing an order. Refused deliveries due to unpaid duties will not be eligible for a full refund — return shipping costs will be deducted.</p>
+            </div>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 06 -->
+          <div class="terms__section reveal" id="s6">
+            <span class="terms__section-num">06</span>
+            <h2>Return Eligibility</h2>
+            <p>We accept returns within 30 days of the delivery date, subject to the following conditions. Items that do not meet these criteria will be returned to you at your expense.</p>
+            <ul>
+              <li>Item must be unworn, unused, and in its original condition</li>
+              <li>All original packaging, dust bags, and tags must be intact and included</li>
+              <li>Item must not show any signs of wear, creasing, or sole contact with surfaces</li>
+              <li>Sale items and final-sale products are non-returnable unless faulty or incorrectly sent</li>
+              <li>Custom or personalised orders are non-returnable unless faulty</li>
+            </ul>
+            <div class="terms__note">
+              <p><strong>Tip:</strong> We recommend trying your shoes indoors on a clean surface before wearing them outside. Outdoor wear immediately voids the return eligibility.</p>
+            </div>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 07 -->
+          <div class="terms__section reveal" id="s7">
+            <span class="terms__section-num">07</span>
+            <h2>How to Return</h2>
+            <p>All returns must be initiated through our Help Center before sending the item back. Unrequested returns may experience significant delays in processing.</p>
+            <ol>
+              <li>Contact our support team at support@vonaldo.com with your order number and reason for return</li>
+              <li>Our team will review your request and provide a Return Authorisation (RA) number within 2 business days</li>
+              <li>Pack the item securely in its original packaging, including all accessories and tags</li>
+              <li>Write your RA number clearly on the outside of the parcel</li>
+              <li>Ship the item using a trackable shipping method — we recommend insuring the parcel for its full value</li>
+              <li>Share the tracking number with our team once dispatched</li>
+            </ol>
+            <p>The cost of return shipping is the responsibility of the customer unless the item was received faulty or incorrectly.</p>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 08 -->
+          <div class="terms__section reveal" id="s8">
+            <span class="terms__section-num">08</span>
+            <h2>Refund Process</h2>
+            <p>Once we receive and inspect your return, we will notify you by email of the outcome within 3 business days. If your return is approved, your refund will be processed as follows:</p>
+            <ul>
+              <li><strong>Original payment method:</strong> Refunds are issued to the original card or payment method used at checkout</li>
+              <li><strong>Processing time:</strong> Please allow 7–10 business days for the refund to appear in your account after approval</li>
+              <li><strong>Original shipping fees:</strong> These are non-refundable unless the return is due to our error</li>
+              <li><strong>Partial refunds:</strong> May be issued for items returned in a condition that does not fully meet our return policy</li>
+            </ul>
+            <div class="terms__note">
+              <p><strong>Please note:</strong> We are unable to issue refunds to a different payment method or account than the one used for the original purchase.</p>
+            </div>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 09 -->
+          <div class="terms__section reveal" id="s9">
+            <span class="terms__section-num">09</span>
+            <h2>Exchanges</h2>
+            <p>We currently do not offer direct exchanges. If you would like a different size or colour, we recommend returning your original item for a refund and placing a new order. This ensures you receive your preferred item as quickly as possible without waiting for the exchange process.</p>
+            <p>If you are unsure about sizing before purchasing, our team is happy to assist — contact us at support@vonaldo.com and we will guide you to the right fit.</p>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 10 -->
+          <div class="terms__section reveal" id="s10">
+            <span class="terms__section-num">10</span>
+            <h2>Damaged or Wrong Items</h2>
+            <p>In the rare event that you receive a damaged, defective, or incorrect item, please contact us within 48 hours of delivery. We will resolve the issue promptly at no additional cost to you.</p>
+            <ol>
+              <li>Email support@vonaldo.com with your order number</li>
+              <li>Attach clear photographs of the item and its packaging</li>
+              <li>Our team will assess the issue and confirm next steps within 1 business day</li>
+              <li>We will arrange a prepaid return label and send a replacement or issue a full refund</li>
+            </ol>
+            <div class="terms__note">
+              <p><strong>We stand behind every pair we make.</strong> If something is not right, we will make it right — no questions asked.</p>
+            </div>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 11 -->
+          <div class="terms__section reveal" id="s11">
+            <span class="terms__section-num">11</span>
+            <h2>Contact Us</h2>
+            <p>Our customer care team is available to assist with any shipping or returns enquiry. We aim to respond to all messages within 2 business days.</p>
+            <ul>
+              <li>Email: support@vonaldo.com</li>
+              <li>Help Center: Available on our website</li>
+              <li>Response time: Within 2 business days</li>
+            </ul>
+            <p>We are committed to making every part of your Vonaldo experience as smooth and satisfying as possible — from your first browse to your final delivery.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="foot-sec-1">
+      <div class="tit-onefoot">
+        <h1>GET IN TOUCH WITH VONALDO</h1>
+        <h2>Contact us, and our team will be happy to answer all your questions</h2>
+      </div>
+      <div class="tit-twofoot">
+        <span>CREATE YOUR</span>
+        <span>OWN UNIQUE</span>
+        <span>LOOK</span>
+      </div>
+    </div>
+    <div class="foot-sec-2">
+      <div class="sec-1-foot">
+        <div class="lounge">
+          <div class="title-loung">
+            <h2>LINOGE</h2>
+          </div>
+          <div class="body-lounge">
+            <h3>Terms & Conditions</h3>
+            <h3>Privacy Policy</h3>
+          </div>
+        </div>
+      </div>
+      <div class="sec-2-foot">
+        <div class="nav-inf">
+          <div class="nave">
+            <div class="nave-title">
+              <h2>NAVIGATION</h2>
+            </div>
+            <div class="body-nav">
+              <h3 class="home">HOME</h3>
+              <h3 class="blogs">Blogs</h3>
+              <h3>LOCK BOOK</h3>
+              <h3>ABOUT</h3>
+            </div>
+          </div>
+          <div class="info">
+            <div class="info-title">
+              <h2>INFO</h2>
+            </div>
+            <div class="info-body">
+              <h3>ACOUNT</h3>
+              <h3>HELP CENTER</h3>
+              <h3>SHIPPING & RETURNS</h3>
+              <h3>COUNTACTS</h3>
+            </div>
+          </div>
+        </div>
+        <div class="newrgs">
+          <div class="new-title">
+            <h2>NEWSLETTER</h2>
+          </div>
+          <div class="new-body">
+            <form class="newsletter-form">
+              <input type="email" id="emailInput" placeholder="EMAIL" required/>
+              <button type="button" onclick="document.getElementById('emailInput').value = ''">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="footer-new">
+            <img src="./icons/apple-pay.webp" alt=""/>
+            <img src="./icons/google-pay.webp" alt=""/>
+            <img src="./icons/symbols (1).webp" alt=""/>
+            <img src="./icons/money.webp" alt=""/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot-sec3">
+      <div class="foot-lounge">
+        <h3>© 2026 vonaldo All right reserved</h3>
+      </div>
+    </div>
+  </div>
+
+  <script src="./blogs.js" type="module"></script>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const d = document.documentElement;
+      document.getElementById('progress').style.width =
+        (d.scrollTop / (d.scrollHeight - d.clientHeight) * 100) + '%';
+    });
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(r => io.observe(r));
+
+    const sections = document.querySelectorAll('.terms__section[id]');
+    const links    = document.querySelectorAll('.sidenav__list a');
+
+    const sio = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.sidenav__list a[href="#${e.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    sections.forEach(s => sio.observe(s));
+  </script>
+  <script src="./blogs.js" type="module"></script>
+
+</body>
+</html>

@@ -1,93 +1,196 @@
 const newarr = [
-        {
-        id:45871363260605,
-        name:"Torino Heritage",
-        desc:"The art of modern elegance",
-        price:130,
-        mainimg:"./imgs/8.jpeg",
-        colors:[
-            {
-                color:"black",
-                imgs:["./imgs/8.jpeg","./imgs/9.jpeg","./imgs/10.jpeg","./imgs/11.jpeg"],
-                sizes:[
-                    {size:39,id:45871363260605,},
-                    {size:40,id:45871363293373,},
-                    {size:41,id:45871363391677,},
-                    {size:42,id:45871363424445,},
-                    {size:43,id:45871363326141,},
-                    {size:44,id:45871363358909,},
-                ]
-            },
-            {
-                color:"brown",
-                imgs:["./imgs/12.jpeg","./imgs/13.jpeg","./imgs/14.jpeg"],
-                sizes:[
-                    {size:39,id:45871363457213,},
-                    {size:40,id:45871363489981,},
-                    {size:41,id:45871363129533,},
-                    {size:42,id:45871363162301,},
-                    {size:43,id:45871363063997,},
-                    {size:44,id:45871363096765,},
-                ]
-            },
-        ]
-    },
-        {
-        id:45871355592893,
-        name:"Capri Comfort",
-        desc:"The heart of pure design",
-        price:160,
-        mainimg:"./imgs/36.jpeg",
-        colors:[
-            {
-                color:"black",
-                imgs:["./imgs/36.jpeg","./imgs/37.jpeg","./imgs/38.jpeg","./imgs/39.jpeg"],
-                sizes:[
-                    {size:38,id:45871355592893,},
-                    {size:39,id:45871355625661,},
-                    {size:40,id:45871355658429,},
-                    {size:41,id:45871355691197,},
-                    {size:42,id:45871355723965,},
-                    {size:43,id:45871355756733,},
-                    {size:44,id:45871355789501,},
-                ]
-            },
-        ]
-    },
-        {
-        id:45871354609853,
-        name:"Siena Craft",
-        desc:"The touch of classic charm",
-        price:120,
-        mainimg:"./imgs/45.jpeg",
-        colors:[
-            {
-                color:"brown",
-                imgs:["./imgs/45.jpeg","./imgs/46.jpeg","./imgs/47.jpeg","./imgs/48.jpeg","./imgs/49.jpeg","./imgs/50.jpeg","./imgs/51.jpeg","./imgs/52.jpeg"],
-                sizes:[
-                    {size:40,id:45871354609853,},
-                    {size:41,id:45871354773693,},
-                    {size:42,id:45871354806461,},
-                    {size:43,id:45871354740925,},
-                    {size:44,id:45871354118333,},
-                    {size:45,id:45871354052797,},
-                ]
-            },
-            {
-                color:"black",
-                imgs:["./imgs/53.jpeg","./imgs/54.jpeg","./imgs/55.jpeg","./imgs/56.jpeg","./imgs/57.jpeg","./imgs/58.jpeg","./imgs/59.jpeg","./imgs/60.jpeg"],
-                sizes:[
-                    {size:40,id:45871354839229,},
-                    {size:41,id:45871354871997,},
-                    {size:42,id:45871354380477,},
-                    {size:43,id:45871354314941,},
-                    {size:44,id:45871354347709,},
-                    {size:45,id:45871354544317,},
-                ]
-            },
-        ]
-    },
-    
+
+{
+    id: 45871363260605,
+    name: "Torino Heritage",
+    desc: "Comfort Built Impress Designed",
+    price: 230,
+    oldprice: 270,
+    vare:"New Collection",
+    material:"Premium Genuine Leather",
+    mainimg: "./file/1/5.webp",
+    shortdesc: "Premium Leather with Lightweight And Comfort derby",
+    longdesc: "Premium Leather with Lightweight Comfort and Distinctive Contemporary Appeal",
+    model:"All Day Comfort Derby",
+    modelimg:"./file/1/5.webp",
+    techdesc1:"A modern genuine leather Derby with clean lines, refined craftsmanship, and effortless versatility for every occasion.",
+    techdesc2:"This isn't just a Derby It's how you want to be seen. Crafted from black leather with flawless precision for the man who stands apart naturally.",
+    Upper:"Premium smooth natural leather with a refined satin finish, offering exceptional durability and a soft, adaptive fit .",
+    Inner:"Ultra-soft natural leather lining for maximum breathability and all-day comfort .",
+    Insole:"Cushioned leather-covered insole with high-density foam for premium shock absorption .",
+    Outsole:"Lightweight, heavy-duty rubber lug sole (Chunky Design) providing superior grip, stability, and a bold modern look .",
+    modelname:"Derby",
+    modeldesc:"Derby Shoes Effortless Style Everyday Confidence Derby shoes are more than just footwear they are a clean confident choice The open lacing design gives you a comfortable fit that feels natural all day They work for everything from work to casual outings with a timeless look that always fits in Simple details quality materials and a sharp silhouette make them easy to rely on Comfortable versatile and always on point Derby shoes give you style without overthinking it Derby where classic style meets everyday wear",
+    title:"Vonaldo Torino Heritage Derby | Premium Italian Leather – All-Day Comfort & Timeless Style",
+    metadesc:"Elevate your style with Torino Heritage Derby shoes. Crafted from Premium Italian Leather with a shock-absorbing insole and extra-light chunky sole for all-day comfort and effortless confidence",
+    colors: [
+      {
+        color: "Black",
+        imgs: [
+          "./file/1/5.webp",
+          "./file/1/2.webp",
+          "./file/1/3.webp",
+          "./file/1/7.webp",
+          "./file/1/6.webp",
+          "./file/1/1.webp",
+
+        ],
+        colorimg:"./file/1/1.webp",
+        sizes: [
+          { size: 39, id: 45871363260605 },
+          { size: 40, id: 45871363293373 },
+          { size: 41, id: 45871363391677 },
+          { size: 42, id: 45871363424445 },
+          { size: 43, id: 45871363326141 },
+          { size: 44, id: 45871363358909 },
+        ],
+      },
+    ],
+  },
+
+    {
+    id: 102,
+    name: "Vittorio Marchetti",
+    desc: "Black and white, never grey",
+    price: 399,
+    oldprice: 450,
+    vare:"New Collection",
+    material:"Genuine Patent Leather",
+    mainimg: "./file/24/15.avif",
+    shortdesc: "Nights out to everyday moments, effortlessly put-together",
+    longdesc: "From nights out to everyday moments, made to keep you looking effortlessly put-together",
+    model:"Italian Leather Loafer",
+    modelimg:"./file/24/15.avif",
+techdesc1: "Not made to blend in. Genuine leather meets a bold two-tone design, balancing classic loafer heritage with a confident modern presence. Distinctive, refined, and impossible to overlook.",
+techdesc2: "From nights out to everyday moments, made to keep you put-together. Because real style means standing apart.",
+    Upper:"High gloss two-tone (black and white) patent leather, accented with a premium gold-tone horsebit detail.",
+    Inner:"Smooth, breathable lining designed for optimal, all-day comfort.",
+    Insole:"Cushioned footbed providing exceptional support and shock absorption.",
+    Outsole:"Cushioned footbed providing exceptional support and shock absorption.",
+    modelname:"Loafer",
+    modeldesc:"Loafers Heritage Timeless Style Modern Elegance Loafers are a key piece in refined menswear known for effortless style and lasting quality Inspired by classic heritage and updated with a modern touch they offer a balance between tradition and contemporary design Made with clean silhouettes quality materials and everyday comfort they are suitable for formal and casual wear Each pair reflects simple luxury subtle elegance and confident style making loafers an essential part of a modern wardrobe Loafers are more than footwear they represent timeless taste quiet confidence and effortless distinction where heritage meets modern elegance",
+    title: "Vonaldo Vittorio Marchetti Loafer – Black & White Patent Leather Horsebit Loafer | Modern Luxury Style",
+    metadesc:"Step into modern luxury with Vonaldo Vittorio Marchetti Loafers featuring high-gloss black and white patent leather premium gold horsebit detail and bold contemporary design Built for standout style and everyday confidence combining timeless loafer heritage with a fresh modern edge Perfect for smart casual looks nights out and refined daily wear where fashion meets effortless elegance",
+    colors: [
+      {
+        color: "B-white",
+        imgs: [
+          "./file/24/15.avif",
+          "./file/24/6.avif",
+          "./file/24/9.avif",
+          "./file/24/11.avif",
+          "./file/24/14.avif",
+          "./file/24/2.avif",
+        ],
+        colorimg:"./file/24/150.avif",
+        sizes: [
+          { size: 38, id: 102 },
+          { size: 39, id: 1030 },
+          { size: 40, id: 104 },
+          { size: 41, id: 105 },
+          { size: 42, id: 106 },
+          { size: 43, id: 107 },
+          { size: 44, id: 108 },
+        ],
+      },
+    ],
+  },
+  {
+    id: 45871355592893,
+    name: "Vesper Chelsea",
+    desc: "Every Step Hits Different",
+    price: 300,
+    oldprice: 340,
+    vare:"New Collection",
+    material:"Premium Genuine Leather",
+    mainimg: "./file/8/7.webp",
+    shortdesc: "Genuine leather Chelsea boot built for confident presence",
+    longdesc: "Built to stand out Chelsea boot in genuine leather elevating presence with confidence",
+    model:"Modern Grip Chelsea Boot",
+    modelimg:"./file/8/1.webp",
+techdesc1: "Black genuine leather Chelsea boot with chunky lug sole bold street presence refined all-day comfort and stylist-level craftsmanship for confident modern style.",
+
+techdesc2: "Built for those who dress with intention this Chelsea boot commands presence the moment you walk in pairing bold street edge with the kind of comfort that carries you through the day without compromise.",
+    Upper:"Premium smooth leather with a refined matte finish, paired with durable elastic side panels for flexibility and effortless wear",
+    Inner:"Premium natural leather lining with breathable sections for enhanced comfort and all-day ventilation",
+    Insole:"Cushioned anatomical footbed, leather-lined for superior comfort and excellent shock absorption",
+    Outsole:"Lightweight yet durable chunky lug outsole with a slip-resistant design for strong grip, stability, and a bold modern look",
+    modelname:"Chunky Chelsea Boots",
+    modeldesc:"Chunky Chelsea Boots are more than just footwear they are a bold modern statement The sturdy silhouette and elastic side panels give you a secure comfortable fit that feels strong all day They work for everything from city walks to casual nights out with a rugged look that always stands out Simple details quality materials and a thick durable sole make them easy to rely on Comfortable versatile and always confident Chunky Chelsea Boots give you presence without overthinking it Chunky Chelsea where bold style meets everyday edge",
+title: "Vonaldo Vesper Chelsea Boot | Chunky Grip Sole Premium Leather – Modern Urban Style & All-Day Comfort",
+metadesc: "Discover Vesper Chelsea Boots by Vonaldo, crafted from premium natural leather with a bold chunky grip sole for superior stability, comfort, and durability. Designed for modern urban style, effortless versatility, and confident everyday wear",
+    colors: [
+      {
+        color: "Black",
+        imgs: [
+          "./file/8/7.webp",
+  
+          "./file/8/10.webp",
+          "./file/8/6.webp",
+                  "./file/8/5.webp",
+          "./file/8/4.webp",
+          // "./file/8/3.webp",
+          "./file/8/1.webp",
+        ],
+        colorimg:"./file/8/70.webp",
+        sizes: [
+          { size: 38, id: 45871355592893 },
+          { size: 39, id: 45871355625661 },
+          { size: 40, id: 45871355658429 },
+          { size: 41, id: 45871355691197 },
+          { size: 42, id: 45871355723965 },
+          { size: 43, id: 45871355756733 },
+          { size: 44, id: 45871355789501 },
+        ],
+      },
+    ],
+  },
+   {
+    id: 120,
+    name: "Eclipse Garnet",
+    desc: "Black in shade, Garnet in light",
+    price: 290,
+    oldprice: 360,
+    vare:"New Collection",
+    material:"Premium Polished Leather",
+    mainimg: "./file/18/2.webp",
+    shortdesc: "Designed for versatile style, crafted with modern character",
+    longdesc: "Premium Burgundy Derby Shoe with refined modern edge and commanding sleek presence",
+    model:"Modern Style Comfort Derby",
+    modelimg:"./file/18/2.webp",
+techdesc1:"Not made to stand out — made to be remembered. This Derby moves easy, sits quiet, and lingers long after the room has forgotten everyone else.",
+
+techdesc2:"Burgundy doesn't shout. It waits for the light, then takes the room without a sound.",
+    Upper:"Crafted from premium leather with a glossy finish and a striking burnished toe effect, featuring classic open lacing and a heel pull tab for everyday ease",
+    Inner:"Soft natural nappa leather lining for exceptional comfort, reduced friction, and enhanced breathability",
+    Insole:"Anatomical leather footbed with a shock-absorbing layer, designed to support the foot and provide all day comfort.",
+    Outsole:"Extra-light, smooth chunky sole made from advanced PU/TPU materials, delivering durability, elevated height, and a modern statement without added weight.",
+    modelname:"Derby",
+    modeldesc:"Derby Shoes Effortless Style Everyday Confidence Derby shoes are more than just footwear they are a clean confident choice The open lacing design gives you a comfortable fit that feels natural all day They work for everything from work to casual outings with a timeless look that always fits in Simple details quality materials and a sharp silhouette make them easy to rely on Comfortable versatile and always on point Derby shoes give you style without overthinking it Derby where classic style meets everyday wear",
+title:"Vonaldo Eclipse Garnet Burgundy Derby | Premium Polished Leather Shoes – Modern Elegance & Comfort",
+
+metadesc:"Shop Eclipse Garnet Burgundy Derby shoes by Vonaldo. Made from premium polished leather with soft nappa lining, shock-absorbing insole, and lightweight chunky sole for all-day comfort, modern elegance, and confident formal style",
+    colors: [
+      {
+        color: "Burgundy",
+        imgs: [
+          "./file/18/2.webp",
+          "./file/18/4.webp",
+          "./file/18/20.webp",
+          "./file/18/5.webp",
+        ],
+        colorimg:"./file/18/25.webp",
+        sizes: [
+          { size: 39, id: 120 },
+          { size: 40, id: 121 },
+          { size: 41, id: 122 },
+          { size: 42, id: 123 },
+          { size: 43, id: 124 },
+          { size: 44, id: 125 },
+        ],
+      },
+    ],
+  },
 
 ]
 

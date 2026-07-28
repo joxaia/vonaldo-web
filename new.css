@@ -1,0 +1,886 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@font-face {
+  font-family: "headreg";
+  src: url("./fonts/geist-v4-latin-regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "headbold";
+  src: url("./fonts/geist-v4-latin-700.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "headvery";
+  src: url("./fonts/geist-v4-latin-900.woff2")
+    format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "klaptreg";
+  src: url("./fonts/Klapt-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "kalptmed";
+  src: url("./fonts/Klapt-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "klaptbold";
+  src: url("./fonts/Klapt-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "body";
+  src: url("./fonts/open-sans-v44-latin-regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bodybold";
+  src: url("./fonts/open-sans-v44-latin-700.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bodyvery";
+  src: url("./fonts/open-sans-v44-latin-800.woff2")
+    format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+:root {
+  --head: "headreg", serif;
+  --headbold: "headbold", serif;
+  --headvery: "headvery", serif;
+  --klapt-reg:"klaptreg", sans-serif;
+  --klapt-med:"kalptmed", sans-serif;
+  --klapt-bold:"klaptbold", sans-serif;
+  --body:"body", sans-serif;
+  --body-bold:"bodybold", sans-serif;
+  --body-very:"bodyvery", sans-serif;
+  --black-color:#262626;
+  --brown-color:#4d403a;
+  --biege-color:#dedacf;
+  --white-color:#f9f8f5;
+        --space-xs:  0.5rem;
+      --space-sm:  1rem;
+      --space-md:  2rem;
+      --space-lg:  4rem;
+      --space-xl:  7rem;
+      --space-xxl: 11rem;
+
+      /* ── Transitions ───────────────────────────────────────── */
+      --transition-base: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --transition-slow: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+    /* .listcart — Sticky Navbar */
+.listcart {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  width: 100%;
+  background: transparent;           /* شفاف في الأول */
+  border-bottom: 1px solid transparent;
+  transition: background var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+/* لما JS يضيف .scrolled */
+.listcart.scrolled {
+  background: var(--white-color);    /* ← يبقى أبيض */
+  border-color: rgba(77, 64, 58, 0.1);
+  box-shadow: 0 4px 28px -6px rgba(38, 38, 38, 0.09);
+  backdrop-filter: blur(10px);
+}
+    /* ── 2. RESET & BASE ────────────────────────────────────────── */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--white-color);
+      color: var(--black-color);
+      font-family: var(--body);
+      font-weight: 400;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* ── 3. NAVIGATION ──────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.6rem 4rem;
+      background: transparent;
+      mix-blend-mode: normal;
+      transition: background var(--transition-base), padding var(--transition-base);
+    }
+
+    nav.scrolled {
+      background: rgba(249, 248, 245, 0.96);
+      padding: 1rem 4rem;
+      border-bottom: 1px solid rgba(77, 64, 58, 0.12);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      font-family: var(--headvery);
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      color: var(--black-color);
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--klapt-reg);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--black-color);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity var(--transition-base);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--brown-color);
+      transition: width var(--transition-base);
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* ── 4. HERO SECTION ────────────────────────────────────────── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      background-color: var(--white-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0px var(--space-md);
+      overflow: hidden;
+    }
+
+    /* Decorative background lines */
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(77,64,58,0.08) 30%, rgba(77,64,58,0.08) 70%, transparent);
+    }
+
+    /* Thin horizontal rule top */
+    .hero-rule-top {
+      width: 1px;
+      height: 80px;
+      background: var(--brown-color);
+      opacity: 0.3;
+      margin-bottom: var(--space-lg);
+      animation: growDown 1.2s ease forwards;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--headbold);
+      font-size: 0.68rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--brown-color);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.3s forwards;
+    }
+
+    .hero-headline {
+      font-family: var(--headvery);
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--black-color);
+      max-width: 860px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.55s forwards;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--brown-color);
+    }
+
+    .hero-subheading {
+      font-family: var(--headbold);
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      color: var(--brown-color);
+      margin-bottom: var(--space-xl);
+      opacity: 0;
+      animation: fadeUp 1s ease 0.75s forwards;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      font-family: var(--headbold);
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.767);
+      background: var(--black-color);
+      padding: 1.1rem 3.2rem;
+      text-decoration: none;
+      border: 1px solid var(--black-color);
+      transition: background var(--transition-base), color var(--transition-base);
+      opacity: 0;
+      animation: fadeUp 1s ease 0.95s forwards;
+    }
+
+    .hero-cta:hover {
+      background: transparent;
+      color: var(--black-color);
+    }
+
+    /* Small decorative year stamp */
+    .hero-year {
+      position: absolute;
+      bottom: 3rem;
+      right: 4rem;
+      font-family: var(--klapt-reg);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brown-color);
+      opacity: 0.4;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+    }
+
+    .hero-scroll {
+      position: absolute;
+bottom: 4rem;
+    left: 646px;
+
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 1.4s forwards;
+    }
+
+    .hero-scroll span {
+      font-family: var(--klapt-reg);
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--brown-color);
+      opacity: 0.5;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: var(--brown-color);
+      opacity: 0.3;
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    /* ── 5. FACTORY STORY SECTION ────────────────────────────────── */
+    #factory-story {
+      background-color: var(--biege-color);
+      padding: 0 0;
+      overflow: hidden;
+      color: var(--white-color);
+    }
+    @media(min-width:1024px){
+      #factory-story {
+            margin-top: 50px;
+    }
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 700px;
+    }
+
+    /* Left: Text Side */
+    .story-text {
+      padding: var(--space-xl) var(--space-xl) var(--space-xl) min(8vw, 8rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .story-label {
+      font-family: var(--klapt-reg);
+      font-size: 13px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--brown-color);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .story-label::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--brown-color);
+      opacity: 0.5;
+    }
+
+    .story-headline {
+      font-family: var(--headbold);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--black-color);
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .story-headline strong {
+      font-weight: 700;
+    }
+
+    .story-body {
+      font-family: var(--body-bold);
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--brown-color);
+      max-width: 480px;
+      margin-bottom: 3rem;
+    }
+
+    .story-body + .story-body {
+      margin-top: -0.8rem;
+    }
+
+    .story-signature {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(77,64,58,0.2);
+    }
+
+    .story-signature-name {
+      font-family: var(--klapt-med);
+      font-size: 1.3rem;
+      color: var(--black-color);
+    }
+
+    .story-signature-title {
+      font-family: var(--headbold);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brown-color);
+      margin-top: 0.3rem;
+    }
+
+    /* Right: Image Side */
+    .story-image-wrap {
+      position: relative;
+      overflow: hidden;
+      padding: var(--space-lg);
+    }
+
+    .story-image-inner {
+      position: relative;
+      height: 100%;
+      min-height: 580px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow:
+        0 30px 60px -10px rgba(38,38,38,0.25),
+        0 10px 30px -5px rgba(38,38,38,0.15);
+      transition: transform var(--transition-slow);
+    }
+
+    .story-image-inner:hover {
+      transform: scale(1.03);
+    }
+
+    .story-image-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: contrast(1.07) saturate(0.85);
+    }
+
+    /* Cinematic gradient overlay */
+    .story-image-inner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(38,38,38,0.08) 0%,
+        rgba(38,38,38,0.0) 40%,
+        rgba(38,38,38,0.4) 100%
+      );
+      pointer-events: none;
+    }
+
+    /* Image caption */
+    .story-image-caption {
+      position: absolute;
+      bottom: calc(var(--space-lg) + 1.5rem);
+      left: calc(var(--space-lg) + 1.5rem);
+      z-index: 2;
+      font-family: var(--klapt-reg);
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(249,248,245,0.7);
+      font-family: var(--head) !important;
+    }
+
+    /* ── 6. CRAFTSMANSHIP VALUES SECTION ─────────────────────────── */
+    #values {
+      background-color: var(--white-color);
+      padding: var(--space-xxl) min(8vw, 8rem);
+    }
+
+    .values-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .values-eyebrow {
+      font-family: var(--head);
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--brown-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .values-headline {
+      font-family: var(--headvery);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 400;
+      color: var(--black-color);
+      letter-spacing: -0.01em;
+    }
+
+    .values-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--brown-color);
+      margin: 2rem auto 0;
+      opacity: 0.4;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-top: var(--space-xl);
+    }
+
+    .value-card {
+      text-align: center;
+      padding: 3.5rem 2.5rem;
+      border: 1px solid rgba(77,64,58,0.12);
+      background: var(--white-color);
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--brown-color);
+      transform: scaleX(0);
+      transition: transform var(--transition-base);
+      transform-origin: center;
+    }
+
+    .value-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px -10px rgba(38,38,38,0.12);
+      border-color: rgba(77,64,58,0.22);
+    }
+
+    .value-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .value-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px solid rgba(77,64,58,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2.5rem;
+      transition: border-color var(--transition-base), background var(--transition-base);
+    }
+
+    .value-card:hover .value-icon {
+      background: var(--biege-color);
+      border-color: var(--brown-color);
+    }
+
+    .value-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--brown-color);
+      fill: none;
+      stroke-width: 1.2;
+    }
+
+    .value-number {
+      font-family: var(--headbold);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--brown-color);
+      opacity: 0.45;
+      margin-bottom: 1rem;
+    }
+.quote-attr {
+    color: var(--biege-color) !important;
+}
+    .value-title {
+      font-family: var(--headbold);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--black-color);
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+    }
+
+    .value-desc {
+      font-family: var(--headbold);
+      font-size: 12px;
+      line-height: 1.85;
+      color: var(--brown-color);
+      opacity: 0.85;
+    }
+
+    /* ── 7. CLOSING QUOTE SECTION ───────────────────────────────── */
+    #quote {
+      background: var(--black-color);
+      padding: var(--space-xxl) min(8vw, 8rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #quote::before {
+      content: '"';
+      position: absolute;
+      top: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--headvery);
+      font-size: 20rem;
+      color: rgba(249,248,245,0.03);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .quote-text {
+      font-family: var(--headvery);
+      font-size: clamp(1.5rem, 3.5vw, 3rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--biege-color);
+      max-width: 760px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.45;
+      letter-spacing: 0.01em;
+    }
+
+    .quote-attr {
+      font-family: var(--klapt-reg);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--brown-color);
+      opacity: 0.6;
+    }
+
+    .quote-divider {
+      width: 32px;
+      height: 1px;
+      background: var(--brown-color);
+      margin: 2rem auto;
+      opacity: 0.35;
+    }
+
+    /* ── 8. FOOTER ──────────────────────────────────────────────── */
+    footer {
+      background: var(--black-color);
+      border-top: 1px solid rgba(222, 218, 207, 0.08);
+      padding: var(--space-lg) min(8vw, 8rem);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-logo {
+      font-family: var(--klapt-bold);
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--biege-color);
+      opacity: 0.7;
+    }
+
+    .footer-copy {
+      font-family: var(--head);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--biege-color);
+      opacity: 0.3;
+    }
+
+    .footer-made {
+      font-family: var(--head);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--biege-color);
+      opacity: 0.5;
+    }
+
+    /* ── 9. KEYFRAME ANIMATIONS ─────────────────────────────────── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes growDown {
+      from { height: 0; opacity: 0; }
+      to   { height: 80px; opacity: 0.3; }
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { transform: scaleY(1); opacity: 0.3; }
+      50%       { transform: scaleY(0.6); opacity: 0.6; }
+    }
+
+    /* ── 10. SCROLL-TRIGGERED FADE (JS-assisted) ────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+      font-family: var(--headbold);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.15s; }
+    .reveal-delay-2 { transition-delay: 0.3s; }
+    .reveal-delay-3 { transition-delay: 0.45s; }
+
+    /* ── 11. RESPONSIVE ─────────────────────────────────────────── */
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      nav {
+        padding: 1.4rem 2.5rem;
+      }
+      nav.scrolled {
+        padding: 0.9rem 2.5rem;
+      }
+
+      #values {
+        padding: var(--space-xl) 3rem;
+      }
+
+      .story-text {
+        padding: var(--space-lg) var(--space-lg) var(--space-lg) 3rem;
+      }
+
+      .story-image-wrap {
+        padding: var(--space-md);
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      :root {
+        --space-xxl: 5rem;
+        --space-xl: 4rem;
+      }
+
+      nav {
+        padding: 1.2rem 1.5rem;
+      }
+
+      nav.scrolled {
+        padding: 0.9rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      #hero {
+        padding: 0rem 2rem var(--space-xl);
+      }
+
+      .hero-year {
+        display: none;
+      }
+
+      /* Story: stack vertically */
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story-text {
+        padding: var(--space-xl) 1.8rem;
+        order: 2;
+      }
+
+      .story-image-wrap {
+        order: 1;
+        padding: 0;
+      }
+
+      .story-image-inner {
+        min-height: 360px;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      /* Values: single column */
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      #values {
+        padding: var(--space-xl) 1.8rem;
+      }
+
+      #quote {
+        padding: var(--space-xl) 1.8rem;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-headline {
+        font-size: 2.5rem;
+      }
+    }
+
+    

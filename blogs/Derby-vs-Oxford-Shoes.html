@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Derby vs Oxford Shoes | Key Differences & Style Guide | Vonaldo</title>
+  <meta name="description" content="Discover the difference between Derby and Oxford shoes. Learn which style fits formal wear, smart casual outfits, and timeless old money menswear aesthetics with Vonaldo."/>
+  <link rel="icon" href="../icons/vo.webp" type="image/webp"/>
+  <link rel="stylesheet" href="../main.css"/>
+
+  <style>
+
+    /* ── BRAND FONTS ── */
+    @font-face { font-family:"headreg";   src:url("../fonts/geist-v4-latin-regular.woff2") format("woff2"); font-display:swap; }
+    @font-face { font-family:"headbold";  src:url("../fonts/geist-v4-latin-700.woff2")     format("woff2"); font-display:swap; }
+    @font-face { font-family:"headvery";  src:url("../fonts/geist-v4-latin-900.woff2")     format("woff2"); font-display:swap; }
+    @font-face { font-family:"klaptreg";  src:url("../fonts/Klapt-Regular.woff2")          format("woff2"); font-display:swap; }
+    @font-face { font-family:"kalptmed";  src:url("../fonts/Klapt-Medium.woff2")           format("woff2"); font-display:swap; }
+    @font-face { font-family:"klaptbold"; src:url("../fonts/Klapt-Bold.woff2")             format("woff2"); font-display:swap; }
+    @font-face { font-family:"bodyf";     src:url("../fonts/open-sans-v44-latin-regular.woff2") format("woff2"); font-display:swap; }
+
+    /* ── TOKENS ── */
+    :root {
+      --fh:  "headbold",  sans-serif;
+      --fhr: "headreg",   sans-serif;
+      --fhv: "headvery",  sans-serif;
+      --fl:  "kalptmed",  sans-serif;
+      --flb: "klaptbold", sans-serif;
+      --fb:  "bodyf",     sans-serif;
+
+      --black:  #1e1e1e;
+      --brown:  #4d403a;
+      --beige:  #dedacf;
+      --beige2: #cec9bc;
+      --beige3: #f0ede6;
+      --cream:  #f9f8f5;
+      --white:  #ffffff;
+      --ink:    #3a3330;
+      --muted:  #8c8279;
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { background:var(--cream); color:var(--black); font-family:var(--fb); overflow-x:hidden; }
+    a { text-decoration:none; color:inherit; }
+    img { display:block; width:100%; }
+
+    /* ── PROGRESS ── */
+    #progress {
+      position:fixed; top:0; left:0; height:2px;
+      width:0%; background:var(--brown); z-index:9999;
+    }
+
+    /* ══════════════════════════════════
+       HERO — unchanged
+    ══════════════════════════════════ */
+    .hero { height:100svh; position:relative; overflow:hidden; }
+    .hero > img { width:100%; height:100%; object-fit:cover; }
+
+    .overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,.68) 100%);
+    }
+
+    .hero-content {
+      position:absolute; bottom:52px; left:0; right:0;
+      padding:0 24px; color:#fff;
+    }
+
+    .tag {
+      font-family:var(--fl); font-size:10px;
+      letter-spacing:3px; text-transform:uppercase;
+      opacity:.75; margin-bottom:16px;
+    }
+
+    .hero h1 {
+      font-family:var(--fh); font-size:30px;
+      line-height:1.2; letter-spacing: 0.5px;
+    }
+
+    .hero p {
+      font-size:15px; line-height:1.8;
+      opacity:.85; margin-top:16px;
+    }
+
+    /* ══════════════════════════════════
+       META BAR
+    ══════════════════════════════════ */
+    .meta-bar {
+      position:sticky; top:80px; z-index:200;
+      background:var(--cream);
+      border-bottom:1px solid var(--beige2);
+    }
+
+    .meta-inner {
+      display:flex; align-items:center;
+      justify-content:space-between;
+      height:50px; padding:0 24px; gap:12px;
+    }
+
+    .meta-tags { display:flex; gap:6px; flex-shrink:0; }
+
+    .meta-chip {
+      font-family:var(--fh); font-size:9px;
+      letter-spacing:2px; text-transform:uppercase;
+      color: #4d403ad1; background:var(--beige);
+      padding:4px 12px; border-radius:100px; white-space:nowrap;
+    }
+
+    .meta-chip.hide-mob { display:none; }
+
+    .meta-right { display:flex; align-items:center; gap:16px; }
+
+    .meta-time {
+      font-family:var(--fl); font-size:9px;
+      letter-spacing:2px; text-transform:uppercase;
+      color:var(--muted); white-space:nowrap;
+    }
+
+    .meta-actions { display:flex; gap:8px; }
+
+    .icon-btn {
+      width:32px; height:32px; border-radius:50%;
+      border:1px solid var(--beige2); background:none;
+      cursor:pointer; display:flex; align-items:center; justify-content:center;
+    }
+
+    .icon-btn svg { width:13px; height:13px; stroke:var(--brown); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+
+    /* ══════════════════════════════════
+       LAYOUT SHELL — mobile = 1 col
+    ══════════════════════════════════ */
+    .shell { padding:56px 24px 100px; }
+
+    /* ── LEAD ── */
+    .lead-block {
+      padding-bottom:52px;
+      border-bottom:1px solid var(--beige2);
+      margin-bottom:60px;
+    }
+
+    .eyebrow {
+      display:flex; align-items:center; gap:12px;
+      font-family:var(--fl); font-size:9px;
+      letter-spacing:3px; text-transform:uppercase;
+      color:var(--muted); margin-bottom:20px;
+    }
+
+    .eyebrow::after { content:''; height:1px; background:var(--beige2); width:40px; flex-shrink:0; }
+
+    .lead-text {
+      font-family:var(--fh); font-size:22px;
+      line-height:1.6; color:var(--brown);
+      border-left:3px solid var(--brown);
+      padding-left:20px;
+    }
+
+    /* ── SECTIONS ── */
+    .art-section { margin-bottom:64px; }
+    .art-section:last-child { margin-bottom:0; }
+
+    .sec-label {
+      display:flex; align-items:center; gap:14px; margin-bottom:24px;
+    }
+
+    .sec-num {
+      font-family:var(--fl); font-size:9px;
+      letter-spacing:3px; text-transform:uppercase;
+      color:var(--beige2); flex-shrink:0;
+    }
+
+    .sec-rule { height:1px; background:var(--beige2); width:32px; flex-shrink:0; }
+
+    .sec-label h2 {
+      font-family:var(--fh); font-size:20px;
+      line-height:1.3; color:var(--black); letter-spacing:-.2px;
+    }
+
+    .art-section p {
+      font-family:var(--fb); font-size:16px;
+      line-height:2.05; color:var(--ink); margin-bottom:18px;
+    }
+
+    .art-section p:last-child { margin-bottom:0; }
+
+    /* Images */
+    .img-full {
+      width:100%; aspect-ratio:3/2;
+      object-fit:cover; border-radius:6px; margin:36px 0;
+    }
+
+    /* Split */
+    .split { display:flex; flex-direction:column; gap:24px; margin:36px 0; }
+
+    .split-img {
+      width:100%; aspect-ratio:4/3;
+      object-fit:cover; border-radius:6px; flex-shrink:0;
+    }
+
+    /* Comparison table */
+    .compare-wrap { margin:36px 0; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+
+    .compare {
+      width:100%; border-collapse:collapse;
+      border:1px solid var(--beige2); border-radius:8px;
+      overflow:hidden; min-width:440px;
+    }
+
+    .compare thead tr {
+      background:var(--black);
+    }
+
+    .compare thead th {
+      padding:16px 20px;
+      font-family:var(--fl); font-size:9px;
+      letter-spacing:3px; text-transform:uppercase;
+      color:rgba(249,248,245,.55);
+      text-align:left; font-weight:400;
+    }
+
+    .compare thead th:first-child { color:rgba(249,248,245,.3); }
+
+    .compare tbody tr {
+      border-bottom:1px solid var(--beige3);
+      background:var(--white);
+      transition:background .2s;
+    }
+
+    .compare tbody tr:last-child { border-bottom:none; }
+    .compare tbody tr:hover { background:var(--beige3); }
+
+    .compare td {
+      padding:14px 20px;
+      font-family:var(--fb); font-size:13.5px;
+      line-height:1.5; color:var(--ink);
+      vertical-align:top;
+    }
+
+    .compare td:first-child {
+      font-family:var(--fl); font-size:9px;
+      letter-spacing:2px; text-transform:uppercase;
+      color:var(--muted); white-space:nowrap;
+    }
+
+    .compare td .badge {
+      display:inline-block;
+      font-family:var(--fl); font-size:9px;
+      letter-spacing:1.5px; text-transform:uppercase;
+      padding:3px 10px; border-radius:100px;
+    }
+
+    .badge-formal { background:#1e1e1e; color:var(--cream); }
+    .badge-casual { background:var(--beige); color:var(--brown); }
+
+    /* Pull quote */
+    .pullquote {
+      background:var(--brown); border-radius:8px;
+      padding:40px 28px; margin:60px 0;
+      position:relative; overflow:hidden;
+    }
+
+    .pullquote::before {
+      content:'\201C';
+      position:absolute; top:-24px; left:16px;
+      font-family:var(--fhv); font-size:160px;
+      color:rgba(255,255,255,.06); line-height:1;
+      pointer-events:none;
+    }
+
+    .pullquote blockquote {
+      font-family:var(--fh); font-size:20px;
+      line-height:1.65; color:var(--cream);
+      position:relative; z-index:1;
+    }
+
+    .pullquote cite {
+      display:block; margin-top:20px;
+      font-family:var(--fl); font-size:9px;
+      letter-spacing:3px; text-transform:uppercase;
+      color:rgba(249,248,245,.38); font-style:normal;
+      position:relative; z-index:1;
+    }
+
+    /* Choice cards */
+    .choice-grid {
+      display:grid; grid-template-columns:1fr;
+      gap:14px; margin-top:28px;
+    }
+
+    .choice-card {
+      border:1px solid var(--beige2); border-radius:8px;
+      overflow:hidden; background:var(--white);
+    }
+
+    .choice-head {
+      padding:18px 22px;
+      display:flex; align-items:center; gap:14px;
+    }
+
+    .choice-icon {
+      width:36px; height:36px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      flex-shrink:0;
+    }
+
+    .choice-icon svg { width:16px; height:16px; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+
+    .choice-oxford .choice-head { background:var(--black); }
+    .choice-oxford .choice-icon { background:rgba(255,255,255,.1); }
+    .choice-oxford .choice-icon svg { stroke:rgba(249,248,245,.8); }
+    .choice-oxford .choice-title { color:var(--cream); }
+
+    .choice-derby .choice-head { background:var(--beige3); }
+    .choice-derby .choice-icon { background:var(--beige); }
+    .choice-derby .choice-icon svg { stroke:var(--brown); }
+    .choice-derby .choice-title { color:var(--brown); }
+
+    .choice-title { font-family:var(--fh); font-size:16px; letter-spacing:-.1px; }
+
+    .choice-body { padding:18px 22px; }
+
+    .choice-body ul {
+      list-style:none; display:flex; flex-direction:column; gap:10px;
+    }
+
+    .choice-body li {
+      display:flex; align-items:flex-start; gap:10px;
+      font-family:var(--fb); font-size:13.5px;
+      line-height:1.6; color:var(--ink);
+    }
+
+    .choice-body li::before {
+      content:''; width:5px; height:5px; border-radius:50%;
+      background:var(--beige2); flex-shrink:0; margin-top:7px;
+    }
+
+    /* Beige box */
+    .beige-box {
+      background:var(--beige3); border-radius:8px;
+      padding:32px 24px; margin-top:24px;
+    }
+
+    .beige-box p { margin-bottom:16px; }
+    .beige-box p:last-child { margin-bottom:0; }
+
+    /* ══════════════════════════════════
+       SIDEBAR
+    ══════════════════════════════════ */
+    .sidebar {
+      display:flex; flex-direction:column; gap:20px;
+      margin-top:60px; padding-top:60px;
+      border-top:1px solid var(--beige2);
+    }
+
+    .toc { display:none; }
+
+    .prod-card {
+      border:1px solid var(--beige2); border-radius:8px;
+      overflow:hidden; background:var(--white);
+    }
+
+    .prod-card img {
+      width:100%; height:220px; object-fit:contain; background:var(--cream);
+    }
+
+    .prod-body { padding:24px; }
+    .prod-body .eyebrow { margin-bottom:10px; }
+
+    .prod-body h3 {
+      font-family:var(--fhv); font-size:26px;
+      line-height:1.1; color:var(--brown); margin-bottom:10px;
+    }
+
+    .prod-body p {
+      font-family:var(--fb); font-size:13px;
+      line-height:1.75; color:var(--muted); margin-bottom:20px;
+    }
+
+    .cta-btn {
+      display:block; width:100%; height:48px;
+      background:var(--brown); color:var(--cream);
+      border:none; border-radius:4px; cursor:pointer;
+      font-family:var(--fl); font-size:10px;
+      letter-spacing:3px; text-transform:uppercase; transition:background .3s;
+    }
+
+    .cta-btn:hover { background:var(--black); }
+
+    /* Quick facts */
+    .quick-facts {
+      border:1px solid var(--beige2); border-radius:8px; overflow:hidden;
+    }
+
+    .qf-head {
+      padding:16px 22px; background:var(--black);
+    }
+
+    .qf-head span {
+      font-family:var(--fl); font-size:9px;
+      letter-spacing:3px; text-transform:uppercase;
+      color:rgba(249,248,245,.5);
+    }
+
+    .qf-row {
+      display:flex; align-items:flex-start;
+      justify-content:space-between; gap:12px;
+      padding:13px 20px;
+      background:var(--white);
+      border-bottom:1px solid var(--beige3);
+    }
+
+    .qf-row:last-child { border-bottom:none; }
+
+    .qf-label {
+      font-family:var(--fl); font-size:9px;
+      letter-spacing:2px; text-transform:uppercase;
+      color:var(--muted); flex-shrink:0; padding-top:2px;
+    }
+
+    .qf-val {
+      font-family:var(--fhr); font-size:13px;
+      color:var(--ink); text-align:right; line-height:1.4;
+    }
+
+    /* Style match */
+    .style-match {
+      border:1px solid var(--beige2); border-radius:8px; overflow:hidden;
+    }
+
+    .sm-head {
+      padding:16px 22px; background:var(--beige);
+      border-bottom:1px solid var(--beige2);
+    }
+
+    .sm-head span {
+      font-family:var(--fl); font-size:9px;
+      letter-spacing:3px; text-transform:uppercase; color:var(--brown);
+    }
+
+    .sm-item {
+      display:flex; align-items:center; gap:12px;
+      padding:13px 20px;
+      border-bottom:1px solid var(--beige3);
+      background:var(--white);
+    }
+
+    .sm-item:last-child { border-bottom:none; }
+
+    .sm-dot {
+      width:8px; height:8px; border-radius:50%; flex-shrink:0;
+    }
+
+    .dot-oxford { background:var(--black); }
+    .dot-derby  { background:var(--brown); }
+
+    .sm-text {
+      font-family:var(--fhr); font-size:13px; color:var(--ink); line-height:1.4;
+    }
+
+    .sm-tag {
+      margin-left:auto; flex-shrink:0;
+      font-family:var(--fl); font-size:8px;
+      letter-spacing:1.5px; text-transform:uppercase;
+      padding:3px 9px; border-radius:100px;
+    }
+
+    .sm-tag.oxford { background:var(--black); color:var(--cream); }
+    .sm-tag.derby  { background:var(--beige); color:var(--brown); }
+
+    /* ══════════════════════════════════
+       DIVIDER
+    ══════════════════════════════════ */
+    .divider { border:none; border-top:1px solid var(--beige2); }
+
+    /* ══════════════════════════════════
+       NEXT ARTICLES
+    ══════════════════════════════════ */
+    .next-section { padding:72px 24px 100px; }
+
+    .next-hdr { margin-bottom:40px; }
+    .next-hdr .eyebrow { margin-bottom:12px; }
+
+    .next-hdr h2 {
+      font-family:var(--fhv); font-size:38px;
+      line-height:1.1; color:var(--brown); letter-spacing:-.5px;
+    }
+
+    .next-hdr a {
+      display:inline-block;
+      font-family:var(--fl); font-size:9px;
+      letter-spacing:2px; text-transform:uppercase;
+      color:var(--brown); border-bottom:1px solid var(--brown);
+      padding-bottom:3px; margin-top:20px;
+    }
+
+    .cards-grid { display:grid; grid-template-columns:1fr; gap:16px; }
+
+    .art-card {
+      border:1px solid var(--beige2); border-radius:8px;
+      overflow:hidden; background:var(--white);
+      display:flex; flex-direction:column;
+      transition:transform .35s ease, box-shadow .35s ease;
+    }
+
+    .art-card:hover { transform:translateY(-6px); box-shadow:0 20px 60px rgba(77,64,58,.1); }
+
+    .card-thumb { overflow:hidden; aspect-ratio:16/10; }
+
+    .card-thumb img {
+      width:100%; height:100%;
+      object-fit:contain; background:var(--cream);
+      transition:transform .5s ease;
+    }
+
+    .art-card:hover .card-thumb img { transform:scale(1.04); }
+
+    .card-body { padding:28px 24px 24px; flex:1; display:flex; flex-direction:column; }
+
+    .card-cat {
+      font-family:var(--fl); font-size:9px;
+      letter-spacing:3px; text-transform:uppercase;
+      color:var(--muted); margin-bottom:12px;
+    }
+
+    .card-body h3 {
+      font-family:var(--fh); font-size:19px;
+      line-height:1.35; color:var(--black); margin-bottom:10px;
+    }
+
+    .card-body p {
+      font-family:var(--fb); font-size:14px;
+      line-height:1.8; color:var(--muted); flex:1; margin-bottom:24px;
+    }
+
+    .card-footer { display:flex; align-items:center; justify-content:space-between; }
+
+    .card-footer span {
+      font-family:var(--flb); font-size:9px;
+      letter-spacing:2px; text-transform:uppercase; color:var(--brown);
+    }
+
+    .arr {
+      width:36px; height:36px; border-radius:50%;
+      border:1px solid var(--beige2);
+      display:flex; align-items:center; justify-content:center;
+      flex-shrink:0; transition:.3s ease;
+    }
+
+    .art-card:hover .arr { background:var(--brown); border-color:var(--brown); }
+
+    .arr svg {
+      width:14px; height:14px; stroke:var(--brown); fill:none;
+      stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; transition:stroke .3s;
+    }
+
+    .art-card:hover .arr svg { stroke:#fff; }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity:0; transform:translateY(24px);
+      transition:opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* ══════════════════════════════════
+       TABLET  ≥ 640px
+    ══════════════════════════════════ */
+    @media (min-width:640px) {
+      .hero-content { bottom:72px; padding:0 40px; }
+      .hero h1 { font-size:52px; }
+      .hero p { font-size:16px; }
+      .meta-inner { padding:0 40px; }
+      .meta-chip.hide-mob { display:inline-block; }
+      .shell { padding:72px 40px 110px; }
+      .lead-text { font-size:26px; }
+      .pullquote { padding:52px 44px; }
+      .pullquote blockquote { font-size:24px; }
+      .pullquote::before { font-size:200px; }
+      .choice-grid { grid-template-columns:1fr 1fr; }
+      .next-section { padding:80px 40px 110px; }
+      .next-hdr h2 { font-size:48px; }
+      .cards-grid { grid-template-columns:1fr 1fr; gap:18px; }
+    }
+
+    /* ══════════════════════════════════
+       DESKTOP  ≥ 1024px
+    ══════════════════════════════════ */
+    @media (min-width:1024px) {
+      .hero-content { bottom:50px; left:52%; right:auto; transform:translateX(-50%); width:92%; max-width:1320px; padding:0; }
+      .hero h1 { font-size:50px !important; max-width:860px; }
+      .hero p { font-size:17px; max-width:540px; }
+
+      .meta-inner { padding:0; width:92%; max-width:1320px; margin:0 auto; }
+
+      .shell {
+        width:92%; max-width:1320px; margin:0 auto;
+        padding:100px 0 140px;
+        display:grid;
+        grid-template-columns:1fr 300px;
+        gap:80px; align-items:start;
+      }
+
+      .content { min-width:0; }
+
+      .sidebar {
+        position:sticky; top:70px;
+        margin-top:0; padding-top:0; border-top:none;
+      }
+
+      .toc {
+        display:block;
+        border:1px solid var(--beige2); border-radius:8px; overflow:hidden;
+        margin-bottom:20px;
+      }
+
+      .toc-head {
+        padding:16px 22px; background:var(--beige);
+        border-bottom:1px solid var(--beige2);
+      }
+
+      .toc-head span {
+        font-family:var(--fl); font-size:9px;
+        letter-spacing:3px; text-transform:uppercase; color:var(--brown);
+      }
+
+      .toc-item {
+        display:flex; align-items:flex-start; gap:12px;
+        padding:12px 22px;
+        border-left:2px solid transparent;
+        cursor:pointer; transition:.2s;
+      }
+
+      .toc-item:hover { background:var(--beige3); }
+      .toc-item.active { background:var(--beige3); border-left-color:var(--brown); }
+
+      .toc-n {
+        font-family:var(--fl); font-size:9px;
+        letter-spacing:2px; text-transform:uppercase;
+        color:var(--beige2); flex-shrink:0; padding-top:2px;
+      }
+
+      .toc-item.active .toc-n { color:var(--brown); }
+
+      .toc-label {
+        font-family:var(--fhr); font-size:13px;
+        color:var(--muted); line-height:1.4; transition:color .2s;
+      }
+
+      .toc-item:hover .toc-label,
+      .toc-item.active .toc-label { color:var(--brown); }
+
+      .lead-block { padding-bottom:64px; margin-bottom:72px; }
+      .lead-text { font-size:30px; }
+      .art-section { margin-bottom:80px; }
+      .sec-label h2 { font-size:24px; }
+      .art-section p { font-size:17px; }
+
+      .split { flex-direction:row; gap:36px; align-items:center; }
+      .split-img { width:48%; aspect-ratio:unset; height:380px; }
+
+      .img-full { aspect-ratio:unset; height:480px; }
+
+      .pullquote { padding:64px 68px; }
+      .pullquote blockquote { font-size:28px; }
+      .pullquote::before { font-size:240px; top:-44px; left:28px; }
+
+      .beige-box { padding:44px; }
+
+      .next-section { padding:100px 0 130px; }
+      .next-inner { width:92%; max-width:1320px; margin:0 auto; }
+      .next-hdr {
+        display:flex; align-items:flex-end;
+        justify-content:space-between; margin-bottom:52px;
+      }
+      .next-hdr .eyebrow { margin-bottom:14px; }
+      .next-hdr h2 { font-size:60px; }
+      .next-hdr a { margin-top:0; padding-bottom:14px; }
+      .cards-grid { gap:20px; }
+      .card-thumb { aspect-ratio:unset; height:300px; }
+    }
+
+    @media (min-width:1280px) {
+      .hero h1 { font-size:76px; }
+      .lead-text { font-size:34px; }
+      .sec-label h2 { font-size:26px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="progress"></div>
+  <div class="list-cartfetch"></div>
+
+  <!-- ══════════════════════════════════════════
+       HERO — unchanged
+  ══════════════════════════════════════════ -->
+  <section class="hero">
+    <img src="../file3/5.png" alt="Derby and Oxford shoes side by side">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <p class="tag">Footwear Guide . Vonaldo Journal</p>
+      <h1>Derby vs Oxford Shoes  What Is The Real Difference</h1>
+      <p>Discover the key differences between Derby and Oxford shoes and learn which timeless silhouette works best for formal, smart casual, and modern luxury styling.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       META BAR
+  ══════════════════════════════════════════ -->
+  <nav class="meta-bar">
+    <div class="meta-inner">
+      <div class="meta-tags">
+        <span class="meta-chip">Style Guide</span>
+        <span class="meta-chip hide-mob">Footwear</span>
+      </div>
+      <div class="meta-right">
+        <span class="meta-time">5 min read</span>
+        <div class="meta-actions">
+          <button class="icon-btn" aria-label="Share">
+            <svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+          </button>
+          <button class="icon-btn" aria-label="Save">
+            <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       SHELL
+  ══════════════════════════════════════════ -->
+  <div class="shell">
+
+    <!-- ═══ CONTENT ═══ -->
+    <main class="content">
+
+      <!-- Lead -->
+      <div class="lead-block reveal" id="s0">
+        <p class="eyebrow">The Fundamentals</p>
+        <p class="lead-text">
+          Two icons One subtle difference in construction and a world apart in what they say about you and how you wear them.
+        </p>
+      </div>
+
+      <!-- §01 Understanding -->
+      <div class="art-section reveal" id="s1">
+        <div class="sec-label">
+          <span class="sec-num">01</span>
+          <div class="sec-rule"></div>
+          <h2>Understanding Both Styles</h2>
+        </div>
+
+        <p>Derby and Oxford shoes are two of the most iconic styles in classic menswear. While they may appear similar at first glance, their construction creates a completely different aesthetic and fit.</p>
+        <p>The defining distinction lies in how the lacing is attached to the shoe. Oxford shoes use a closed-lacing system  the quarters are stitched underneath the vamp while Derby shoes feature an open lacing construction where the eyelets sit on top, allowing more flexibility.</p>
+
+        <img src="../file/5.webp" alt="Premium leather Oxford shoe craftsmanship detail" class="img-full" style="object-fit:contain; background:var(--cream);">
+
+        <!-- Comparison table -->
+        <div class="compare-wrap">
+          <table class="compare">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Oxford</th>
+                <th>Derby</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Lacing</td>
+                <td>Closed (stitched under)</td>
+                <td>Open (eyelet on top)</td>
+              </tr>
+              <tr>
+                <td>Formality</td>
+                <td><span class="badge badge-formal">Black Tie</span></td>
+                <td><span class="badge badge-casual">Smart Casual</span></td>
+              </tr>
+              <tr>
+                <td>Fit</td>
+                <td>Structured &amp; precise</td>
+                <td>Relaxed &amp; adaptable</td>
+              </tr>
+              <tr>
+                <td>Best for</td>
+                <td>Suits, black tie, tailoring</td>
+                <td>Tailoring, denim, knitwear</td>
+              </tr>
+              <tr>
+                <td>Versatility</td>
+                <td>Formal occasions</td>
+                <td>All-day, any occasion</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- §02 Oxford -->
+      <div class="art-section reveal" id="s2">
+        <div class="sec-label">
+          <span class="sec-num">02</span>
+          <div class="sec-rule"></div>
+          <h2>Why Oxford Shoes Feel More Formal</h2>
+        </div>
+
+        <div class="split">
+          <img src="../file3/2.png" alt="Classic Oxford shoe silhouette" class="split-img" style="object-fit:contain; background:var(--cream);">
+          <div class="split-copy">
+            <p>Oxford shoes create a cleaner, sharper silhouette, making them ideal for black tie events, weddings, and elegantly tailored outfits. Their closed lacing gives the shoe a smooth, uninterrupted line from toe to collar.</p>
+            <p>The minimal, disciplined construction has remained timeless for decades inside classic menswear culture, defining what it means to dress with true intention.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pull quote -->
+      <div class="pullquote reveal">
+        <blockquote>Oxford shoes represent timeless elegance — Derby shoes deliver modern versatility and effortless everyday confidence.</blockquote>
+        <cite>Vonaldo Journal . Style Guide</cite>
+      </div>
+
+      <!-- §03 Derby -->
+      <div class="art-section reveal" id="s3">
+        <div class="sec-label">
+          <span class="sec-num">03</span>
+          <div class="sec-rule"></div>
+          <h2>Why Derby Shoes Are More Versatile</h2>
+        </div>
+
+        <p>Derby shoes adapt effortlessly to both formal and smart casual looks. They pair naturally with tailored trousers, denim, knitwear, and relaxed luxury essentials without losing their refined character.</p>
+        <p>Their open-lacing construction also provides additional comfort and ease of wear, making them one of the best everyday luxury footwear choices for the modern wardrobe that moves between occasions.</p>
+
+        <div class="choice-grid">
+          <div class="choice-card choice-oxford">
+            <div class="choice-head">
+              <div class="choice-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <span class="choice-title">Oxford</span>
+            </div>
+            <div class="choice-body">
+              <ul>
+                <li>Black tie &amp; formal events</li>
+                <li>Bespoke and tailored suits</li>
+                <li>Weddings and ceremonies</li>
+                <li>Business formal settings</li>
+              </ul>
+            </div>
+          </div>
+          <div class="choice-card choice-derby">
+            <div class="choice-head">
+              <div class="choice-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              </div>
+              <span class="choice-title">Derby</span>
+            </div>
+            <div class="choice-body">
+              <ul>
+                <li>Smart casual daily wear</li>
+                <li>Tailored trousers &amp; denim</li>
+                <li>Business casual settings</li>
+                <li>Weekend luxury styling</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- §04 Which to choose -->
+      <div class="art-section reveal" id="s4">
+        <div class="sec-label">
+          <span class="sec-num">04</span>
+          <div class="sec-rule"></div>
+          <h2>Which One Should You Choose</h2>
+        </div>
+
+        <div class="beige-box">
+          <p>If your wardrobe focuses heavily on tailoring and formalwear, Oxford shoes deliver unmatched sophistication and precision that no other shoe can replicate.</p>
+          <p>However, if you need a versatile shoe that transitions effortlessly between occasions — from the office to a dinner to a weekend in the city — Derby shoes are often the smarter, more considered investment.</p>
+          <p>Both silhouettes remain timeless essentials in luxury menswear and continue to define the old money aesthetic through premium leather, clean design, and understated confidence.</p>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ═══ SIDEBAR ═══ -->
+    <aside class="sidebar">
+
+      <!-- TOC — desktop only -->
+      <div class="toc">
+        <div class="toc-head"><span>In This Article</span></div>
+        <div class="toc-list">
+          <div class="toc-item active" data-sec="s1">
+            <span class="toc-n">01</span>
+            <span class="toc-label">Understanding Both Styles</span>
+          </div>
+          <div class="toc-item" data-sec="s2">
+            <span class="toc-n">02</span>
+            <span class="toc-label">Why Oxford Feels More Formal</span>
+          </div>
+          <div class="toc-item" data-sec="s3">
+            <span class="toc-n">03</span>
+            <span class="toc-label">Why Derby Is More Versatile</span>
+          </div>
+          <div class="toc-item" data-sec="s4">
+            <span class="toc-n">04</span>
+            <span class="toc-label">Which Should You Choose</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product -->
+      <div class="prod-card reveal">
+        <img src="../file/5.webp" alt="Torino Heritage Derby shoe">
+        <div class="prod-body">
+          <p class="eyebrow">Featured Product</p>
+          <h3>Torino Heritage Derby</h3>
+          <p>Crafted from premium Italian leather with an ultra-light sole and timeless Derby construction.</p>
+          <button class="cta-btn">Explore Product</button>
+        </div>
+      </div>
+
+      <!-- Quick facts -->
+      <div class="quick-facts reveal">
+        <div class="qf-head"><span>At a Glance</span></div>
+        <div class="qf-row">
+          <span class="qf-label">Origin</span>
+          <span class="qf-val">Oxford — 1800s formal<br>Derby — 1850s military</span>
+        </div>
+        <div class="qf-row">
+          <span class="qf-label">Lacing</span>
+          <span class="qf-val">Oxford closed<br>Derby open</span>
+        </div>
+        <div class="qf-row">
+          <span class="qf-label">Best Fit</span>
+          <span class="qf-val">Derby fits wider feet more comfortably</span>
+        </div>
+        <div class="qf-row">
+          <span class="qf-label">Occasions</span>
+          <span class="qf-val">Oxford for formal<br>Derby for anything</span>
+        </div>
+      </div>
+
+      <!-- Style match -->
+      <div class="style-match reveal">
+        <div class="sm-head"><span>Style Match</span></div>
+        <div class="sm-item">
+          <div class="sm-dot dot-oxford"></div>
+          <span class="sm-text">Black tie suit</span>
+          <span class="sm-tag oxford">Oxford</span>
+        </div>
+        <div class="sm-item">
+          <div class="sm-dot dot-derby"></div>
+          <span class="sm-text">Smart chinos</span>
+          <span class="sm-tag derby">Derby</span>
+        </div>
+        <div class="sm-item">
+          <div class="sm-dot dot-oxford"></div>
+          <span class="sm-text">Wedding morning suit</span>
+          <span class="sm-tag oxford">Oxford</span>
+        </div>
+        <div class="sm-item">
+          <div class="sm-dot dot-derby"></div>
+          <span class="sm-text">Dark denim &amp; blazer</span>
+          <span class="sm-tag derby">Derby</span>
+        </div>
+        <div class="sm-item">
+          <div class="sm-dot dot-derby"></div>
+          <span class="sm-text">Business casual</span>
+          <span class="sm-tag derby">Derby</span>
+        </div>
+        <div class="sm-item">
+          <div class="sm-dot dot-oxford"></div>
+          <span class="sm-text">Bespoke tailoring</span>
+          <span class="sm-tag oxford">Oxford</span>
+        </div>
+      </div>
+
+    </aside>
+
+  </div><!-- /shell -->
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════
+       NEXT ARTICLES
+  ══════════════════════════════════════════ -->
+  <section class="next-section">
+    <div class="next-inner">
+
+      <div class="next-hdr reveal">
+        <div>
+          <p class="eyebrow">Continue Reading</p>
+          <h2>More From<br>The Journal</h2>
+        </div>
+        <a href="#">View All Articles</a>
+      </div>
+
+      <div class="cards-grid">
+
+        <a href="How-To-Care-For-Leather-Shoes.html" class="art-card reveal">
+          <div class="card-thumb">
+            <img src="../imgs/2a8d5ba12cd4d0efa0176aa7c7c770a3.jpg" style="object-fit: cover;" alt="How to care for leather shoes">
+          </div>
+          <div class="card-body">
+            <p class="card-cat">Leather Care</p>
+            <h3>How To Care For Leather Shoes</h3>
+            <p>Learn the essential steps to protect premium leather and preserve timeless elegance for decades of wear.</p>
+            <div class="card-footer">
+              <span>Read Article</span>
+              <div class="arr">
+                <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="how-to-style-derby-shoes.html" class="art-card reveal">
+          <div class="card-thumb">
+            <img src="../file/7.webp" alt="How to style Derby shoes">
+          </div>
+          <div class="card-body">
+            <p class="card-cat">Style Guide</p>
+            <h3>How To Style Derby Shoes</h3>
+            <p>Discover effortless ways to style Derby shoes with smart casual and old money outfits for any season.</p>
+            <div class="card-footer">
+              <span>Read Article</span>
+              <div class="arr">
+                <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER — unchanged
+  ══════════════════════════════════════════ -->
+  <div class="footer">
+    <div class="foot-sec-1">
+      <div class="tit-onefoot">
+        <h1>GET IN TOUCH WITH VONALDO</h1>
+        <h2>Contact us, and our team will be happy to answer all your questions</h2>
+      </div>
+      <div class="tit-twofoot">
+        <span>CREATE YOUR</span><span>OWN UNIQUE</span><span>LOOK</span>
+      </div>
+    </div>
+    <div class="foot-sec-2">
+      <div class="sec-1-foot">
+        <div class="lounge">
+          <div class="title-loung"><h2>LINOGE</h2></div>
+          <div class="body-lounge"><h3>Terms &amp; Conditions</h3><h3>Privacy Policy</h3></div>
+        </div>
+      </div>
+      <div class="sec-2-foot">
+        <div class="nav-inf">
+          <div class="nave">
+            <div class="nave-title"><h2>NAVIGATION</h2></div>
+            <div class="body-nav"><h3>HOME</h3><h3>MEN</h3><h3>LOCK BOOK</h3><h3>ABOUT</h3></div>
+          </div>
+          <div class="info">
+            <div class="info-title"><h2>INFO</h2></div>
+            <div class="info-body"><h3>ACOUNT</h3><h3>HELP CENTER</h3><h3>SHIPPING &amp; RETURNS</h3><h3>COUNTACTS</h3></div>
+          </div>
+        </div>
+        <div class="newrgs">
+          <div class="new-title"><h2>NEWSLETTER</h2></div>
+          <div class="new-body">
+            <form class="newsletter-form">
+              <input type="email" id="emailInput" placeholder="EMAIL" required/>
+              <button type="button" onclick="document.getElementById('emailInput').value=''">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="footer-new">
+            <img src="../icons/apple-pay.webp" alt="Apple Pay"/>
+            <img src="../icons/google-pay.webp" alt="Google Pay"/>
+            <img src="../icons/symbols (1).webp" alt=""/>
+            <img src="../icons/money.webp" alt=""/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot-sec3">
+      <div class="foot-lounge"><h3>© 2026 vonaldo All right reserved</h3></div>
+    </div>
+  </div>
+
+  <script src="../blogs.js" type="module"></script>
+
+  <script>
+    /* Progress */
+    window.addEventListener('scroll', () => {
+      const d = document.documentElement;
+      document.getElementById('progress').style.width =
+        (d.scrollTop / (d.scrollHeight - d.clientHeight) * 100) + '%';
+    }, { passive:true });
+
+    /* Reveal */
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+    }, { threshold:0.08 });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+    /* TOC active */
+    const secs = ['s1','s2','s3','s4'].map(id => document.getElementById(id)).filter(Boolean);
+    const tocItems = document.querySelectorAll('.toc-item[data-sec]');
+
+    if (secs.length && tocItems.length) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            tocItems.forEach(t => t.classList.remove('active'));
+            const a = document.querySelector(`.toc-item[data-sec="${e.target.id}"]`);
+            if (a) a.classList.add('active');
+          }
+        });
+      }, { rootMargin:'-15% 0px -70% 0px' });
+      secs.forEach(s => io.observe(s));
+    }
+
+    /* TOC click */
+    tocItems.forEach(el => {
+      el.addEventListener('click', () => {
+        const t = document.getElementById(el.dataset.sec);
+        if (t) t.scrollIntoView({ behavior:'smooth', block:'start' });
+      });
+    });
+  </script>
+
+</body>
+</html>

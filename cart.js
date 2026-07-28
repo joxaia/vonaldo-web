@@ -22,19 +22,40 @@ const carte = () => {
     });
   }
 
+
+
   /* ================= ELEMENTS ================= */
   const cartlist = document.querySelector(".cart");
   const carticons = document.querySelector(".cart-icons");
   const cartclose = document.getElementById("closecart");
   const menulist = document.querySelector(".menu-list");
   const menuopen = document.querySelector(".menu");
-  const closemenu = document.getElementById("closemenu");
+  const closemenu = document.querySelector(".close-men");
   const home = document.querySelector(".logo");
   const checkoutBtn = document.querySelector(".checkout-cart");
+  let count = document.querySelector(".count")
+  let collection = document.querySelector(".colection")
+  let homepage = document.querySelector(".home")
+  let manpage = document.querySelector(".manufac")
+  let contshop = document.getElementById("to")
+
+  contshop.addEventListener("click",()=>{
+    cartlist.classList.remove("active")
+  })
+  manpage.addEventListener("click",()=>{
+    window.location.href = `./Manufacture.html`
+  })
+  homepage.addEventListener("click",()=>{
+    window.location.href = `../index.html`
+  })
+
+  collection.addEventListener("click",()=>{
+    window.location.href = `./collection.html`
+  })
 
   /* ================= NAV ================= */
   home.addEventListener("click", () => {
-    window.location.href = "./index.html";
+    window.location.href = "../index.html";
   });
 
   carticons.addEventListener("click", () => {
@@ -77,6 +98,7 @@ const carte = () => {
     const listhtml = document.querySelector(".list");
     const quantityhtml = document.querySelector(".counter");
     const pricehtml = document.querySelector(".totalprice");
+    const pricehtml2 = document.querySelector(".totalprice2");
 
     let totalquantity = 0;
     let totalprice = 0;
@@ -106,13 +128,14 @@ const carte = () => {
           <img src="${variant.imgs[0]}" alt="Vonaldo Italian Shoes">
         </div>
         <div class="detailscart">
-          <p>size: ${size.size}</p>
-          <p>color: ${variant.color}</p>
-          <p>price: ${info.price}$</p>
+          <p class="namecard">${info.name}</p>
+          <p class="colorcard">${variant.color}</p>
+          <p class="sizecard">Size : ${size.size}</p>
+          <p class="pricecard">$${info.price}</p>
         </div>
         <div class="more-det">
-          <span class="material-symbols-outlined removeprocart" data-id="${size.id}">
-            close_small
+          <span class="removeprocart" data-id="${size.id}">
+            remove
           </span>
           <div class="quantitybox">
             <span class="minus" data-id="${size.id}">−</span>
@@ -122,11 +145,21 @@ const carte = () => {
         </div>
       `;
 
+
       listhtml.appendChild(card);
     });
 
     quantityhtml.textContent = totalquantity;
-    pricehtml.textContent = totalprice + "$";
+    pricehtml.textContent = "$"+totalprice ;
+    pricehtml2.textContent = "$"+totalprice ;
+let hed = document.querySelector(".empty")
+    if (totalquantity === 0) {
+  cartlist.classList.add("hidden-ui");
+  hed.classList.remove("headen")
+} else {
+  cartlist.classList.remove("hidden-ui");
+  hed.classList.add("headen")
+}
   };
 
   /* ================= EVENTS ================= */
@@ -174,6 +207,25 @@ const carte = () => {
   refresh();
 
   /* ================= CHECKOUT ================= */
+
+  const showCheckoutError = (message) => {
+    const wrapper = document.querySelector(".btns-cartlist");
+    let errorEl = wrapper.querySelector(".checkout-error");
+
+    if (!errorEl) {
+      errorEl = document.createElement("p");
+      errorEl.className = "checkout-error";
+      wrapper.appendChild(errorEl);
+    }
+
+    errorEl.textContent = message;
+  };
+
+  const clearCheckoutError = () => {
+    const errorEl = document.querySelector(".btns-cartlist .checkout-error");
+    if (errorEl) errorEl.remove();
+  };
+
   async function createCheckout() {
     const lineItems = cart.map((item) => ({
       merchandiseId: `gid://shopify/ProductVariant/${item.proudct_id}`,
@@ -181,19 +233,20 @@ const carte = () => {
     }));
 
     const res = await fetch(
-      "https://k6nv4p-xx.myshopify.com/api/2024-07/graphql.json",
+      "https://vonaldo-4.myshopify.com/api/2024-07/graphql.json",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "X-Shopify-Storefront-Access-Token":
-            "d2dddf0bfa85314f4768291633b95095",
+            "025f253ecdd5a53b1df7c87cef056c00",
         },
         body: JSON.stringify({
           query: `
             mutation cartCreate($input: CartInput!) {
               cartCreate(input: $input) {
                 cart { checkoutUrl }
+                userErrors { field message }
               }
             }
           `,
@@ -202,25 +255,69 @@ const carte = () => {
       }
     );
 
+    if (!res.ok) {
+      throw new Error(`Shopify request failed with status ${res.status}`);
+    }
+
     const result = await res.json();
-    return result.data.cartCreate.cart.checkoutUrl;
+
+    if (result.errors && result.errors.length > 0) {
+      throw new Error(result.errors.map((e) => e.message).join(", "));
+    }
+
+    const payload = result.data && result.data.cartCreate;
+
+    if (!payload) {
+      throw new Error("No cartCreate data returned from Shopify");
+    }
+
+    if (payload.userErrors && payload.userErrors.length > 0) {
+      throw new Error(payload.userErrors.map((e) => e.message).join(", "));
+    }
+
+    if (!payload.cart || !payload.cart.checkoutUrl) {
+      throw new Error("Shopify did not return a checkout URL");
+    }
+
+    return payload.cart.checkoutUrl;
   }
 
-  checkoutBtn.addEventListener("click", async () => {
-    checkoutBtn.classList.add("loading");
-    checkoutBtn.disabled = true;
+checkoutBtn?.addEventListener("click", async () => {
+  clearCheckoutError();
+  checkoutBtn.classList.add("loading");
+  checkoutBtn.disabled = true;
 
-    try {
-      const url = await createCheckout();
-      setTimeout(() => {
-        window.location.href = url;
-      }, 300);
-    } catch (e) {
-      checkoutBtn.classList.remove("loading");
-      checkoutBtn.disabled = false;
-      console.error(e);
+  try {
+
+    if (typeof window.fbq !== "undefined") {
+      fbq("track", "InitiateCheckout", {
+        num_items: cart.reduce((sum, item) => sum + item.quantity, 0),
+        value: cart.reduce((sum, item) => {
+          const prod = proudct.find((p) =>
+            p.colors.some((c) =>
+              c.sizes.some((s) => s.id === item.proudct_id)
+            )
+          );
+
+          return sum + (prod ? prod.price * item.quantity : 0);
+        }, 0),
+        currency: "USD",
+      });
     }
-  });
-};
+
+    const url = await createCheckout();
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 300);
+
+  } catch (e) {
+    checkoutBtn.classList.remove("loading");
+    checkoutBtn.disabled = false;
+    showCheckoutError("Couldn't start checkout. Please try again.");
+    console.error(e);
+  }
+});
+}
 
 export default carte;

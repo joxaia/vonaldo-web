@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms & Conditions | Vonaldo</title>
+  <meta name="description" content="Read Vonaldo's Terms and Conditions. Understand your rights and responsibilities when shopping our premium Italian leather footwear collection."/>
+  <meta name="robots" content="noindex, follow"/>
+  <link rel="canonical" href="https://vonaldo.com/terms-and-conditions"/>
+  <link rel="icon" href="./icons/vo.webp" type="image/webp"/>
+  <link rel="stylesheet" href="./main.css"/>
+
+  <style>
+    @font-face {
+      font-family: "headreg";
+      src: url("./fonts/geist-v4-latin-regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "headbold";
+      src: url("./fonts/geist-v4-latin-700.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "headvery";
+      src: url("./fonts/geist-v4-latin-900.woff2") format("woff2");
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "klaptbold";
+      src: url("./fonts/Klapt-Bold.woff2") format("woff2");
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "kalptmed";
+      src: url("./fonts/Klapt-Medium.woff2") format("woff2");
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "klaptreg";
+      src: url("./fonts/Klapt-Regular.woff2") format("woff2");
+      font-display: swap;
+    }
+
+    :root {
+      --black-color: #262626;
+      --brown-color: #4d403a;
+      --biege-color: #dedacf;
+      --white-color: #f9f8f5;
+
+      --biege-light: #f0ede6;
+      --biege-mid:   #cdc4b5;
+      --rule:        #e5e0d6;
+      --gold:        #b8965a;
+
+      --head:      "headreg",  serif;
+      --headbold:  "headbold", serif;
+      --headvery:  "headvery", serif;
+      --klapt:     "klaptreg",  sans-serif;
+      --klaptmed:  "kalptmed",  sans-serif;
+      --klaptbold: "klaptbold", sans-serif;
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white-color);
+      color: var(--black-color);
+      font-family: var(--head);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { width: 100%; display: block; }
+
+    .container {
+      width: 92%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* ── PROGRESS ── */
+    #progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--brown-color));
+      z-index: 9999;
+      transition: width .1s linear;
+    }
+
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--black-color);
+      padding: 160px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: 'T&C';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--headvery);
+      font-size: clamp(160px, 22vw, 320px);
+      color: rgba(255,255,255,.03);
+      line-height: 1;
+      pointer-events: none;
+      letter-spacing: -10px;
+      white-space: nowrap;
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--klaptmed);
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+    }
+
+    .hero__tag::before {
+      content: '';
+      width: 32px; height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: var(--headbold);
+      font-size: clamp(44px, 6vw, 88px);
+      line-height: 1.0;
+      color: var(--white-color);
+      letter-spacing: -1.5px;
+      max-width: 700px;
+    }
+
+    .hero h1 span {
+      color: var(--biege-color);
+      display: block;
+    }
+
+    .hero__meta {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+
+    .hero__meta-label {
+      font-family: var(--klaptmed);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.3);
+      margin-bottom: 6px;
+    }
+
+    .hero__meta-value {
+      font-family: var(--head);
+      font-size: 14px;
+      color: rgba(255,255,255,.65);
+    }
+
+    .hero__divider {
+      width: 1px; height: 36px;
+      background: rgba(255,255,255,.12);
+    }
+
+    /* ── LAYOUT ── */
+    .page {
+      padding: 100px 0 140px;
+    }
+
+    .page__inner {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR NAV ── */
+    .sidenav {
+      position: sticky;
+      top: 100px;
+    }
+
+    .sidenav__label {
+      font-family: var(--klaptmed);
+      font-size: 10px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .sidenav__list {
+      list-style: none;
+      border-left: 1px solid var(--rule);
+    }
+
+    .sidenav__list li a {
+      display: block;
+      padding: 10px 0 10px 20px;
+      font-size: 13px;
+      color: var(--brown-color);
+      font-family: var(--head);
+      border-left: 2px solid transparent;
+      margin-left: -1px;
+      transition: color .2s, border-color .2s, padding-left .2s;
+      line-height: 1.5;
+    }
+
+    .sidenav__list li a:hover,
+    .sidenav__list li a.active {
+      color: var(--black-color);
+      border-left-color: var(--gold);
+      padding-left: 24px;
+    }
+
+    .sidenav__contact {
+      margin-top: 36px;
+      padding: 24px;
+      background: var(--biege-light);
+      border-radius: 4px;
+    }
+
+    .sidenav__contact p {
+      font-size: 13px;
+      color: var(--brown-color);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .sidenav__contact a {
+      font-family: var(--klaptmed);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black-color);
+      border-bottom: 1px solid var(--biege-mid);
+      padding-bottom: 2px;
+      transition: border-color .2s, color .2s;
+    }
+
+    .sidenav__contact a:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* ── CONTENT ── */
+    .terms { max-width: 780px; }
+
+    .terms__intro {
+      font-size: 18px;
+      line-height: 1.9;
+      color: var(--brown-color);
+      padding-bottom: 56px;
+      margin-bottom: 72px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .terms__section {
+      margin-bottom: 72px;
+      scroll-margin-top: 100px;
+    }
+
+    .terms__section-num {
+      font-family: var(--klaptmed);
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .terms__section h2 {
+      font-family: var(--headbold);
+      font-size: clamp(24px, 2.8vw, 34px);
+      color: var(--black-color);
+      margin-bottom: 24px;
+      letter-spacing: -.3px;
+      line-height: 1.15;
+    }
+
+    .terms__section p {
+      font-size: 16px;
+      line-height: 1.95;
+      color: #5c504a;
+      margin-bottom: 20px;
+    }
+
+    .terms__section ul,
+    .terms__section ol {
+      margin: 20px 0 20px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .terms__section ul li,
+    .terms__section ol li {
+      font-size: 16px;
+      line-height: 1.85;
+      color: #5c504a;
+      padding: 10px 0 10px 28px;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+    }
+
+    .terms__section ul li:last-child,
+    .terms__section ol li:last-child { border-bottom: none; }
+
+    .terms__section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 20px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--biege-mid);
+    }
+
+    .terms__section ol {
+      counter-reset: items;
+    }
+
+    .terms__section ol li {
+      counter-increment: items;
+    }
+
+    .terms__section ol li::before {
+      content: counter(items, decimal-leading-zero);
+      position: absolute;
+      left: 0; top: 10px;
+      font-family: var(--klaptmed);
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--gold);
+    }
+
+    /* HIGHLIGHT BOX */
+    .terms__note {
+      background: var(--biege-light);
+      border-left: 3px solid var(--gold);
+      padding: 28px 32px;
+      border-radius: 0 4px 4px 0;
+      margin: 32px 0;
+    }
+
+    .terms__note p {
+      font-size: 15px;
+      color: var(--brown-color);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .terms__note strong {
+      font-family: var(--headbold);
+      color: var(--black-color);
+    }
+
+    /* DIVIDER */
+    .terms__rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 72px 0;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--black-color);
+      color: var(--white-color);
+      padding: 90px 0 0;
+    }
+
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 60px;
+      padding-bottom: 70px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .footer__brand-name {
+      font-family: var(--headbold);
+      font-size: 28px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .footer__brand p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: rgba(255,255,255,.4);
+      max-width: 260px;
+    }
+
+    .footer__col-title {
+      font-family: var(--klaptmed);
+      font-size: 10px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .footer__col a {
+      display: block;
+      font-size: 14px;
+      color: rgba(255,255,255,.45);
+      margin-bottom: 13px;
+      transition: color .2s;
+      font-family: var(--head);
+    }
+
+    .footer__col a:hover { color: white; }
+
+    .footer__newsletter-form {
+      display: flex;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .footer__newsletter-form input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 14px 16px;
+      color: white;
+      font-family: var(--head);
+      font-size: 13px;
+      outline: none;
+    }
+
+    .footer__newsletter-form input::placeholder { color: rgba(255,255,255,.25); }
+
+    .footer__newsletter-form button {
+      background: var(--gold);
+      border: none;
+      padding: 0 18px;
+      cursor: pointer;
+      color: white;
+      transition: background .2s;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer__newsletter-form button:hover { background: var(--brown-color); }
+
+    .footer__newsletter-form button svg { width:16px; height:16px; }
+
+    .footer__payments {
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .footer__payments img {
+      width: 40px;
+      height: auto;
+      opacity: .5;
+      filter: brightness(0) invert(1);
+      transition: opacity .2s;
+    }
+
+    .footer__payments img:hover { opacity: 1; }
+
+    .footer__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 26px 0;
+      gap: 20px;
+    }
+
+    .footer__copy {
+      font-family: var(--klapt);
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,.22);
+    }
+
+    .footer__links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .footer__links a {
+      font-family: var(--klapt);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.28);
+      transition: color .2s;
+    }
+
+    .footer__links a:hover { color: rgba(255,255,255,.7); }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .page__inner { grid-template-columns: 1fr; }
+      .sidenav { position: relative; top: 0; display: none; }
+      .footer__top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding: 130px 0 80px; }
+      .hero__meta { flex-wrap: wrap; gap: 20px; }
+      .footer__top { grid-template-columns: 1fr; }
+      .footer__bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress"></div>
+  <div class="list-cartfetch"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__tag">Legal Document</div>
+        <h1>
+          Terms &
+          <span>Conditions</span>
+        </h1>
+        <div class="hero__meta">
+          <div class="hero__meta-item">
+            <div class="hero__meta-label">Last Updated</div>
+            <div class="hero__meta-value">January 1, 2026</div>
+          </div>
+          <div class="hero__divider"></div>
+          <div class="hero__meta-item">
+            <div class="hero__meta-label">Effective Date</div>
+            <div class="hero__meta-value">January 1, 2026</div>
+          </div>
+          <div class="hero__divider"></div>
+          <div class="hero__meta-item">
+            <div class="hero__meta-label">Jurisdiction</div>
+            <div class="hero__meta-value">International</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE -->
+  <section class="page">
+    <div class="container">
+      <div class="page__inner">
+
+        <!-- SIDEBAR -->
+        <nav class="sidenav">
+          <span class="sidenav__label">Contents</span>
+          <ul class="sidenav__list">
+            <li><a href="#s1">Acceptance of Terms</a></li>
+            <li><a href="#s2">Use of the Website</a></li>
+            <li><a href="#s3">Products & Pricing</a></li>
+            <li><a href="#s4">Orders & Payment</a></li>
+            <li><a href="#s5">Shipping & Delivery</a></li>
+            <li><a href="#s6">Returns & Refunds</a></li>
+            <li><a href="#s7">Intellectual Property</a></li>
+            <li><a href="#s8">Privacy & Data</a></li>
+            <li><a href="#s9">Limitation of Liability</a></li>
+            <li><a href="#s10">Governing Law</a></li>
+            <li><a href="#s11">Contact Us</a></li>
+          </ul>
+          <div class="sidenav__contact">
+            <p>Questions about these terms?</p>
+            <a href="mailto:support@vonaldo.com">support@vonaldo.com</a>
+          </div>
+        </nav>
+
+        <!-- TERMS CONTENT -->
+        <div class="terms">
+
+          <p class="terms__intro reveal">
+            Welcome to Vonaldo. By accessing or using our website and purchasing our products, you agree to be bound by the following Terms and Conditions. Please read them carefully before proceeding with any purchase or use of our services.
+          </p>
+
+          <!-- 01 -->
+          <div class="terms__section reveal" id="s1">
+            <span class="terms__section-num">01</span>
+            <h2>Acceptance of Terms</h2>
+            <p>By accessing the Vonaldo website or placing an order, you confirm that you are at least 18 years of age and have the legal capacity to enter into a binding agreement. If you are using our website on behalf of a company or organisation, you represent that you have the authority to bind that entity to these terms.</p>
+            <p>We reserve the right to update or modify these Terms and Conditions at any time without prior notice. Continued use of the website following any changes constitutes your acceptance of the revised terms.</p>
+            <div class="terms__note">
+              <p><strong>Important:</strong> Your use of the Vonaldo website and any purchase made through it is governed exclusively by these Terms and Conditions. By proceeding, you confirm you have read and understood them in full.</p>
+            </div>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 02 -->
+          <div class="terms__section reveal" id="s2">
+            <span class="terms__section-num">02</span>
+            <h2>Use of the Website</h2>
+            <p>You agree to use the Vonaldo website solely for lawful purposes. You must not use our website in any way that:</p>
+            <ul>
+              <li>Violates any applicable local, national, or international law or regulation</li>
+              <li>Is fraudulent, deceptive, or misleading in any way</li>
+              <li>Transmits unsolicited commercial communications or spam</li>
+              <li>Attempts to gain unauthorised access to any part of the website or its systems</li>
+              <li>Interferes with the normal operation or security of the website</li>
+              <li>Reproduces, duplicates, or resells any part of our website without written permission</li>
+            </ul>
+            <p>We reserve the right to terminate or restrict access to any user who violates these terms without prior notice.</p>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 03 -->
+          <div class="terms__section reveal" id="s3">
+            <span class="terms__section-num">03</span>
+            <h2>Products & Pricing</h2>
+            <p>All product descriptions, images, and specifications on the Vonaldo website are provided for informational purposes only. While we endeavour to ensure accuracy, we do not warrant that product descriptions or other content on the site are complete, reliable, or error-free.</p>
+            <p>Prices are displayed in US Dollars (USD) and are subject to change without notice. We reserve the right to modify or discontinue any product at any time. The following terms apply to pricing:</p>
+            <ol>
+              <li>All prices are exclusive of applicable taxes and shipping costs unless stated otherwise</li>
+              <li>Promotional prices are valid only for the specified period and while stock lasts</li>
+              <li>We reserve the right to cancel any order placed at an incorrect price due to a typographical or system error</li>
+              <li>Currency conversions shown are approximate and for reference only</li>
+            </ol>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 04 -->
+          <div class="terms__section reveal" id="s4">
+            <span class="terms__section-num">04</span>
+            <h2>Orders & Payment</h2>
+            <p>Placing an order on Vonaldo constitutes an offer to purchase the selected products subject to these terms. We reserve the right to accept or decline any order at our sole discretion. An order confirmation email does not constitute acceptance of your order.</p>
+            <p>We accept the following payment methods:</p>
+            <ul>
+              <li>All major credit and debit cards (Visa, Mastercard, American Express)</li>
+              <li>Apple Pay and Google Pay</li>
+              <li>Other methods available at checkout</li>
+            </ul>
+            <p>All transactions are processed securely through our payment provider. Vonaldo does not store your full payment card details on our servers. In the event of suspected fraud or unauthorised use, we reserve the right to suspend or cancel any transaction.</p>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 05 -->
+          <div class="terms__section reveal" id="s5">
+            <span class="terms__section-num">05</span>
+            <h2>Shipping & Delivery</h2>
+            <p>Vonaldo ships to most countries worldwide. Delivery times and shipping costs vary depending on your location and the shipping method selected at checkout. Estimated delivery times are provided for guidance only and are not guaranteed.</p>
+            <div class="terms__note">
+              <p><strong>Please note:</strong> International orders may be subject to import duties, taxes, and customs fees upon arrival in the destination country. These charges are the responsibility of the recipient and are not included in your order total.</p>
+            </div>
+            <p>Risk of loss and title for products purchased from Vonaldo pass to you upon delivery to the shipping carrier. We are not responsible for delays caused by the carrier, customs processing, or circumstances beyond our reasonable control.</p>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 06 -->
+          <div class="terms__section reveal" id="s6">
+            <span class="terms__section-num">06</span>
+            <h2>Returns & Refunds</h2>
+            <p>We want you to be completely satisfied with your Vonaldo purchase. If for any reason you are not satisfied, you may return eligible items within 30 days of receipt subject to the following conditions:</p>
+            <ol>
+              <li>Items must be unworn, unused, and in their original packaging with all tags attached</li>
+              <li>Returns must be initiated through our Help Center before shipping the item back</li>
+              <li>The cost of return shipping is the responsibility of the customer unless the item is faulty or incorrectly sent</li>
+              <li>Refunds will be issued to the original payment method within 7–10 business days of receiving the return</li>
+              <li>Sale items and final-sale products are non-returnable unless faulty</li>
+            </ol>
+            <p>We inspect all returns upon receipt. Items that do not meet our return conditions will be sent back to you at your expense.</p>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 07 -->
+          <div class="terms__section reveal" id="s7">
+            <span class="terms__section-num">07</span>
+            <h2>Intellectual Property</h2>
+            <p>All content on the Vonaldo website — including but not limited to text, photography, graphics, logos, product designs, and software — is the exclusive property of Vonaldo and is protected by applicable copyright, trademark, and intellectual property laws.</p>
+            <p>You may not reproduce, distribute, modify, or create derivative works from any content on our website without our prior written consent. Personal, non-commercial use of our content for reference purposes is permitted provided appropriate attribution is given.</p>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 08 -->
+          <div class="terms__section reveal" id="s8">
+            <span class="terms__section-num">08</span>
+            <h2>Privacy & Data</h2>
+            <p>Your privacy is important to us. Our collection, use, and storage of personal information is governed by our Privacy Policy, which is incorporated into these Terms and Conditions by reference. By using our website, you consent to our data practices as described in the Privacy Policy.</p>
+            <p>We use cookies and similar technologies to enhance your experience on our website. By continuing to use our site, you consent to the use of cookies in accordance with our Cookie Policy.</p>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 09 -->
+          <div class="terms__section reveal" id="s9">
+            <span class="terms__section-num">09</span>
+            <h2>Limitation of Liability</h2>
+            <p>To the fullest extent permitted by law, Vonaldo and its directors, employees, and agents shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the website or purchase of our products.</p>
+            <p>Our total liability to you in connection with any claim arising from these terms or your use of our products shall not exceed the total amount paid by you for the relevant order.</p>
+            <div class="terms__note">
+              <p><strong>Nothing in these terms</strong> shall exclude or limit our liability for death or personal injury caused by negligence, fraud, or any other liability that cannot be excluded by applicable law.</p>
+            </div>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 10 -->
+          <div class="terms__section reveal" id="s10">
+            <span class="terms__section-num">10</span>
+            <h2>Governing Law</h2>
+            <p>These Terms and Conditions shall be governed by and construed in accordance with applicable law. Any disputes arising in connection with these terms that cannot be resolved amicably shall be submitted to the exclusive jurisdiction of the relevant courts.</p>
+            <p>If any provision of these terms is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.</p>
+          </div>
+
+          <hr class="terms__rule">
+
+          <!-- 11 -->
+          <div class="terms__section reveal" id="s11">
+            <span class="terms__section-num">11</span>
+            <h2>Contact Us</h2>
+            <p>If you have any questions, concerns, or requests regarding these Terms and Conditions, please do not hesitate to contact our team:</p>
+            <ul>
+              <li>Email: support@vonaldo.com</li>
+              <li>Help Center: Available on our website</li>
+              <li>Response time: Within 2 business days</li>
+            </ul>
+            <p>We are committed to resolving any concerns promptly and to your satisfaction. Our team is available to assist you with any aspect of your experience with Vonaldo.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+   <div class="footer">
+        <div class="foot-sec-1">
+          <div class="tit-onefoot">
+            <h1>GET IN TOUCH WITH VONALDO</h1>
+            <h2>
+              Contact us, and our team will be happy to answer all your
+              questions
+            </h2>
+          </div>
+          <div class="tit-twofoot">
+            <span>CREATE YOUR</span>
+            <span>OWN UNIQUE</span>
+            <span>LOOK</span>
+          </div>
+        </div>
+        <div class="foot-sec-2">
+          <div class="sec-1-foot">
+            <div class="lounge">
+              <div class="title-loung">
+                <h2>LINOGE</h2>
+              </div>
+              <div class="body-lounge">
+                <h3>Terms & Conditions</h3>
+                <h3>Privacy Policy</h3>
+              </div>
+            </div>
+          </div>
+          <div class="sec-2-foot">
+            <div class="nav-inf">
+              <div class="nave">
+                <div class="nave-title">
+                  <h2>NAVIGATION</h2>
+                </div>
+                <div class="body-nav">
+                  <h3 class="home">HOME</h3>
+                  <h3 class="blogs">Blogs</h3>
+                  <h3>LOCK BOOK</h3>
+                  <h3>ABOUT</h3>
+                </div>
+              </div>
+              <div class="info">
+                <div class="info-title">
+                  <h2>INFO</h2>
+                </div>
+                <div class="info-body">
+                  <h3>ACOUNT</h3>
+                  <h3>HELP CENTER</h3>
+                  <h3>SHIPPING & RETURNS</h3>
+                  <h3>COUNTACTS</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="newrgs">
+              <div class="new-title">
+                <h2>NEWSLETTER</h2>
+              </div>
+              <div class="new-body">
+                <form class="newsletter-form">
+                  <input
+                    type="email"
+                    id="emailInput"
+                    placeholder="EMAIL"
+                    required
+                  />
+
+                  <button
+                    type="button"
+                    onclick="document.getElementById('emailInput').value = ''"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                      />
+                    </svg>
+                  </button>
+                </form>
+              </div>
+              <div class="footer-new">
+                <img src="./icons/apple-pay.webp" alt="" />
+                <img src="./icons/google-pay.webp" alt="" />
+                <img src="./icons/symbols (1).webp" alt="" />
+                <img src="./icons/money.webp" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="foot-sec3">
+          <div class="foot-lounge">
+            <h3>© 2026 vonaldo All right reserved</h3>
+          </div>
+        </div>
+      </div>
+
+  <script src="./main.js" type="module"></script>
+
+  <script>
+    // Progress bar
+    window.addEventListener('scroll', () => {
+      const d = document.documentElement;
+      document.getElementById('progress').style.width =
+        (d.scrollTop / (d.scrollHeight - d.clientHeight) * 100) + '%';
+    });
+
+    // Scroll reveal
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(r => io.observe(r));
+
+    // Active sidebar link
+    const sections = document.querySelectorAll('.terms__section[id]');
+    const links    = document.querySelectorAll('.sidenav__list a');
+
+    const sio = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.sidenav__list a[href="#${e.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    sections.forEach(s => sio.observe(s));
+  </script>
+
+  <script src="./blogs.js" type="module"></script>
+
+</body>
+</html>

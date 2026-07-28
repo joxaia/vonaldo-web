@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How To Style Derby Shoes | Old Money & Smart Casual Guide | Vonaldo</title>
+
+<meta
+  name="description"
+  content="Learn how to style Derby shoes with old money aesthetics, smart casual outfits, and timeless menswear looks. Discover luxury leather styling tips and modern classic fashion inspiration with Vonaldo."
+>
+      <link rel="icon" href="../icons/vo.webp" type="image/webp" />
+
+  <!-- FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../main.css">
+
+  <style>
+
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+    @font-face {
+      font-family: "headreg";
+      src: url("../fonts/geist-v4-latin-regular.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "headbold";
+      src: url("../fonts/geist-v4-latin-700.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "headvery";
+      src: url("../fonts/geist-v4-latin-900.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "klaptreg";
+      src: url("../fonts/Klapt-Regular.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "kalptmed";
+      src: url("../fonts/Klapt-Medium.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "klaptbold";
+      src: url("../fonts/Klapt-Bold.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "body";
+      src: url("../fonts/open-sans-v44-latin-regular.woff2") format("woff2");
+    }
+
+    :root {
+      --head: "headreg", serif;
+      --headbold: "headbold", serif;
+      --headvery: "headvery", serif;
+
+      --klapt-reg:"klaptreg", sans-serif;
+      --klapt-med:"kalptmed", sans-serif;
+      --klapt-bold:"klaptbold", sans-serif;
+
+      --body:"body", sans-serif;
+
+      --black-color:#262626;
+      --brown-color:#4d403a;
+      --biege-color:#dedacf;
+      --white-color:#f9f8f5;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:var(--white-color);
+      color:var(--black-color);
+      font-family:var(--body);
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    .container{
+      width:92%;
+      max-width:1280px;
+      margin:auto;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:100vh;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to bottom,
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.6));
+    }
+
+    .hero-content{
+      position:absolute;
+      bottom:90px;
+      left:50%;
+      transform:translateX(-50%);
+      width:92%;
+      max-width:1280px;
+      color:white;
+    }
+
+    .tag{
+      font-size:13px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      margin-bottom:20px;
+      font-family:var(--klapt-med);
+      opacity:.8;
+    }
+
+    .hero h1{
+      font-size:50px;
+      line-height:1.4;
+      max-width:900px;
+      font-family:var(--headbold);
+    letter-spacing: 0.6px;
+    }
+
+    .hero p{
+      max-width:640px;
+      font-size:17px;
+      line-height:1.8;
+      opacity:.9;
+    }
+
+    /* ARTICLE */
+
+    .article{
+      padding:120px 0;
+    }
+
+    .article-wrap{
+      display:grid;
+      grid-template-columns:1.2fr .6fr;
+      gap:80px;
+    }
+
+    .content h2{
+      font-size:48px;
+      line-height:1.1;
+      margin-bottom:24px;
+      font-family:var(--headbold);
+      color:var(--brown-color);
+    }
+
+    .content p{
+      font-size:17px;
+      line-height:2;
+      color:#444;
+      margin-bottom:34px;
+    }
+
+    .content img{
+      height:600px;
+      object-fit:contain;
+      border-radius:30px;
+      margin:45px 0 60px;
+    }
+
+    .quote{
+      background:var(--biege-color);
+      padding:50px;
+      border-radius:30px;
+      margin:60px 0;
+    }
+
+    .quote h3{
+      font-size:30px;
+      line-height:1.5;
+      font-family:var(--headbold);
+      color:var(--brown-color);
+    }
+
+    /* SIDEBAR */
+
+    .sidebar{
+      position:sticky;
+      top:100px;
+      height:fit-content;
+    }
+
+    .product-card{
+      background:white;
+      border:1px solid #e9e3d9;
+      border-radius:32px;
+      overflow:hidden;
+    }
+
+    .product-content{
+      padding:30px;
+    }
+
+    .product-content span{
+      font-size:12px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:#777;
+      display:block;
+      margin-bottom:14px;
+      font-family:var(--klapt-med);
+    }
+
+    .product-content h3{
+      font-size:34px;
+      line-height:1.1;
+      margin-bottom:18px;
+      font-family:var(--headbold);
+      color:var(--brown-color);
+    }
+
+    .product-content p{
+      color:#555;
+      line-height:1.8;
+      margin-bottom:30px;
+      font-size:15px;
+    }
+
+    .btn{
+      width:100%;
+      height:58px;
+      border:none;
+      border-radius:100px;
+      background:var(--black-color);
+      color:white;
+      font-size:14px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      cursor:pointer;
+      transition:.3s ease;
+      font-family:var(--klapt-bold);
+    }
+
+    .btn:hover{
+      background:var(--brown-color);
+    }
+
+    /* NEXT */
+
+    .next{
+      padding:120px 0;
+      border-top:1px solid #e6e0d6;
+    }
+
+    .next-top{
+      margin-bottom:50px;
+    }
+
+    .next-top span{
+      letter-spacing:3px;
+      text-transform:uppercase;
+      font-size:12px;
+      color:#777;
+      font-family:var(--klapt-med);
+    }
+
+    .next-top h2{
+      font-size:58px;
+      margin-top:18px;
+      font-family:var(--headbold);
+      color:var(--brown-color);
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:28px;
+    }
+
+    .card{
+      background:var(--white-color);
+      border-radius:28px;
+      overflow:hidden;
+      border:1px solid #ece6dc;
+      transition:.35s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+    }
+
+    .card img{
+      height:400px;
+      object-fit:contain;
+    }
+
+    .card-content{
+      padding:28px;
+    }
+
+    .card-content h3{
+      font-size:30px;
+      line-height:1.2;
+      margin-bottom:16px;
+      font-family:var(--headbold);
+    }
+
+    .card-content p{
+      color:#666;
+      line-height:1.8;
+      margin-bottom:22px;
+    }
+
+    .read{
+      font-size:14px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:var(--brown-color);
+      font-family:var(--klapt-bold);
+    }
+
+    @media (max-width:1000px){
+
+      .article-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .sidebar{
+        position:relative;
+        top:0;
+      }
+
+      .hero h1{
+        font-size:62px;
+      }
+
+    }
+
+    @media (max-width:768px){
+
+      .hero{
+        height:80vh;
+      }
+
+      .hero h1{
+        font-size:44px;
+      }
+
+      .hero-content{
+        bottom:60px;
+      }
+
+      .content h2{
+        font-size:36px;
+      }
+
+      .content img{
+        height:340px;
+      }
+
+      .quote{
+        padding:35px;
+      }
+
+      .quote h3{
+        font-size:28px;
+      }
+
+      .next-top h2{
+        font-size:40px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+    <div class="list-cartfetch"></div>
+  <section class="hero">
+
+    <img src="../file/7.webp" alt="">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+      <div class="tag">
+        Style Guide . Vonaldo Journal
+      </div>
+
+      <h1>
+        How To Style Derby Shoes With Effortless Confidence
+      </h1>
+
+      <p>
+        Discover how Derby shoes became the perfect balance between timeless elegance and modern smart casual styling.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ARTICLE -->
+
+  <section class="article">
+
+    <div class="container">
+
+      <div class="article-wrap">
+
+        <!-- CONTENT -->
+
+        <div class="content">
+
+          <h2>
+            Why Derby Shoes Work With Almost Everything
+          </h2>
+
+          <p>
+            Derby shoes are one of the most versatile footwear choices in modern menswear. Their open-lacing construction creates a more relaxed silhouette compared to traditional Oxford shoes, making them perfect for both formal tailoring and elevated everyday outfits.
+          </p>
+
+          <p>
+            Whether paired with tailored trousers, relaxed denim, or minimal smart casual pieces, Derby shoes bring balance, confidence, and timeless sophistication to any wardrobe.
+          </p>
+
+          <img src="../file/5.webp" alt="">
+
+          <h2>
+            Smart Casual Styling
+          </h2>
+
+          <p>
+            The easiest way to style Derby shoes is with clean smart casual essentials. Neutral trousers, premium knitwear, and structured outerwear allow the shoes to become the statement piece without looking overdone.
+          </p>
+
+          <p>
+            Black leather Derby shoes offer a sharper luxury appearance, while brown tones create a softer and more relaxed aesthetic ideal for daytime styling.
+          </p>
+
+          <div class="quote">
+
+            <h3>
+              Derby shoes combine everyday comfort with timeless luxury making them an essential foundation for modern style.
+            </h3>
+
+          </div>
+
+          <h2>
+            Choosing The Right Leather Finish
+          </h2>
+
+          <p>
+            Polished leather creates a refined formal look, while matte finishes and textured leather add a contemporary edge. Premium leather not only improves durability but also develops a richer character over time.
+          </p>
+
+          <p>
+            Investing in quality craftsmanship ensures better comfort, stronger structure, and a more elevated silhouette that works season after season.
+          </p>
+
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <div class="sidebar">
+
+          <div class="product-card">
+
+            <img src="./file/5.webp" alt="">
+
+            <div class="product-content">
+
+              <span>
+                Featured Product
+              </span>
+
+              <h3>
+                Torino Heritage Derby
+              </h3>
+
+              <p>
+                Crafted from premium Italian leather with an ultra-light chunky sole and all-day comfort support.
+              </p>
+
+              <button class="btn">
+                Explore Product
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- NEXT ARTICLES -->
+
+  <section class="next">
+
+    <div class="container">
+
+      <div class="next-top">
+
+        <span>
+          Continue Reading
+        </span>
+
+        <h2>
+          More From The Journal
+        </h2>
+
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+
+          <img src="../file/1.webp" alt="">
+
+          <div class="card-content">
+
+            <h3>
+              How To Care For Leather Shoes
+            </h3>
+
+            <p>
+              Learn the essential steps to keep premium leather looking polished and refined.
+            </p>
+
+            <a href="How-To-Care-For-Leather-Shoes.html" class="read">
+              Read Article
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+
+          <img src="../file3/3.png" alt="">
+
+          <div class="card-content">
+
+            <h3>
+              Derby vs Oxford Shoes
+            </h3>
+
+            <p>
+              Understand the difference between two timeless menswear essentials.
+            </p>
+
+            <a href="Derby-vs-Oxford-Shoes.html" class="read">
+              Read Article
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+      <div class="footer">
+      <div class="foot-sec-1">
+        <div class="tit-onefoot">
+          <h1>GET IN TOUCH WITH VONALDO</h1>
+          <h2>
+            Contact us, and our team will be happy to answer all your questions
+          </h2>
+        </div>
+        <div class="tit-twofoot">
+          <span>CREATE YOUR</span>
+          <span>OWN UNIQUE</span>
+          <span>LOOK</span>
+        </div>
+      </div>
+      <div class="foot-sec-2">
+        <div class="sec-1-foot">
+          <div class="lounge">
+            <div class="title-loung">
+              <h2>LINOGE</h2>
+            </div>
+            <div class="body-lounge">
+              <h3>Terms & Conditions</h3>
+              <h3>Privacy Policy</h3>
+            </div>
+          </div>
+        </div>
+        <div class="sec-2-foot">
+          <div class="nav-inf">
+            <div class="nave">
+              <div class="nave-title">
+                <h2>NAVIGATION</h2>
+              </div>
+              <div class="body-nav">
+                <h3>HOME</h3>
+                <h3>Blogs</h3>
+                <h3>LOCK BOOK</h3>
+                <h3>ABOUT</h3>
+              </div>
+            </div>
+            <div class="info">
+              <div class="info-title">
+                <h2>INFO</h2>
+              </div>
+              <div class="info-body">
+                <h3>ACOUNT</h3>
+                <h3>HELP CENTER</h3>
+                <h3>SHIPPING & RETURNS</h3>
+                <h3>COUNTACTS</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="newrgs">
+            <div class="new-title">
+              <h2>NEWSLETTER</h2>
+            </div>
+            <div class="new-body">
+              <form class="newsletter-form">
+                <input
+                  type="email"
+                  id="emailInput"
+                  placeholder="EMAIL"
+                  required
+                />
+
+                <button
+                  type="button"
+                  onclick="document.getElementById('emailInput').value = ''"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                    />
+                  </svg>
+                </button>
+              </form>
+            </div>
+            <div class="footer-new">
+              <img src="../icons/apple-pay.webp" alt="" />
+              <img src="../icons/google-pay.webp" alt="" />
+              <img src="../icons/symbols (1).webp" alt="" />
+              <img src="../icons/money.webp" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot-sec3">
+        <div class="foot-lounge">
+          <h3>© 2026 vonaldo All right reserved</h3>
+        </div>
+      </div>
+    </div>
+    
+<script src="../blogs.js" type="module"></script>
+</body>
+</html>
