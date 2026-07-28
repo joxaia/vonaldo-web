@@ -768,13 +768,40 @@ const checkBtnMob = document.querySelector(".mobbt .Checkout");
 const checkBtnOriginalText = checkBtn ? checkBtn.textContent : "";
 const checkBtnMobOriginalText = checkBtnMob ? checkBtnMob.textContent : "";
 
-const getSelectedVariantId = () => {
-  // ياخد المقاس المختار سواء من نسخة الديسكتوب أو الموبايل، أيهما متاح
+const getSelectedVariantId = (isMobile = false) => {
+  // بيدي الأولوية للـ id بتاع النسخة اللي فعلاً بتتفاعل معاها اليوزر
+  if (isMobile) {
+    return (
+      domCache.addToCartMob?.getAttribute("data-id") ||
+      domCache.addToCart?.getAttribute("data-id") ||
+      null
+    );
+  }
   return (
     domCache.addToCart?.getAttribute("data-id") ||
     domCache.addToCartMob?.getAttribute("data-id") ||
     null
   );
+};
+
+const showBuyNowError = (btn, message) => {
+  if (!btn || !btn.parentElement) return;
+  let errorEl = btn.parentElement.querySelector(".buynow-error");
+  if (!errorEl) {
+    errorEl = document.createElement("p");
+    errorEl.className = "buynow-error";
+    errorEl.style.color = "#c0392b";
+    errorEl.style.fontSize = "13px";
+    errorEl.style.marginTop = "8px";
+    errorEl.style.textAlign = "center";
+    btn.insertAdjacentElement("afterend", errorEl);
+  }
+  errorEl.textContent = message;
+};
+
+const clearBuyNowError = (btn) => {
+  const errorEl = btn?.parentElement?.querySelector(".buynow-error");
+  if (errorEl) errorEl.remove();
 };
 
 async function createCheckout(variantId, quantity) {
@@ -837,13 +864,15 @@ async function createCheckout(variantId, quantity) {
   return payload.cart.checkoutUrl;
 }
 
-const handleBuyNow = async (btn, originalText) => {
+const handleBuyNow = async (btn, originalText, isMobile = false) => {
   if (!btn) return;
 
-  const variantId = getSelectedVariantId();
+  clearBuyNowError(btn);
+
+  const variantId = getSelectedVariantId(isMobile);
 
   if (!variantId) {
-    console.error("No variant selected");
+    showBuyNowError(btn, "Please select a size first.");
     return;
   }
 
@@ -864,13 +893,14 @@ const handleBuyNow = async (btn, originalText) => {
     console.error(e);
     btn.disabled = false;
     btn.textContent = originalText;
+    showBuyNowError(btn, "Couldn't start checkout. Please try again.");
   }
 };
 
 checkBtn?.addEventListener("click", () => {
-  handleBuyNow(checkBtn, checkBtnOriginalText);
+  handleBuyNow(checkBtn, checkBtnOriginalText, false);
 });
 
 checkBtnMob?.addEventListener("click", () => {
-  handleBuyNow(checkBtnMob, checkBtnMobOriginalText);
+  handleBuyNow(checkBtnMob, checkBtnMobOriginalText, true);
 });
