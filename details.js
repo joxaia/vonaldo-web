@@ -863,7 +863,6 @@ async function createCheckout(variantId, quantity) {
 
   return payload.cart.checkoutUrl;
 }
-
 const handleBuyNow = async (btn, originalText, isMobile = false) => {
   if (!btn) return;
 
@@ -878,14 +877,20 @@ const handleBuyNow = async (btn, originalText, isMobile = false) => {
 
   btn.disabled = true;
   btn.innerHTML = `<span class="btn-spinner"></span>`;
-  if (typeof window.fbq !== "undefined") {
-  fbq("track", "InitiateCheckout", {
-    content_name: info.name,
-    content_type: "product",
-    value: info.price,
-    currency: "USD",
-  });
-}
+
+  try {
+    if (typeof window.fbq !== "undefined" && currentProductInfo) {
+      fbq("track", "InitiateCheckout", {
+        content_name: currentProductInfo.name,
+        content_type: "product",
+        value: currentProductInfo.price,
+        currency: "USD",
+      });
+    }
+  } catch (pixelErr) {
+    console.error("fbq InitiateCheckout failed:", pixelErr);
+  }
+
   try {
     const url = await createCheckout(variantId, curent);
     window.location.href = url;
@@ -896,11 +901,3 @@ const handleBuyNow = async (btn, originalText, isMobile = false) => {
     showBuyNowError(btn, "Couldn't start checkout. Please try again.");
   }
 };
-
-checkBtn?.addEventListener("click", () => {
-  handleBuyNow(checkBtn, checkBtnOriginalText, false);
-});
-
-checkBtnMob?.addEventListener("click", () => {
-  handleBuyNow(checkBtnMob, checkBtnMobOriginalText, true);
-});
