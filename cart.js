@@ -203,6 +203,18 @@ let hed = document.querySelector(".empty")
   /* ================= INIT ================= */
   if (localStorage.getItem("cart")) {
     cart = JSON.parse(localStorage.getItem("cart"));
+
+    // شيل أي منتج مخزن قديم مبقاش موجود فعليًا (الـ id اتغير أو المنتج اتشال من شوبيفاي)
+    const validCart = cart.filter((item) =>
+      proudct.some((p) =>
+        p.colors.some((c) => c.sizes.some((s) => s.id === item.proudct_id))
+      )
+    );
+
+    if (validCart.length !== cart.length) {
+      cart = validCart;
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
   }
   refresh();
 
@@ -227,7 +239,24 @@ let hed = document.querySelector(".empty")
   };
 
   async function createCheckout() {
-    const lineItems = cart.map((item) => ({
+    // فلترة أخيرة قبل الإرسال: منتشيلش منتجات مبقتش موجودة في proudct.js
+    const validItems = cart.filter((item) =>
+      proudct.some((p) =>
+        p.colors.some((c) => c.sizes.some((s) => s.id === item.proudct_id))
+      )
+    );
+
+    if (validItems.length !== cart.length) {
+      cart = validItems;
+      localStorage.setItem("cart", JSON.stringify(cart));
+      refresh();
+    }
+
+    if (validItems.length === 0) {
+      throw new Error("Your cart items are no longer available. Cart cleared.");
+    }
+
+    const lineItems = validItems.map((item) => ({
       merchandiseId: `gid://shopify/ProductVariant/${item.proudct_id}`,
       quantity: item.quantity,
     }));
@@ -311,10 +340,14 @@ checkoutBtn?.addEventListener("click", async () => {
       window.location.href = url;
     }, 300);
 
-} catch (e) {
+  } catch (e) {
     checkoutBtn.classList.remove("loading");
     checkoutBtn.disabled = false;
-    showCheckoutError("Error: " + (e.message || "unknown error"));
+    if (e.message && e.message.includes("no longer available")) {
+      showCheckoutError("Some items in your cart are no longer available. Please review your cart.");
+    } else {
+      showCheckoutError("Couldn't start checkout. Please try again.");
+    }
     console.error(e);
   }
 });
