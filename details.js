@@ -128,6 +128,18 @@ const buildSizes = (sizes, activeBtn, selector = ".h4size", parentSelector = ".s
   parent.appendChild(fragment);
 };
 
+/* =================================================================
+   FIX: كان متغيّر info معرّف جوه initPro() بس، ومكنش متاح
+   في handleBuyNow (اللي معرّفة برّه في الـ module scope).
+   ده كان بيسبب ReferenceError لما تدوس على زرار buy now
+   (خصوصًا الموبايل)، والخطأ ده كان بيحصل قبل الـ try/catch
+   فالسبيرنر كان بيفضل ظاهر للأبد من غير ما يروح للـ checkout.
+
+   الحل: عملنا متغيّر على مستوى الملف بيتحدّث جوه initPro()
+   وبنستخدمه في handleBuyNow بدل info.
+   ================================================================= */
+let currentProductInfo = null;
+
 const initPro = () => {
   const nameParam = getNameParam();
   const product = proudct.find(p =>
@@ -137,6 +149,8 @@ const initPro = () => {
   if (!product) return;
 
   const info = product;
+  currentProductInfo = info; // <-- FIX: خزّن المنتج في متغيّر متاح لكل الملف
+
   if (typeof fbq !== "undefined") {
   fbq("track", "ViewContent", {
     content_name: info.name,
@@ -849,15 +863,19 @@ const handleBuyNow = async (btn, originalText) => {
 
   btn.disabled = true;
   btn.innerHTML = `<span class="btn-spinner"></span>`;
-  if (typeof window.fbq !== "undefined") {
-  fbq("track", "InitiateCheckout", {
-    content_name: info.name,
-    content_type: "product",
-    value: info.price,
-    currency: "USD",
-  });
-}
+
+  // FIX: نقلنا نداء fbq جوه الـ try، وبنستخدم currentProductInfo
+  // بدل info (اللي مكانتش متاحة في السكوب ده أصلًا وكانت بتكسر الكود)
   try {
+    if (typeof window.fbq !== "undefined" && currentProductInfo) {
+      fbq("track", "InitiateCheckout", {
+        content_name: currentProductInfo.name,
+        content_type: "product",
+        value: currentProductInfo.price,
+        currency: "USD",
+      });
+    }
+
     const url = await createCheckout(variantId, curent);
     window.location.href = url;
   } catch (e) {
