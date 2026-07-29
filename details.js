@@ -880,6 +880,37 @@ async function createCheckout(variantId, quantity) {
   return payload.cart.checkoutUrl;
 }
 
+/* =================================================================
+   FIX (bfcache): لما تدوس Buy Now بيتحط السبيرنر ويتعطل الزرار،
+   وبعدين المتصفح بيروح لصفحة الـ checkout (صفحة تانية على دومين Shopify).
+   لما ترجع بزرار الـ back، أغلب المتصفحات (خصوصًا Safari/Chrome على
+   الموبايل) بترجّع الصفحة القديمة من الـ bfcache (back-forward cache)
+   من غير ما تعمل reload كامل ولا تعيد تشغيل السكريبتات — يعني الصفحة
+   بترجع بالظبط زي ما سبتها: الزرار لسه disabled ولسه شايل السبيرنر.
+
+   الحل: عملنا دالة resetBuyBtn بترجع أي زرار لحالته الأصلية، واستخدمناها
+   في الـ catch (زي الأول)، وكمان في مستمع حدث pageshow اللي بيتفعل
+   لما الصفحة تترجع من الـ bfcache (event.persisted === true) —
+   وده بيغطي حالة الرجوع للصفحة سواء من نجاح أو فشل عملية الـ checkout.
+   ضفنا كمان مستمع visibilitychange كـ fallback إضافي لبعض متصفحات
+   الموبايل اللي سلوكها مع bfcache مش ثابت 100%.
+   ================================================================= */
+const resetBuyBtn = (btn, originalText) => {
+  if (!btn) return;
+  btn.disabled = false;
+  btn.textContent = originalText;
+  btn.style.minWidth = "";
+  btn.style.minHeight = "";
+  btn.style.display = "";
+  btn.style.alignItems = "";
+  btn.style.justifyContent = "";
+};
+
+const resetAllBuyBtns = () => {
+  resetBuyBtn(checkBtn, checkBtnOriginalText);
+  resetBuyBtn(checkBtnMob, checkBtnMobOriginalText);
+};
+
 const handleBuyNow = async (btn, originalText) => {
   if (!btn) return;
 
@@ -917,13 +948,7 @@ const handleBuyNow = async (btn, originalText) => {
     window.location.href = url;
   } catch (e) {
     console.error(e);
-    btn.disabled = false;
-    btn.textContent = originalText;
-    btn.style.minWidth = "";
-    btn.style.minHeight = "";
-    btn.style.display = "";
-    btn.style.alignItems = "";
-    btn.style.justifyContent = "";
+    resetBuyBtn(btn, originalText);
   }
 };
 
@@ -933,4 +958,21 @@ checkBtn?.addEventListener("click", () => {
 
 checkBtnMob?.addEventListener("click", () => {
   handleBuyNow(checkBtnMob, checkBtnMobOriginalText);
+});
+
+// bfcache: الصفحة اترجّعت من غير reload (زرار الرجوع من الـ checkout)
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    resetAllBuyBtns();
+  }
+});
+
+// fallback إضافي: لو الصفحة رجعت تكون visible تاني (بعض متصفحات الموبايل)
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible" && checkBtn?.disabled === true) {
+    resetAllBuyBtns();
+  }
+  if (document.visibilityState === "visible" && checkBtnMob?.disabled === true) {
+    resetAllBuyBtns();
+  }
 });
