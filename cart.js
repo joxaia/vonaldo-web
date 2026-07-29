@@ -238,6 +238,37 @@ let hed = document.querySelector(".empty")
     if (errorEl) errorEl.remove();
   };
 
+  /* =================================================================
+     FIX (bfcache) — نفس مشكلة زرار Buy Now بالظبط:
+     لما تدوس Checkout بيتحط زرار .checkout-cart في حالة loading/disabled،
+     وبعدين المتصفح بيروح لصفحة الـ checkout بتاعة Shopify. لو رجعت
+     بزرار الـ back، المتصفح (خصوصًا على الموبايل) غالبًا بيرجّع الصفحة
+     من الـ bfcache من غير reload ومن غير ما يعيد تشغيل السكريبت —
+     يعني الزرار بيفضل واقف في حالة "loading" و disabled للأبد.
+
+     الحل: دالة موحّدة resetCheckoutBtn بترجّع الزرار لحالته الطبيعية،
+     بنستخدمها في الـ catch زي الأول، وكمان في مستمعين:
+     - pageshow مع event.persisted (الحالة القياسية للـ bfcache)
+     - visibilitychange كـ fallback لبعض متصفحات الموبايل
+     ================================================================= */
+  const resetCheckoutBtn = () => {
+    if (!checkoutBtn) return;
+    checkoutBtn.classList.remove("loading");
+    checkoutBtn.disabled = false;
+  };
+
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+      resetCheckoutBtn();
+    }
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible" && checkoutBtn?.disabled === true) {
+      resetCheckoutBtn();
+    }
+  });
+
   async function createCheckout() {
     // فلترة أخيرة قبل الإرسال: منتشيلش منتجات مبقتش موجودة في proudct.js
     const validItems = cart.filter((item) =>
@@ -341,8 +372,7 @@ checkoutBtn?.addEventListener("click", async () => {
     }, 300);
 
   } catch (e) {
-    checkoutBtn.classList.remove("loading");
-    checkoutBtn.disabled = false;
+    resetCheckoutBtn();
     if (e.message && e.message.includes("no longer available")) {
       showCheckoutError("Some items in your cart are no longer available. Please review your cart.");
     } else {
