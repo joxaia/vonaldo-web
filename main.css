@@ -17824,3 +17824,92 @@ font-family: 'Montserrat';
   margin-top: 40px;
 }
 }
+
+
+@media(max-width:360px){
+
+
+  .list-text h2{
+    font-size: 19px !important;
+  }
+  .list-text h1{
+    font-size: 11px;
+    gap: 0;
+  }
+  .list-text{
+    top: 60%;
+  }
+  .list-text-2 h2{
+    font-size: 18px;
+  }
+  .sec-2-b h1{
+    font-size: 12px;
+  }
+  .list-text-2{
+    top: 55%;
+    gap: 10px;
+  }
+  .list-text-3 h2{
+    font-size: 18px;
+  }
+  .list-text-3{
+    top: 55%;
+    gap: 10px;
+  }
+  .list-text-4{
+    left: -10%;
+  }
+  .list-text-4 h2{
+    font-size: 18px;
+  }
+  .list-text-4{
+    top: 40%;
+  }
+  .t-9 h2{
+    font-size: 20px;
+  }
+  .slider-bullets .bullet{
+    width: 12px;
+    height: 12px;
+  }
+  .newarriva h1{
+    font-size: 19px;
+  }
+  .collection{
+    font-size: 10px;
+  }
+  .newarriva h2{
+    font-size: 11px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .sale img{
+    width: 13px;
+    height: 13px;
+  }
+  .price-m h3{
+    font-size: 12px;
+  }
+  .price-m h4{
+    font-size: 11px;
+  }
+  .butt button{
+    font-size: 11px;
+    width: 170px;
+  }
+  .view-fit button{
+    width: 150px;
+  }
+  .box-det h4{
+    font-size: 13px !important;
+  }
+  .box-det h2{
+    font-size: 30px;
+  }
+  .smalldesc h4{
+    font-size: 10px !important; 
+  }
+  .c div{
+    width: 170px !important;
+  }
+}
