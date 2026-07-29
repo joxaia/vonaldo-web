@@ -782,6 +782,35 @@ const checkBtnMob = document.querySelector(".mobbt .Checkout");
 const checkBtnOriginalText = checkBtn ? checkBtn.textContent : "";
 const checkBtnMobOriginalText = checkBtnMob ? checkBtnMob.textContent : "";
 
+/* =================================================================
+   FIX: السبيرنر كان معتمد على كلاس CSS خارجي (.btn-spinner) اللي
+   يمكن يكون مش متعرّف (أو متعرّف بس لسياق تاني) بالنسبة لزرار الموبايل،
+   فكان بيتحط في الـ DOM لكن حجمه/لونه بيخليه مش ظاهر بصريًا.
+   الحل: حقن الـ keyframes مرة واحدة + عمل السبيرنر بـ inline styles
+   كاملة عشان يشتغل مضمون مهما كان فيه أو مفيش تعريف في ملفات الـ CSS. */
+if (!document.getElementById("btn-spinner-keyframes")) {
+  const style = document.createElement("style");
+  style.id = "btn-spinner-keyframes";
+  style.textContent = `
+    @keyframes btnSpinnerRotate { to { transform: rotate(360deg); } }
+  `;
+  document.head.appendChild(style);
+}
+
+const buildSpinnerHTML = () => `
+  <span style="
+    display:inline-block;
+    width:18px;
+    height:18px;
+    border:2px solid currentColor;
+    border-top-color:transparent;
+    border-radius:50%;
+    opacity:0.9;
+    animation:btnSpinnerRotate 0.6s linear infinite;
+    vertical-align:middle;
+  "></span>
+`;
+
 const getSelectedVariantId = () => {
   // ياخد المقاس المختار سواء من نسخة الديسكتوب أو الموبايل، أيهما متاح
   return (
@@ -861,8 +890,16 @@ const handleBuyNow = async (btn, originalText) => {
     return;
   }
 
+  // نثبّت أبعاد الزرار قبل ما نغيّر محتواه عشان ميقفلش على نفسه (width/height = 0)
+  const rect = btn.getBoundingClientRect();
+  btn.style.minWidth = `${rect.width}px`;
+  btn.style.minHeight = `${rect.height}px`;
+  btn.style.display = "inline-flex";
+  btn.style.alignItems = "center";
+  btn.style.justifyContent = "center";
+
   btn.disabled = true;
-  btn.innerHTML = `<span class="btn-spinner"></span>`;
+  btn.innerHTML = buildSpinnerHTML();
 
   // FIX: نقلنا نداء fbq جوه الـ try، وبنستخدم currentProductInfo
   // بدل info (اللي مكانتش متاحة في السكوب ده أصلًا وكانت بتكسر الكود)
@@ -882,6 +919,11 @@ const handleBuyNow = async (btn, originalText) => {
     console.error(e);
     btn.disabled = false;
     btn.textContent = originalText;
+    btn.style.minWidth = "";
+    btn.style.minHeight = "";
+    btn.style.display = "";
+    btn.style.alignItems = "";
+    btn.style.justifyContent = "";
   }
 };
 
