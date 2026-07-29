@@ -3,3 +3,13 @@
     { "source": "/:name", "destination": "/details.html?name=:name" }
   ]
 }
+
+{
+  "redirects": [
+    {
+      "source": "/collection",
+      "destination": "/collection.html",
+      "permanent": true
+    }
+  ]
+}
