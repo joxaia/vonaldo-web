@@ -1,10 +1,10 @@
 {
   "rewrites": [
-    { "source": "/:name", "destination": "/details.html?name=:name" }
-  ]
-}
-
-{
+    {
+      "source": "/:name",
+      "destination": "/details.html?name=:name"
+    }
+  ],
   "redirects": [
     {
       "source": "/collection",
