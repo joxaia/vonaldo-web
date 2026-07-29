@@ -191,7 +191,25 @@ The Vonaldo spirit of heritage mastery defines every pair with timeless elegance
             </div>
       </div>
     </div>
-
+  
     <script src="./collection.js" type="module" defer></script>
+    <script>
+(function () {
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+  const isInstagram = ua.includes('Instagram');
+
+  if (isInstagram) {
+    const url = window.location.href;
+
+    if (/iPhone|iPad|iPod/i.test(ua)) {
+      window.location.href = "googlechrome://" + url.replace(/^https?:\/\//, '');
+    } 
+    else if (/Android/i.test(ua)) {
+      window.location.href = "intent://" + url.replace(/^https?:\/\//, '') + "#Intent;scheme=https;package=com.android.chrome;end";
+    }
+  }
+})();
+</script>
   </body>
 </html>
