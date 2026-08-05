@@ -17986,3 +17986,8 @@ font-family: 'Montserrat';
         text-transform: capitalize;
     }
 }
+@media (max-width: 400px) {
+    .desc h4 {
+        font-size: 10px !important;
+    }
+}
