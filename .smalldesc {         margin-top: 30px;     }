@@ -17913,3 +17913,10 @@ font-family: 'Montserrat';
     width: 175px !important;
   }
 }
+
+
+@media (max-width: 550px) {
+    .smalldesc {
+        margin-top: 40px !important;
+    }
+}
