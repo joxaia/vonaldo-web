@@ -17991,3 +17991,8 @@ font-family: 'Montserrat';
         font-size: 10px !important;
     }
 }
+@media (max-width: 400px) {
+    .bull-secmob {
+        margin-top: 50px !important;
+    }
+}
