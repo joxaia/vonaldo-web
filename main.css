@@ -17931,7 +17931,7 @@ font-family: 'Montserrat';
         display: flex;
         overflow: hidden;
         width: calc(4 * 8px + 5 * 8px);
-        padding: 4px 7px !important;
+        padding: 4px 6px !important;
         border-radius: 20px;
         box-shadow: 1px 2px 4px 1px #0000000a;
         position: relative;
