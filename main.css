@@ -17915,7 +17915,7 @@ font-family: 'Montserrat';
 }
 
 
-@media (max-width: 550px) {
+@media (max-width:768px) {
     .smalldesc {
         margin-top: 40px !important;
     }
