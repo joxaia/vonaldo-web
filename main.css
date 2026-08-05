@@ -17946,4 +17946,14 @@ font-family: 'Montserrat';
     }
 }
 
-
+@media (max-width: 676px) {
+    .count-mobile-wrap {
+        width: 90%;
+        height: 450px !important;
+        z-index: 100;
+        margin: auto;
+        overflow: hidden;
+        transition: all 1s ease;
+        display: block;
+    }
+}
