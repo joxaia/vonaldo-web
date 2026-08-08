@@ -18033,4 +18033,10 @@ font-family: 'Montserrat';
         align-items: center;
         padding: 40px 25px 20px 25px !important;
     }
+      .sec-imgmob {
+        width: 91%;
+        height: auto;
+        margin: auto;
+        position: relative;
+    }
 }
