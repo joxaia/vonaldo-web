@@ -18026,4 +18026,11 @@ font-family: 'Montserrat';
         line-height: 26px;
         text-transform: capitalize;
     }
+      .smalldesc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 25px 20px 25px !important;
+    }
 }
