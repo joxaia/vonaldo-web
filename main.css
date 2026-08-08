@@ -18008,3 +18008,9 @@ font-family: 'Montserrat';
         text-transform: capitalize;
     }
 }
+
+@media (max-width: 375px) {
+    .proudcts {
+        width: 155px !important;
+    }
+}
