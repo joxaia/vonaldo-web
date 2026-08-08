@@ -18039,4 +18039,20 @@ font-family: 'Montserrat';
         margin: auto;
         position: relative;
     }
+      .view-coll span {
+        font-family: var(--headbold);
+        color: #4d403ab0;
+        cursor: pointer;
+        font-size: 11px;
+        width: 190px;
+        height: 45px;
+        border: 2px solid rgba(var(--biege-rgb), 0.2);
+        animation: pulse-border 2s ease-in-out infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 200px;
+        padding-top: 1px;
+        letter-spacing: 0.2px;
+    }
 }
