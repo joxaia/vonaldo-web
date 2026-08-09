@@ -18056,3 +18056,8 @@ font-family: 'Montserrat';
         letter-spacing: 0.2px;
     }
 }
+
+    .collection {
+        border-radius: 10px !important;
+    }
+
