@@ -18130,25 +18130,25 @@ font-family: 'Montserrat';
         opacity: 0.8;
     }
 }
-@media (max-width: 370px) {
+@media (max-width: 414pxpx) {
     .check h4 {
         font-size: 11px !important;
       letter-spacing: 0 !important;
     }
 }
-@media (max-width:370px) {
+@media (max-width:414px) {
     .check a {
         font-size: 11px !important;
       letter-spacing: 0 !important;
     }
 }
-@media (max-width: 370px) {
+@media (max-width: 414px) {
     .loc h4 {
         font-size: 11px !important;
       letter-spacing: 0 !important;
     }
 }
-@media (max-width: 370px) {
+@media (max-width: 414px) {
     .loc a {
         font-size: 11px !important;
       letter-spacing: 0 !important;
