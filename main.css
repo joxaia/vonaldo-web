@@ -18135,3 +18135,8 @@ font-family: 'Montserrat';
         font-size: 11px !important;
     }
 }
+@media (max-width: 414px) {
+    .check a {
+        font-size: 11px !important;
+    }
+}
