@@ -18145,3 +18145,8 @@ font-family: 'Montserrat';
         font-size: 11px !important;
     }
 }
+@media (max-width: 414px) {
+    .loc a {
+        font-size: 11px !important;
+    }
+}
