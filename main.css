@@ -18170,3 +18170,8 @@ font-family: 'Montserrat';
         letter-spacing: 0.4px !important;
     }
 }
+@media (max-width: 360px) {
+    .c div {
+        width: 170px !important;
+    }
+}
