@@ -18067,5 +18067,10 @@ font-family: 'Montserrat';
     }
 
 
+@media (max-width: 676px) {
+    .price-m h3 {
+        font-size: 12px !important;
 
+    }
+}
 
