@@ -18175,3 +18175,10 @@ font-family: 'Montserrat';
         width: 170px !important;
     }
 }
+@media (max-width: 676px) {
+    .bull-secmob ul li.active {
+        background-color: #808080ab !important;
+        transform: scale(1.1);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
