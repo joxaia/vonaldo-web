@@ -18116,3 +18116,13 @@ font-family: 'Montserrat';
 
     }
 }
+
+@media (max-width: 400px) {
+    .view-fit button {
+        width: 145px;
+        height: 36px !important;
+        font-size: 9px;
+        letter-spacing: 0.3px !important;
+    }
+}
+
