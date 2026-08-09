@@ -18066,3 +18066,11 @@ font-family: 'Montserrat';
 
     }
 
+
+@media (min-width: 1024px) {
+    .price-m h3 {
+        font-size: 13px !important;
+
+    }
+}
+
