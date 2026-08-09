@@ -18091,3 +18091,21 @@ font-family: 'Montserrat';
         z-index: 5;
     }
 }
+
+@media (min-width: 1024px) {
+    .view-fit button {
+        width: 210px !important;
+        height: 45px;
+        font-family: var(--headbold);
+        background-color: var(--black-color);
+        color: var(--biege-color);
+        text-transform: uppercase;
+        font-size: 12px;
+        border: none;
+        border-radius: 200px 0px 200px 200px;
+        cursor: pointer;
+        letter-spacing: 0.3px !important;
+        transition: all 0.5s ease;
+        user-select: none;
+    }
+}
