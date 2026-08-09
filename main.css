@@ -18130,4 +18130,8 @@ font-family: 'Montserrat';
         opacity: 0.8;
     }
 }
-
+@media (max-width: 414px) {
+    .check h4 {
+        font-size: 11px !important;
+    }
+}
