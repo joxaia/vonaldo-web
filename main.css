@@ -18109,3 +18109,10 @@ font-family: 'Montserrat';
         user-select: none;
     }
 }
+
+@media (max-width: 676px) {
+    .butt button {
+        font-family: 'headbold' !important;
+
+    }
+}
