@@ -4,7 +4,7 @@ const proudct = [
     id: 47723415142589,
     name: "Torino Heritage",
     desc: "Comfort Built Impress Designed",
-    price: 159,
+    price: 149,
     oldprice: 200,
     vare:"New Collection",
     sizeguide:"./icons/main.webp",
