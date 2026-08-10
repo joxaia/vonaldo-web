@@ -538,7 +538,7 @@ metadesc: "Step into refined confidence with Torino Monk shoes. Crafted from pre
     id: 47729104912573,
     name: "Vesper Chelsea",
     desc: "Every Step Hits Different",
-    price: 180,
+    price: 179,
     oldprice: 240,
     vare:"New Collection",
     sizeguide:"./icons/main.webp",
