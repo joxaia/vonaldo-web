@@ -11,7 +11,7 @@ const proudct = [
     listcolor:"#f5f3ef",
     material:"Premium Genuine Leather",
     mainimg: "./file/1/5.webp",
-    modelwearmob:"./file/1/556.avif",
+    modelwearmob:"./file/1/77.avif",
     modelwearpc:"./file/1/10.avif",
     shortdesc: "Premium Leather with Lightweight And Comfort derby",
     longdesc: "Premium Leather with Lightweight Comfort and Contemporary Appeal",
