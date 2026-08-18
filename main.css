@@ -18197,3 +18197,12 @@ font-family: 'Montserrat';
         justify-content: center;
     }
 }
+@media (max-width: 676px) {
+    .sumship h3 {
+        font-family: var(--headbold);
+        font-size: 15px !important;
+        color: var(--brown-color);
+        padding: 5px 25px 10px 25px;
+        text-transform: capitalize;
+    }
+}
