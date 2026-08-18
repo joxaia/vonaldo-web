@@ -18211,7 +18211,7 @@ font-family: 'Montserrat';
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-size: 16px;
+        font-size: 15px !important;
         gap: 3px;
         font-family: var(--headbold);
         color: var(--black-color);
