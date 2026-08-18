@@ -18206,3 +18206,16 @@ font-family: 'Montserrat';
         text-transform: capitalize;
     }
 }
+@media (max-width: 676px) {
+    .total-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 16px;
+        gap: 3px;
+        font-family: var(--headbold);
+        color: var(--black-color);
+        padding: 0 25px;
+        text-transform: capitalize;
+    }
+}
