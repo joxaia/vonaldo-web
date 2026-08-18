@@ -18219,3 +18219,12 @@ font-family: 'Montserrat';
         text-transform: capitalize;
     }
 }
+@media (max-width: 676px) {
+    .total-big span {
+        font-family: var(--headbold);
+        font-size: 15px !important;
+        color: var(--black-color);
+        padding: 10px 25px 10px 25px;
+        text-transform: capitalize;
+    }
+}
