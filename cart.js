@@ -129,8 +129,9 @@ const carte = () => {
         </div>
         <div class="detailscart">
           <p class="namecard">${info.name}</p>
-          <p class="colorcard">${variant.color}</p>
           <p class="sizecard">Size : ${size.size}</p>
+          <p class="colorcard">${variant.color}</p>
+          
           <p class="pricecard">$${info.price}</p>
         </div>
         <div class="more-det">
