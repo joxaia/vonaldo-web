@@ -18189,3 +18189,11 @@ font-family: 'Montserrat';
         color: var(--black-color);
     }
 }
+@media (max-width: 390px) {
+    .cardcart {
+        display: grid;
+        grid-template-columns: 80px 1fr 90px !important;
+        gap: 8px;
+        justify-content: center;
+    }
+}
