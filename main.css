@@ -18108,6 +18108,11 @@ font-family: 'Montserrat';
         transition: all 0.5s ease;
         user-select: none;
     }
+
+    .text-style h3 {
+    font-family: 'Montserrat' !important;
+    font-weight: 600 !important;
+}
 }
 
 @media (max-width: 676px) {
@@ -18227,8 +18232,5 @@ font-family: 'Montserrat';
         padding: 10px 25px 10px 25px;
         text-transform: capitalize;
     }
-  .text-style h3 {
-    font-family: 'Montserrat' !important;
-    font-weight: 600 !important;
-}
+
 }
