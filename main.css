@@ -18227,4 +18227,8 @@ font-family: 'Montserrat';
         padding: 10px 25px 10px 25px;
         text-transform: capitalize;
     }
+  .text-style h3 {
+    font-family: 'Montserrat' !important;
+    font-weight: 600 !important;
+}
 }
