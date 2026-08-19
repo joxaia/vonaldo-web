@@ -18234,3 +18234,8 @@ font-family: 'Montserrat';
     }
 
 }
+@media (min-width: 1024px) {
+    .header-index {
+        box-shadow: 4px 2px 2px #00000045 !important;
+    }
+}
