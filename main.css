@@ -18239,3 +18239,16 @@ font-family: 'Montserrat';
         box-shadow: 4px 2px 2px #00000045 !important;
     }
 }
+@media (min-width: 1024px) {
+    .slider-bullets {
+        position: absolute;
+        bottom: 80px !important;
+        right: 120px;
+        left: auto;
+        top: auto;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        z-index: 5;
+    }
+}
