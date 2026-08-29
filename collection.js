@@ -112,7 +112,7 @@ function renderCards() {
             <h3 class="price" id="pr">$${pro.price.toFixed(2)}</h3>
             <h4 class=""old>$${pro.oldprice.toFixed(2)}</h4>
           </div>
-          <span>%25 OFF</span>
+          <span>%60 OFF</span>
           </div>
         `;
         list.appendChild(card);
